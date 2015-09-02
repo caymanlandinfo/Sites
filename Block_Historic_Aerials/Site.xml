@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block Historic Aerials" ID="Historic_Aerials" Version="4.3.1">
+  <Map FullExtent="1492782.20013123,6981628.20013123,2083362.20013123,7171926.20013123" InitialExtent="1350528.63888889,6959725.63888889,1923925.97222222,7237834.08333333">
+    <LayerList>
+      <Items>
+        <Item ID="0" IsExpanded="true" Name="Operational Layers" Visible="false" />
+        <Item ID="1" IsExpanded="true" Name="Base Maps" Visible="true">
+          <Items>
+            <Item ID="2" />
+            <Item ID="3" />
+            <Item ID="4" />
+            <Item ID="5" />
+            <Item ID="6" />
+            <Item ID="7" />
+          </Items>
+        </Item>
+      </Items>
+    </LayerList>
+    <MapServices>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2008/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Aerial 2008" FailureAction="Warn" Function="Base" ID="5" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="2" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Historic_Aerials/5/Basemap_Aerial_2008/MapServer" AppRelativeTemplate="local-proxy/Historic_Aerials/5/Basemap_Aerial_2008/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Satellite_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Satellite 2004" FailureAction="Warn" Function="Base" ID="4" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="3" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Historic_Aerials/4/Basemap_Satellite_2004/MapServer" AppRelativeTemplate="local-proxy/Historic_Aerials/4/Basemap_Satellite_2004/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+        <Permissions Inherit="True">
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="platinum" Issuer="urn:gcx:legacy" />
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="enterprise" Issuer="urn:gcx:legacy" />
+          <Deny Type="http://www.geocortex.net/legacy/security/claims/role" Value="Everyone" Issuer="urn:gcx:legacy" />
+        </Permissions>
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Aerial 2004" Function="Base" ID="3" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" ImageFormat="Png24" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="4" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Historic_Aerials/3/Basemap_Aerial_2004/MapServer" AppRelativeTemplate="local-proxy/Historic_Aerials/3/Basemap_Aerial_2004/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+        <Permissions Inherit="True">
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="platinum" Issuer="urn:gcx:legacy" />
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="enterprise" Issuer="urn:gcx:legacy" />
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="survey" Issuer="urn:gcx:legacy" />
+          <Deny Type="http://www.geocortex.net/legacy/security/claims/role" Value="Everyone" Issuer="urn:gcx:legacy" />
+        </Permissions>
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1999/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Aerial 1999" Function="Base" ID="2" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" ImageFormat="Png24" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="5" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Historic_Aerials/2/Basemap_Aerial_1999/MapServer" AppRelativeTemplate="local-proxy/Historic_Aerials/2/Basemap_Aerial_1999/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+        <Permissions Inherit="True">
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="platinum" Issuer="urn:gcx:legacy" />
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="enterprise" Issuer="urn:gcx:legacy" />
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="survey" Issuer="urn:gcx:legacy" />
+        </Permissions>
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1994/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Aerial 1994" FailureAction="Warn" Function="Base" ID="1" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="6" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Historic_Aerials/1/Basemap_Aerial_1994/MapServer" AppRelativeTemplate="local-proxy/Historic_Aerials/1/Basemap_Aerial_1994/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+        <Permissions Inherit="True">
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="platinum" Issuer="urn:gcx:legacy" />
+        </Permissions>
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1971/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Aerial 1971" FailureAction="Warn" Function="Base" ID="0" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="7" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Historic_Aerials/0/Basemap_Aerial_1971/MapServer" AppRelativeTemplate="local-proxy/Historic_Aerials/0/Basemap_Aerial_1971/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+        <Permissions Inherit="True">
+          <Allow Type="http://www.geocortex.net/legacy/security/claims/user" Value="platinum" Issuer="urn:gcx:legacy" />
+        </Permissions>
+      </MapService>
+    </MapServices>
+  </Map>
+  <OverviewMap />
+</Site>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block Surveyors" ID="Block_Surveyors" Version="4.3.1">
+  <Map FullExtent="1495390.99988816,6987571.99997986,2079177.00004785,7168362.80760814" InitialExtent="1508477.68713003,6998400.90343551,1519374.8537967,7003820.12565773">
+    <LayerList>
+      <Items>
+        <Item ID="0" IsExpanded="true" Name="Layers" Visible="true">
+          <Items>
+            <Item ID="2" IsExpanded="true" Name="Survey" Visible="true">
+              <Items>
+                <Item ID="3" />
+                <Item ID="4" />
+                <Item ID="5" />
+              </Items>
+            </Item>
+          </Items>
+        </Item>
+        <Item ID="1" IsExpanded="true" Name="Base Maps" Visible="false" />
+      </Items>
+    </LayerList>
+    <MapServices>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Survey/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Survey" FailureAction="Warn" Function="Operational" ID="0" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+        <CachedServiceData />
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="Survey Controls" FeatureZoomScale="618496" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="3" Name="Survey Controls" NativeID="0" Queryable="true" Searchable="true" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="false">
+            <Fields>
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STC" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STATION" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="HTRAV" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="Z_COORD" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="Y_COORD" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="X_COORD" Searchable="true" Visible="true" />
+            </Fields>
+          </Layer>
+          <Layer CanCopyFeature="true" DisplayName="BPs &amp; PCMs" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="4" Name="BPs &amp; PCMs" NativeID="2" Queryable="true" Searchable="true" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="false">
+            <Fields>
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PLAN NAME" FocusField="false" Name="BP_Name" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REFERENCE MAP 1" FocusField="false" Name="Ref_Map_1" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REFERENCE MAP 2" FocusField="false" Name="Ref_Map_2" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REFERENCE MAP 3" FocusField="false" Name="Ref_Map_3" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="ISLAND" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="LAW" FocusField="false" Name="Law" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="SECTION" FocusField="false" Name="Section" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="GAZETTE NO." FocusField="false" Name="Gaz_Number" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="GAZETTE DATE" FocusField="false" Name="Gaz_Date" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NOTES" FocusField="false" Name="Remarks" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STATUS" FocusField="false" Name="Status" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="BASE PLANS" FocusField="false" Name="Base_Plans" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="LOCATION" FocusField="false" Name="Location" Searchable="true" Visible="true" />
+            </Fields>
+          </Layer>
+          <Layer CanCopyFeature="true" DisplayName="Graphic Index" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="5" Name="Graphic Index" NativeID="1" Queryable="true" Searchable="true" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="false">
+            <Fields>
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="ID" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="SURVEYS" FocusField="false" Name="Surveys" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TYPE" FocusField="false" Name="SurveyType" Searchable="true" Visible="true" />
+            </Fields>
+          </Layer>
+        </Layers>
+        <LocalProxy AppRelativePath="local-proxy/Block_Surveyors/0/Layers_Survey/MapServer" AppRelativeTemplate="local-proxy/Block_Surveyors/0/Layers_Survey/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+    </MapServices>
+  </Map>
+  <OverviewMap />
+</Site>

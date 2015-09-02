@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Upgrade OldVersion="1.7" NewVersion="1.8" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+  </Preprocessing>
+
+  <Globals>
+    <AddGlobal Description="Adding BaseMapCacheEnabled Global"
+       Name="BaseMapCacheEnabled"
+       Value="false" />
+
+    <AddGlobal Description="Adding BaseMapCacheEnabled Global"
+       Name="BaseMapCacheProxyUri"
+       Value="http://127.0.0.1:8085" />
+
+    <AddGlobal Description="Adding ProjectKeepQueryStringParameters global"
+       Name="ProjectKeepQueryStringParameters"
+       Value="false" />
+
+    <AddGlobal Description="Adding SymbolizationShowNormalizationOptions global"
+       Name="SymbolizationShowNormalizationOptions"
+       Value="false" />
+
+    <AddGlobal Description="Adding SymbolizationShowNewAttributeQuickLink global"
+       Name="SymbolizationShowNewAttributeQuickLink"
+       Value="false" />
+
+    <AddGlobal Description="Adding SymbolizationDefaultNumberOfBreaks global"
+       Name="SymbolizationDefaultNumberOfBreaks"
+       Value="5" />
+
+    <AddGlobal Description="Adding SymbolizationMakeLayerVisibleOnApply global"
+       Name="SymbolizationMakeLayerVisibleOnApply"
+       Value="true" />
+
+    <AddGlobal Description="Adding SymbolizationAllowMultiFieldsUniqueValueRenderer global"
+       Name="SymbolizationAllowMultiFieldsUniqueValueRenderer"
+       Value="false" />
+
+    <AddGlobal Description="Adding SymbolizationUniqueValueMaximumFeaturesInLayer global"
+       Name="SymbolizationUniqueValueMaximumFeaturesInLayer"
+       Value="1000" />
+
+    <AddGlobal Description="Adding SymbolizationPreventUniqueValueWhenMaximumFeaturesReached global"
+       Name="SymbolizationPreventUniqueValueWhenMaximumFeaturesReached"
+       Value="true" />
+
+    <AddGlobal Description="Adding SymbolizationDefaultRampFromColor global"
+       Name="SymbolizationDefaultRampFromColor"
+       Value="#FFFFFF" />
+
+    <AddGlobal Description="Adding SymbolizationDefaultRampToColor global"
+       Name="SymbolizationDefaultRampToColor"
+       Value="#FF0000" />
+
+    <AddGlobal Description="Adding WatermarkImageIsVisible global"
+       Name="WatermarkImageIsVisible"
+       Value="false" />
+
+    <AddGlobal Description="Adding WatermarkImageUrl global"
+       Name="WatermarkImageUrl"
+       Value="" />
+
+    <AddGlobal Description="Adding WatermarkImageMode global"
+       Name="WatermarkImageMode"
+       Value="Scaled" />
+
+    <AddGlobal Description="Adding WatermarkImageOpacity global"
+       Name="WatermarkImageOpacity"
+       Value="0.25" />
+
+    <AddGlobal Description="Adding WatermarkImageSize global"
+       Name="WatermarkImageSize"
+       Value="0.1" />
+
+    <AddGlobal Description="Adding WatermarkImagePosition global"
+       Name="WatermarkImagePosition"
+       Value="Center" />
+
+    <AddGlobal Description="Adding CenterMapAfterToolbarOpens global"
+       Name="CenterMapAfterToolbarOpens"
+       Value="true" />
+
+    <AddGlobal Description="Adding CenterMapAfterDataFrameOpens global"
+       Name="CenterMapAfterDataFrameOpens"
+       Value="true" />
+
+    <AddGlobal Description="Adding StickyTools global"
+       Name="StickyTools"
+       Value="true" />
+
+    <AddGlobal Description="Adding TimeAwareSliderShow global"
+       Name="TimeAwareSliderShow"
+       Value="true" />
+
+    <AddElement Description="Adding TimeAwareSliderConfiguration to Global"
+                    Path="/Configuration/*[local-name()='Globals']"
+                    Name="TimeAwareSliderConfiguration">
+      <TimeAwareSliderConfiguration>
+        <Configuration TimeMode="TimeExtent" Loop="true" PlaySpeed="1.0" NumberOfIntervals="10" UserConfigurable="true" />
+      </TimeAwareSliderConfiguration>
+    </AddElement>
+
+
+  </Globals>
+
+  <UpdateModules>
+
+    <!-- QueryBuilder -->
+    <AddAttribute Description="Adding GeometryServiceUri to QueryBuilder"
+                  Path="/Configuration/Modules/QueryBuilder/Configuration"
+                  Name="GeometryServiceUri"
+                  Value="{GeometryServiceUri}" />
+
+    <AddAttribute Description="Adding GeometryServiceUri to QueryBuilder"
+                  Path="/Configuration/Modules/QueryBuilder/Configuration"
+                  Name="AllowDrawingsAsSpatialFilter"
+                  Value="true" />
+
+    <AddAttribute Description="Adding GeometryServiceUri to QueryBuilder"
+                  Path="/Configuration/Modules/QueryBuilder/Configuration"
+                  Name="AllowSelectedFeaturesAsSpatialFilter"
+                  Value="true" />
+
+    <!-- Symbolization -->
+    <AddAttribute Description="Update the Type attribute of the view in Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Views/View[@Id='SymbolizationView']"
+                  Name="Type"
+                  Value="Geocortex.EssentialsSilverlightViewer.CoreModules.Symbolization.SymbolizationEditor"
+                  ReplaceExisting="true" />
+
+    <AddAttribute Description="Modify ShowNormalizationOptions to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="ShowNormalizationOptions"
+                  Value="{SymbolizationShowNormalizationOptions}" />
+
+    <AddAttribute Description="Modify ShowNewAttributeQuickLink to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="ShowNewAttributeQuickLink"
+                  Value="{SymbolizationShowNewAttributeQuickLink}" />
+
+    <AddAttribute Description="Modify DefaultNumberOfBreaks to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="DefaultNumberOfBreaks"
+                  Value="{SymbolizationDefaultNumberOfBreaks}" />
+
+    <AddAttribute Description="Modify DefaultRampFromColor to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="DefaultRampFromColor"
+                  Value="{SymbolizationDefaultRampFromColor}" />
+
+    <AddAttribute Description="Modify DefaultRampToColor to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="DefaultRampToColor"
+                  Value="{SymbolizationDefaultRampToColor}" />
+
+    <AddAttribute Description="Modify MakeLayerVisibleOnApply to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="MakeLayerVisibleOnApply"
+                  Value="{SymbolizationMakeLayerVisibleOnApply}" />
+
+    <AddAttribute Description="Adding AllowMultiFieldsUniqueValueRenderer to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="AllowMultiFieldsUniqueValueRenderer"
+                  Value="{SymbolizationAllowMultiFieldsUniqueValueRenderer}" />
+
+    <AddAttribute Description="Adding UniqueValueMaximumFeaturesInLayer to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="UniqueValueMaximumFeaturesInLayer"
+                  Value="{SymbolizationUniqueValueMaximumFeaturesInLayer}" />
+
+    <AddAttribute Description="Adding UniqueValueMaximumFeaturesInLayer to Symbolization"
+                  Path="/Configuration/Modules/Symbolization/Configuration"
+                  Name="PreventUniqueValueWhenMaximumFeaturesReached"
+                  Value="{SymbolizationPreventUniqueValueWhenMaximumFeaturesReached}" />
+
+    <AddAttribute Description="Adding KeepQueryStringParameters to SaveOpenProject"
+              Path="/Configuration/Modules/SaveOpenProject/Configuration"
+              Name="KeepQueryStringParameters"
+              Value="{ProjectKeepQueryStringParameters}" />
+
+    <AddAttribute Description="Adding CenterMapAfterDataframeOpens to Shell"
+              Path="/Configuration/Modules/Shell/Configuration/Shell"
+              Name="CenterMapAfterDataFrameOpens"
+              Value="{CenterMapAfterDataFrameOpens}" />
+
+    <AddAttribute Description="Adding CenterMapAfterDataframeOpens to Shell"
+              Path="/Configuration/Modules/Shell/Configuration/Shell"
+              Name="CenterMapAfterToolbarOpens"
+              Value="{CenterMapAfterToolbarOpens}" />
+
+    <AddElement Description="Adding new Geocoding views"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Geocoding/Views"
+                Name="View"
+                Prepend="true">
+      <View Id="SelectWorksheetView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Geocoding.SelectWorksheetView" Visible="false" />
+    </AddElement>
+
+    <AddElement Description="Adding SelectAddressFieldsView Geocoding view"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Geocoding/Views"
+                Name="View"
+                Prepend="true">
+      <View Id="SelectAddressFieldsView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Geocoding.SelectAddressFieldsView" Visible="false" />
+    </AddElement>
+
+    <AddElement Description="Adding ConfirmationView Geocoding view"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Geocoding/Views"
+                Name="View"
+                Prepend="true">
+      <View Id="ConfirmationView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Geocoding.ConfirmationView" Visible="false" />
+    </AddElement>
+
+    <AddElement Description="Adding AdvancedQueryBuilder Geocoding view"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Help/Configuration/Topics"
+                Name="UriTopic"
+                Prepend="true">
+      <UriTopic Key="AdvancedQueryBuilder" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_UseTheAdvancedQueryBuilder.htm" />
+    </AddElement>
+
+    <AddElement Description="Adding simple query builder help topic"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Help/Configuration/Topics"
+                Name="UriTopic"
+                Prepend="true">
+      <UriTopic Key="SimpleQueryBuilder" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_UseTheSimpleQueryBuilder.htm" />
+    </AddElement>
+
+    <AddElement Description="Adding simple filter builder help topic"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Help/Configuration/Topics"
+                Name="UriTopic"
+                Prepend="true">
+      <UriTopic Key="FilterBuilder" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_Use_The_AdvancedFilter.htm" />
+    </AddElement>
+
+    <AddElement Description="Adding symbolization help topic"
+                ReplaceExisting="false"
+                Path="/Configuration/Modules/Help/Configuration/Topics"
+                Name="UriTopic"
+                Prepend="true">
+      <UriTopic Key="Symbolization" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_AboutSymbolsClassificationBreaks.htm" />
+    </AddElement>
+
+    <AddElement Description="Adding Reset Symbolization item to LayerActions menu"
+            Path="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerActions']/Items"
+            Name="Item">
+      <Item Text="Reset Symbolization" Command="ResetCustomRendererCommand" HideWhenDisabled="true" />
+    </AddElement>
+
+    <AddElement Description="Adding Advanced Filter item to LayerActions menu"
+            Path="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerActions']/Items"
+            Name="Item">
+      <Item Text="Advanced Filter" Command="ShowFilterBuilderView" HideWhenDisabled="true" />
+    </AddElement>
+
+    <AddElement Description="Adding Copy To Edit Layer item to FeatureActions menu"
+            Path="/Configuration/Modules/MapTips/Configuration/Menus/Menu[@Id='FeatureActions']/Items"
+            Name="Item">
+      <Item Text="Copy To Edit Layer" Command="AddFeatureToEditLayer" HideWhenDisabled="true" />
+    </AddElement>
+
+    <AddElement Description="Adding GeometryServiceUri to QueryBuilder"
+            Path="/Configuration/Modules/QueryBuilder"
+            Name="Item">
+      <Configuration GeometryServiceUri="{GeometryServiceUri}" AllowDrawingsAsSpatialFilter="true" AllowSelectedFeaturesAsSpatialFilter="true" />
+    </AddElement>
+
+    <AddElement Description="Adding Items to Results List menu"
+            Path="/Configuration/Modules/Results/Configuration/Menus/Menu[@Id='ResultsListMenu']/Items"
+            Name="Item">
+      <Item Text="Copy To Edit Layer" Command="AddFeatureToEditLayer" HideWhenDisabled="true" />
+    </AddElement>
+
+    <AddElement Description="Adding Items to Results Table menu"
+            Path="/Configuration/Modules/Results/Configuration/Menus/Menu[@Id='ResultsTableMenu']/Items"
+            Name="Item">
+      <Item Text="Copy To Edit Layer" Command="AddFeatureToEditLayer" HideWhenDisabled="true" />
+    </AddElement>
+
+    <RemoveElement Description="Remove Configuration from "
+              Path="/Configuration/Modules/QueryBuilder/Configuration" />
+
+    <AddElement Description="Add Configuration to GeometryServiceUri"
+              Path="/Configuration/Modules/QueryBuilder"
+              Name="Configuration">
+      <Configuration GeometryServiceUri="{GeometryServiceUri}" AllowDrawingsAsSpatialFilter="true" AllowSelectedFeaturesAsSpatialFilter="true" />
+    </AddElement>
+
+    <AddElement Description="Adding TimeAwareSliderConfiguration to Global"
+                Path="/Configuration/Globals"
+                Name="TimeAwareSliderConfiguration">
+      <TimeAwareSliderConfiguration>
+        <Configuration TimeMode="TimeExtent" Loop="true" PlaySpeed="1.0" NumberOfIntervals="25" UserConfigurable="true" />
+      </TimeAwareSliderConfiguration>
+    </AddElement>
+    
+    <AddAttribute Description="Adding Keep Query String Parameters attribute"
+              Path="/Configuration/Modules/SaveOpenProject/Configuration"
+              Name="KeepQueryStringParameters"
+              Value="{ProjectKeepQueryStringParameters}" />
+
+    <AddAttribute Description="Adding DefaultAreaUnit attribute"
+              Path="/Configuration/Modules/Measurement/Configuration/MeasurementOptions"
+              Name="DefaultAreaUnit"
+              Value="{MeasurementAreaUnitDefault}" />
+
+    <ChangeAttributeDefault Description="Changing Sticky Tools attribute to be configurable"
+              Path="/Configuration/Modules/Toolbar/Configuration/Toolbar"
+              Name="StickyTools"
+              OldDefault="true"
+              NewDefault="{StickyTools}" />
+
+    <AddElement Description="Adding Batch Geocode to Add Data group"
+            Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Maps &amp; Data Sources']/Group[@DisplayName='Add Data']"
+            Name="Button">
+      <Button DisplayName="Batch Geocode" Command="OpenExcelFileDialog" ImageUri="/Resources/Images/geocode-batch-32.png" ToolTip="Open an Excel file and add it to the map" />
+    </AddElement>
+
+  </UpdateModules>
+
+  <DeprecateModules>
+  </DeprecateModules>
+
+  <AddModules>
+
+    <AddModule Description="Adding BaseMapCache module"
+               Name="BaseMapCache"
+               ModuleDescription="Adds caching capabilities to basemaps.">
+      <BaseMapCache>
+        <Configuration>
+          <Proxy Enabled="{BaseMapCacheEnabled}" Uri="{BaseMapCacheProxyUri}"></Proxy>
+        </Configuration>
+      </BaseMapCache>
+    </AddModule>
+
+    <AddModule Description="Adding TimeSlider module"
+               Name="TimeSlider"
+               ModuleDescription="Adds the TimeSlider to the viewer">
+      <TimeAwareSlider>
+        <Views>
+          <View Id="TimeAwareSliderView" Region="TopMapRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.TimeAwareSlider.TimeAwareSliderView" Visible="{TimeAwareSliderShow}" />
+          <View Id="TimeAwareSliderConfigView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.TimeAwareSlider.TimeAwareSliderConfigView" Visible="false" />
+        </Views>
+        <Configuration>
+          {TimeAwareSliderConfiguration}
+        </Configuration>
+      </TimeAwareSlider>
+    </AddModule>
+
+    <AddModule Description="Adding Symbolization module"
+               Name="Symbolization"
+               ModuleDescription="Adds dynamic symbolization capabilities to the viewer">
+      <Symbolization LibraryId="Core">
+        <Views>
+          <View Id="SymbolizationView" Visible="false" Region="DataRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Symbolization.SymbolizationEditor" AssociatedHelpTopicKey="Symbolization" />
+        </Views>
+        <Configuration ShowNormalizationOptions="{SymbolizationShowNormalizationOptions}"
+                       ShowNewAttributeQuickLink="{SymbolizationShowNewAttributeQuickLink}"
+                       DefaultNumberOfBreaks="{SymbolizationDefaultNumberOfBreaks}"
+                       DefaultRampFromColor="{SymbolizationDefaultRampFromColor}"
+                       DefaultRampToColor="{SymbolizationDefaultRampToColor}"
+                       MakeLayerVisibleOnApply="{SymbolizationMakeLayerVisibleOnApply}"
+                       AllowMultiFieldsUniqueValueRenderer="{SymbolizationAllowMultiFieldsUniqueValueRenderer}"
+                       UniqueValueMaximumFeaturesInLayer="{SymbolizationUniqueValueMaximumFeaturesInLayer}"
+                       PreventUniqueValueWhenMaximumFeaturesReached="{SymbolizationPreventUniqueValueWhenMaximumFeaturesReached}" />
+      </Symbolization>
+    </AddModule>
+
+    <AddModule Description="Adding Watermark module"
+               Name="Watermark"
+               ModuleDescription="Adds the watermark module to the viewer">
+      <Watermark>
+        <Views>
+          <View Id="WatermarkImageView" Region="MapWatermarkOverlayRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Watermark.ImageWatermarkView" Visible="{WatermarkImageIsVisible}">
+            <Configuration ImageUrl="{WatermarkImageUrl}" ImageMode="{WatermarkImageMode}" Opacity="{WatermarkImageOpacity}" Size="{WatermarkImageSize}" Position="{WatermarkImagePosition}" />
+          </View>
+        </Views>
+      </Watermark>
+    </AddModule>
+  </AddModules>
+
+  <DocumentTransformations>
+
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="1.8" />
+
+    <RegexTextReplace Description="Updating Uris to virtual directory content" Match="/Templates/SilverlightViewer_1_\d/VirtualDirectory/" ReplaceWith="/Templates/SilverlightViewer_1_8/VirtualDirectory/" />
+
+  </DocumentTransformations>
+
+</Upgrade>

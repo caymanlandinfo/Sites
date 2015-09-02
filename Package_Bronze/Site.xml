@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Bronze" ID="Bronze" Version="4.3.1">
+  <ExternalConfigs>
+    <ExternalConfig SiteID="Block_Marine" />
+    <ExternalConfig SiteID="Block_ID_Base" />
+    <ExternalConfig SiteID="Block_Cadastral" />
+    <ExternalConfig SiteID="Block_ID_Cadastral" />
+    <ExternalConfig SiteID="Navigation" />
+  </ExternalConfigs>
+  <Map InitialExtent="1498352.62274466,6969919.83482047,1609623.06750778,7054748.44892215">
+    <LayerList>
+      <Items>
+        <Item ID="0" IsExpanded="true" Name="Layers" Visible="true">
+          <Items>
+            <Item ID="2" />
+            <Item ID="3" IsExpanded="true" Name="Cadastral" Visible="true">
+              <Items>
+                <Item ID="4" />
+                <Item ID="5" />
+                <Item ID="6" />
+              </Items>
+            </Item>
+            <Item ID="19" IsExpanded="true" Name="Marine" Visible="true" />
+          </Items>
+        </Item>
+        <Item ID="1" IsExpanded="true" Name="Base Maps" Visible="true">
+          <Items>
+            <Item ID="9" />
+            <Item ID="10" />
+            <Item ID="11" />
+            <Item ID="12" />
+            <Item ID="13" />
+          </Items>
+        </Item>
+        <Item ID="14" IsExpanded="false" Name="Query Layers" Visible="true">
+          <Items>
+            <Item ID="15" />
+            <Item ID="16" />
+            <Item ID="17" />
+            <Item ID="18" />
+          </Items>
+        </Item>
+      </Items>
+      <Items MergeMode="Remove">
+        <Item ID="Block_ID_Cadastral-6" />
+        <Item ID="Navigation-0" />
+        <Item ID="Navigation-1" />
+      </Items>
+    </LayerList>
+    <MapServices MergeMode="Update">
+      <MapService ID="Block_Cadastral-3" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="2" />
+      <MapService ID="Block_ID_Cadastral-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral_Revised/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
+        <Layers MergeMode="Update">
+          <Layer Name="Parcels ID" NativeID="0" LayerListID="17" />
+          <Layer Name="Parcels - Map Tips ID" NativeID="2" LayerListID="18" />
+          <Layer Name="Leases" NativeID="3" LayerListID="4" />
+          <Layer Name="Parcel Boundaries" NativeID="4" LayerListID="5" />
+          <Layer Name="Registration Sections" NativeID="5" LayerListID="6" />
+        </Layers>
+      </MapService>
+      <MapService ID="Block_ID_Base-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
+        <Layers MergeMode="Update">
+          <Layer Name="Streets" NativeID="0" LayerListID="15" Visible="false" />
+          <Layer Name="Buildings" NativeID="1" LayerListID="16" />
+        </Layers>
+      </MapService>
+      <MapService ID="Block_Cadastral-2" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="9" />
+      <MapService ID="Block_Cadastral-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="10" />
+      <MapService ID="Navigation-3" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="11" />
+      <MapService ID="Navigation-2" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="12" />
+      <MapService ID="Navigation-4" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="13" />
+    </MapServices>
+  </Map>
+  <NamedExtents>
+    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
+    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
+    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
+  </NamedExtents>
+  <NamedExtents MergeMode="Remove">
+    <NamedExtent ID="Block_ID_Base-0" />
+    <NamedExtent ID="Block_ID_Base-1" />
+    <NamedExtent ID="Block_ID_Base-2" />
+  </NamedExtents>
+  <Viewers>
+    <Viewer DisplayName="HTML5 Bronze" Hidden="false" ID="HTML5_Bronze" Path="{SitePath}\Viewers\HTML5_Bronze" TemplateID="Html5Viewer_2_4" />
+  </Viewers>
+</Site>

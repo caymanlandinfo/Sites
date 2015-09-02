@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Upgrade OldVersion="2.2" NewVersion="2.3" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+  </Preprocessing>
+
+  <Globals>
+  
+    <!-- Map Scaling (Stephen Bates) -->
+    
+    <AddGlobal Description="Adding MapScaleCalculationMethod for Map Scale Calculation" Name="MapScaleCalculationMethod" Value="CurrentExtent" />
+    <AddGlobal Description="Adding AdvancedMapControlsUseEsriScaleLevelValues for Map Scale Calculation" Name="AdvancedMapControlsUseEsriScaleLevelValues" Value="false" />
+        
+  </Globals>
+
+  <UpdateModules>
+  
+    <!-- Map Scaling (Stephen Bates) -->
+    
+    <AddAttribute Description="Adding scale calculation method to map module" Path="/Configuration/Modules/Map/Configuration" Name="ScaleCalculationMethod" Value="{MapScaleCalculationMethod}" />
+    <AddAttribute Description="Adding UseEsriScaleLevelValues to AdvancedMapControls module" Path="/Configuration/Modules/AdvancedMapControls/Views/View[1]/Configuration" Name="UseEsriScaleLevelValues" Value="{AdvancedMapControlsUseEsriScaleLevelValues}" />
+    
+    <!-- Configurable Layer List (Yongzhi) -->
+    
+    <AddAttribute Description="Adding new Zoom Command" Path="/Configuration/Modules/LayerList/Views/View[1]/Configuration/Menus/Menu[@Id='LayerActions']/Items/Item[@Text='Zoom to Visible Scale']" Name="Command" Value="ZoomToLayerListItemVisible" />
+
+    <AddElement Description="Adding RemoveLayerListFolder to LayerActions"
+                    Path="/Configuration/Modules/LayerList/Views/View[1]/Configuration/Menus/Menu[@Id='LayerActions']/Items"
+                    Name="Item">
+        <Item Text="Remove Folder" Command="RemoveLayerListFolder" HideWhenDisabled="true" />
+    </AddElement>
+    
+    <RemoveElement Description="Removing Batch Zoom Commands"
+                   Path="/Configuration/Modules/LayerList/Views/View[1]/Configuration/Menus/Menu[@Id='LayerActions']/Items/Item[@Text='Zoom to Visible Scale']/Batch" />
+  
+  </UpdateModules>
+
+  <DeprecateModules>
+  </DeprecateModules>
+
+  <AddModules>
+  
+    <!-- Label Symbolization (Paul Hicken) -->
+  
+    <AddModule Description="Adding LabelSymbolization Module"
+               Name="LabelSymbolization"
+               ModuleDescription="Provides support for Symbolizing Dynamic Labels."
+               DefaultsOnly="true">
+        <LabelSymbolization>
+            <Views>
+                <View Id="LabelSymbolizationView" Visible="false" Region="DataRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.LabelSymbolization.LabelSymbolizationEditor" AssociatedHelpTopicKey="LabelSymbolization" />
+            </Views>
+            <Configuration>
+                <LabelFontFamilies>
+                    <LabelFontFamily Value="Arial" />
+                    <LabelFontFamily Value="Arial Black" />
+                    <LabelFontFamily Value="Comic Sans MS" />
+                    <LabelFontFamily Value="Courier New" />
+                    <LabelFontFamily Value="Georgia" />
+                    <LabelFontFamily Value="Impact" />
+                    <LabelFontFamily Value="Lucida Console" />
+                    <LabelFontFamily Value="Lucida Sans Unicode" />
+                    <LabelFontFamily Value="Palatino Linotype" />
+                    <LabelFontFamily Value="Tahoma" />
+                    <LabelFontFamily Value="Times New Roman" />
+                    <LabelFontFamily Value="Trebuchet MS" />
+                    <LabelFontFamily Value="Verdana" />
+                </LabelFontFamilies>
+            </Configuration>
+        </LabelSymbolization>
+    </AddModule>
+    
+  </AddModules>
+
+  <DocumentTransformations>
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="2.3" />
+    <RegexTextReplace Description="Updating Uris to virtual directory content" Match="/Templates/SilverlightViewer_2_\d/VirtualDirectory/" ReplaceWith="/Templates/SilverlightViewer_2_3/VirtualDirectory/" />
+  </DocumentTransformations>
+
+</Upgrade>

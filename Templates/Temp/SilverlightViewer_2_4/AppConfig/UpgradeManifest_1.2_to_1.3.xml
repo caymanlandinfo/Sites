@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Upgrade OldVersion="1.2" NewVersion="1.3" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+  </Preprocessing>
+
+  <Globals>
+    
+    <!-- CoordinateSystems -->
+    <MoveElement Description="Moving CoordinateTool's coordinate systems to Globals" From="/Configuration/Modules/CoordinateTool/Configuration/CoordinateSystems" To="/Configuration/*[local-name()='Globals']" />
+                    
+    <AddElement Description="Adding CoordinateSystems token reference to CoordinateTool" Path="/Configuration/Modules/CoordinateTool/Configuration" Name="CoordinateSystems">
+      <CoordinateSystems>{CoordinateSystems}</CoordinateSystems>
+    </AddElement>
+    
+    <!-- "UseInstantSearch" -->
+    <AddGlobal Description="Adding UseInstantSearch global" Name="UseInstantSearch" Value="false" />
+    
+    <!-- "UseLayerSearch" -->
+    <AddGlobal Description="Adding UseLayerSearch global" Name="UseLayerSearch" Value="true" />
+
+    <!-- Token updates -->
+    <TokenizeAttribute Description="Tokenizing BufferingProjectionWkid in Identify" Path="/Configuration/Modules/Identify/Configuration/BufferingOptions" Attribute="WKID" Token="BufferingProjectionWkid" />
+    <TokenizeAttribute Description="Tokenizing BufferingProjectionWkt in Identify" Path="/Configuration/Modules/Identify/Configuration/BufferingOptions" Attribute="WKT" Token="BufferingProjectionWkt" />
+    <TokenizeAttribute Description="Tokenizing BufferingProjectionIsGeographic in Identify" Path="/Configuration/Modules/Identify/Configuration/BufferingOptions" Attribute="IsGeographic" Token="BufferingProjectionIsGeographic" />    
+    <TokenizeAttribute Description="Tokenizing SaveOpenProject ProjectCategory" Path="/Configuration/Modules/SaveOpenProject/Configuration" Attribute="ProjectCategory" Token="ProjectCategory" />
+    <TokenizeAttribute Description="Tokenizing MouseCoordinatesView visibility" Path="/Configuration/Modules/CoordinateTool/Views/View[@Id='MouseCoordinatesView']" Attribute="Visible" Token="MouseCoordinatesShow" />
+    <TokenizeAttribute Description="Tokenizing extent Scale Factor for Overview map" Path="/Configuration/Modules/OverviewMap/Configuration/ExtentScaleFactor" Attribute="Value" Token="OverviewMapExtentScaleFactor" />
+
+    
+  </Globals>
+  
+  <UpdateModules>
+    
+    <!-- AdvancedMapControls -->
+    <RemoveAttribute Description="Removing ShowCoordinatesByDefault setting" Path="/Configuration/Modules/AdvancedMapControls/Configuration" Name="ShowCoordinatesByDefault" />
+    
+    <!-- CoordinateTool -->
+    <RemoveAttribute Description="Removing CoordinateToolView view ID" Path="/Configuration/Modules/CoordinateTool/Views/View[@Id='CoordinateToolView']" Name="Id" />
+    
+    <!-- Geocoding -->
+    <AddAttribute Description="Adding GeometryServiceUri to Geocoding module" Path="/Configuration/Modules/Geocoding/Configuration" Name="GeometryServiceUri" Value="{GeometryServiceUri}" />
+    
+    <!-- Identify -->
+    <AddElement Description="Adding BufferingOptions element to Identify module" Path="/Configuration/Modules/Identify/Configuration" Name="BufferingOptions">
+      <BufferingOptions IsGeographic="" WKID="" WKT="" />
+    </AddElement>
+    
+    <!-- IWantToMenu -->
+    <AddElement Description="Adding 'Add External Map Layer' to I Want To... Menu" Path="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu[@Id='{IWantToMenu}']/Items" Name="Item" Prepend="true">
+      <Item Command="AddMapLayerInteractive" Description="Add External Map Layer." ImageUri="/Resources/Images/LayersAdd.png" Text="Add Map Layer" />
+    </AddElement>
+    
+    <!-- LayerList -->
+    <AddAttribute Description="Adding LayerListView ID" Path="/Configuration/Modules/LayerList/Views/View[1]" Name="Id" Value="LayerListView" />
+
+    <AddAttribute Description="Adding LayerListView Visible flag" Path="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']" Name="Visible" Value="false" />
+
+    <AddElement Description="Addign Layer Actions menu" Path="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus" Name="Menu">
+      <Menu Id="LayerActions">
+        <Items>
+          <Item Command="ListFeatureSet" HideWhenDisabled="true" Text="List Items" />
+          <Item Command="RemoveEsriLayer" HideWhenDisabled="true" Text="Remove Layer" />
+          <Item Command="ShowSymbolizeGraphicsLayerDialog" HideWhenDisabled="false" Text="Symbolize Layer" />
+          <Item Command="UpdateLayer" HideWhenDisabled="true" Text="Update" />
+          <Item Command="ZoomToExtent" Text="Zoom To Extent" />
+          <Item Text="Zoom To Visible Scale">
+            <Batch>
+              <BatchItem Command="ZoomToEsriLayerVisible" />
+              <BatchItem Command="ZoomToLayerVisible" />
+            </Batch>
+          </Item>
+        </Items>
+      </Menu>
+    </AddElement>
+
+
+    <AddElement Id="MoveHighlightFeatures" Description="Adding 'Unhighlight Features' layer list menu option." Name="Item" Path="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerListSelectionActionsMenu']/Items" Prepend="true">
+      <Item Command="UnhighlightFSMFeatureSet" HideWhenDisabled="true" Text="Unhighlight Features" />
+    </AddElement>
+    
+    <MoveElement DependsOn="MoveHighlightFeatures" Description="Moving 'Highlight Features' layer list menu option to temporary location" From="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerListSelectionActionsMenu']/Items/Item[@Text='Highlight Features']" To="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerListSelectionActionsMenu']/TempItem" Prepend="true" />
+    
+    <MoveElement DependsOn="MoveHighlightFeatures" Description="Moving 'Highlight Features' layer list menu option to menu items" From="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerListSelectionActionsMenu']/TempItem/Item" To="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerListSelectionActionsMenu']/Items" Prepend="true" />
+
+    <RemoveElement DependsOn="MoveHighlightFeatures" Description="Removing temporary item" Path="/Configuration/Modules/LayerList/Views/View[@Id='LayerListView']/Configuration/Menus/Menu[@Id='LayerListSelectionActionsMenu']/TempItem" />
+
+    <!-- Map -->
+    <AddAttribute Description="Adding DefaultPointFeatureZoomScales option to Map" Path="/Configuration/Modules/Map/Configuration" Name="DefaultPointFeatureZoomScales" Value="" />
+    
+    <!-- MapTips -->
+    <RemoveAttribute Description="Removing MapTipsView ID" Path="/Configuration/Modules/MapTips/Views/View[@Id='MapTipsView']" Name="Id" />
+
+    <RemoveElement Description="Removing old AddToSelection option in MapTips." Path="/Configuration/Modules/MapTips/Configuration/Menus/Menu/Items/Item[@Command='AddFeatureToSelection']" />
+      
+    <AddElement ReplaceExisting="true" Description="Updating AddToSelection option in MapTips." Path="/Configuration/Modules/MapTips/Configuration/Menus/Menu/Items" Name="Item">
+
+      <Item Text="Add to Selection" ToolTip="Add this feature to my selection" HideWhenDisabled="true">
+        <Batch>
+          <BatchItem Command="AddFeatureToSelection" Module="Selection" AbortBatchOnFailure="true" />
+        </Batch>
+      </Item>
+    </AddElement>
+    
+    <!-- Results -->
+    <ReplaceAttributeValue Description="Replacing deprecated command 'SwitchToTabularView' with 'SwitchToTabularResultsView'" OldValue="SwitchToTabularView" NewValue="SwitchToTabularResultsView" />
+    
+    <ReplaceAttributeValue Description="Replacing deprecated command 'SwitchToListView' with 'SwitchToListResultsView'" OldValue="SwitchToListView" NewValue="SwitchToListResultsView" />
+
+    <!-- Selection -->
+    <RemoveElement Description="Removing old Selection views" Path="/Configuration/Modules/Selection/Views" />
+    
+    <AddElement Description="Adding new Selection views" ReplaceExisting="true" Path="/Configuration/Modules/Selection" Name="Views" Prepend="true">
+      <Views>
+        <View Id="SelectionView" Visible="true" Region="ResultsSelectionRegion" />
+        <View Id="HistoryView" Visible="true" Region="ResultsHistoryRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Selection.HistoryView">
+          <Configuration TimestampFormat="h:mm tt" MaximumSavedSearches="10" />
+        </View>
+      </Views>
+    </AddElement>
+
+    <RemoveElement Description="Removing SearchHistory element" Path="/Configuration/Modules/Selection/Configuration/SearchHistory" />
+     
+    <!-- Toolbar -->
+    <AddAttribute Description="Adding ToolbarView Id attribute" Path="/Configuration/Modules/Toolbar/Views/View[1]" Name="Id" Value="ToolbarView" />
+
+    <AddAttribute Description="Adding ToolbarView Visible flag" Path="/Configuration/Modules/Toolbar/Views/View[1]" Name="Visible" Value="false" />
+
+    <AddElement Description="Adding Pan tool to toolbar" Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab/Group[@DisplayName='Zoom']" Name="Tool" Prepend="true">
+      <Tool DisplayName="Pan" DrawMode="None" HelpText="Drag the map around to pan." ImageUri="/Resources/Images/Pan.png" Name="Pan" ToolTip="Pan" />
+    </AddElement>
+
+    <AddElement Description="Adding 'Add Map Layer' button to toolbar" Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab/Group[@DisplayName='Map Layers']" Name="Button" Prepend="true">
+      <Button Command="AddMapLayerInteractive" ImageUri="/Resources/Images/LayersAdd.png" Name="Add Map Layer" ToolTip="Add External Map Layer" />
+    </AddElement>
+
+    <AddText Description="Adding 'MapsAndDataSources-Groups' injection token" AddAfter="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab/Group[@DisplayName='Map Layers']">
+      {Insert__Toolbar-MapsAndDataSources-Groups}
+    </AddText>
+    
+    <!-- Workflow -->
+    <AddElement Description="Adding workflow containers" Path="/Configuration/Modules/Workflow/Configuration" Name="WorkflowContainers">
+      <WorkflowContainers DefaultTitle="Workflow" DefaultRegion="DataRegion" DefaultIconUri="/Resources/Images/Form.png">
+        <WorkflowContainer IconUri="/Resources/Images/Form.png" Name="Default" RegionName="DataRegion" Title="Workflow" />
+        <WorkflowContainer IconUri="/Resources/Images/LayersExtract.png" Name="Extract" RegionName="DataRegion" Title="Extract Data" />
+        <WorkflowContainer Name="ModalWindow" RegionName="ModalWindowRegion" Title="Workflow" />
+      </WorkflowContainers>
+    </AddElement>              
+    
+  </UpdateModules>
+
+  <DeprecateModules>
+
+    <!-- Search -->
+    <DeprecateModule Description="Deprecating old Search module" ModuleName="Search" Action="Delete" />
+                     
+    
+  </DeprecateModules>
+  
+  <AddModules>
+    
+    <!-- GeoRss -->
+    <AddModule Description="Adding GeoRss module" Name="GeoRss" ModuleDescription="Consumes and displays GeoRSS feeds.">
+      <GeoRss>
+        <Configuration GeometryServiceUri="{GeometryServiceUri}" />
+      </GeoRss>
+    </AddModule>
+    
+    <!-- InstantSearch -->
+    <AddModule Description="Adding InstantSearch module" Name="InstantSearch" ModuleDescription="Provides powerful instant search capabilities.">
+      <InstantSearch>
+        <Configuration IncludeInGlobalSearch="{UseInstantSearch}" MaxResults="50" />
+      </InstantSearch>
+    </AddModule>
+    
+    <!-- LayerSearch -->
+    <AddModule Description="Adding LayerSearch module" Name="LayerSearch" ModuleDescription="Provides powerful layer search capabilities.">
+      <LayerSearch>
+        <Configuration IncludeInGlobalSearch="{UseLayerSearch}" />
+      </LayerSearch>
+    </AddModule>
+    
+    <!-- UserLayerAddition -->
+    <AddModule Description="Adding UserLayerAddition module" Name="UserLayerAddition" ModuleDescription="Allows users to dynamically add layers to the map.">
+      <UserLayerAddition>
+        <Configuration>
+          <ArcGIS>
+            <Search Location="http://sampleserver1.arcgisonline.com/ArcGIS/rest/services" />
+            <Search Location="http://sampleserver1/ArcGIS/rest/services" />
+            <Search Service="ArcGISOnline" />
+            <Template Location="http://{0}/ArcGIS/rest/services" />
+            <Template Location="https://{0}/ArcGIS/rest/services" />
+            <Template Location="{0}" />
+          </ArcGIS>
+          <Bing>
+            <Token Value="AvnGunFSkNnx0Qf9VrRFyCzSlfSZs2Y3PSlG6IjEyo7_WyD1170WdhAC09O9bNLh" />
+          </Bing>
+        </Configuration>
+      </UserLayerAddition>
+    </AddModule>
+
+  </AddModules>
+
+  <DocumentTransformations>
+    <RenameAttribute Description="ToolTip capitalization consistency" Path="//*" OldName="Tooltip" NewName="ToolTip" />
+    
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="1.3" />
+    <RegexTextReplace Description="Updating ExternalConfig Uri" Match="SilverlightViewer_1_2/VirtualDirectory" ReplaceWith="SilverlightViewer_1_3/VirtualDirectory" />
+
+    <!-- Language changes -->
+    <ReplaceAttributeValue Description="Language change 1" OldValue="Zoom to feature" NewValue="Zoom to Feature" AttributeName="Text" />
+
+    <ReplaceAttributeValue Description="Language change 2" OldValue="Pan to feature" NewValue="Pan to Feature" AttributeName="Text" />
+    
+    <ReplaceAttributeValue Description="Language change 3" OldValue="Create a Report" NewValue="Create A Report" AttributeName="Text" />
+
+    <ReplaceAttributeValue Description="Language change 4" OldValue="Copy feature" NewValue="Copy Feature" AttributeName="Text" />
+    
+    <ReplaceAttributeValue Description="Language change 5" OldValue="Add to Selection" NewValue="Add to Selected" AttributeName="Text" />
+    
+    <ReplaceAttributeValue Description="Language change 6" OldValue="Remove from Selection" NewValue="Remove From Selected" AttributeName="Text" />
+    
+    <ReplaceAttributeValue Description="Language change 7" OldValue="Add Feature to My Selection" NewValue="Add To Selected" AttributeName="Text" />
+
+    <ReplaceAttributeValue Description="Language change 8" OldValue="Remove Feature from My Selection" NewValue="Remove From Selected" AttributeName="Text" />
+    
+    <ReplaceAttributeValue Description="Language change 9" OldValue="Add Features to My Selection" NewValue="Add To Selected" AttributeName="Text" />
+
+    <ReplaceAttributeValue Description="Language change 10" OldValue="Remove Features from My Selection" NewValue="Remove From Selected" AttributeName="Text" />
+
+    <ReplaceAttributeValue Description="Language change 11" OldValue="Clear All Selected Features" NewValue="Clear Selected" AttributeName="Text" />
+
+    <ReplaceAttributeValue Description="Language change 12" OldValue="Add To My Selection" NewValue="Add To Selected" AttributeName="Text" />
+    
+  </DocumentTransformations>
+
+</Upgrade>

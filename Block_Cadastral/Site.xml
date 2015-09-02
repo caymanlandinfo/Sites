@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block_Cadastral" ID="Block_Cadastral" Version="4.3.1">
+  <ExternalConfigs>
+    <ExternalConfig SiteID="Block_ID_Cadastral" />
+  </ExternalConfigs>
+  <GeometryEndpoints>
+    <GeometryEndpoint ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Utilities/Geometry/GeometryServer" ID="0" ServiceID="ArcGisGeometry" />
+  </GeometryEndpoints>
+  <Map>
+    <LayerList MergeMode="Remove">
+      <Items />
+    </LayerList>
+    <MapServices>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Feature Overlay" FailureAction="Warn" Function="Operational" ID="3" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" Opacity="0.9" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Block_Cadastral/3/Basemap_FeaturesOverlay/MapServer" AppRelativeTemplate="local-proxy/Block_Cadastral/3/Basemap_FeaturesOverlay/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel" FailureAction="Warn" Function="Base" ID="2" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Block_Cadastral/2/Basemap_Cadastral/MapServer" AppRelativeTemplate="local-proxy/Block_Cadastral/2/Basemap_Cadastral/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Hybrid" FailureAction="Warn" Function="Base" ID="1" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-hybrid-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/Block_Cadastral/1/Basemap_AerialHybrid_2013/MapServer" AppRelativeTemplate="local-proxy/Block_Cadastral/1/Basemap_AerialHybrid_2013/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+    </MapServices>
+    <MapServices MergeMode="Layout">
+      <MapService ID="3" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Block_ID_Cadastral-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral_Revised/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+    </MapServices>
+  </Map>
+  <Workflows>
+    <Workflow DisplayName="Find Parcels" ID="Find_Parcels" RunOnStartup="false" Uri="{RootUri}/Workflows/Find_Parcels.xaml" />
+    <Workflow DisplayName="Find Last Parcel" ID="Find_Last_Parcel" RunOnStartup="false" Uri="{RootUri}/Workflows/find_last_parcel.xaml" />
+  </Workflows>
+</Site>

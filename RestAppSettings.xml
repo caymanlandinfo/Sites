@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RestAppSettings AccessLogLevel="Info" ExternalRestUrl="https://geo.caymanlandinfo.ky/Geocortex/Essentials/REST " SiteThumbnailsGenerated="true" SystemLogLevel="Warn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=".\RestAppSettings.xsd">
+  <ServiceConnections>
+    <ArcGisPortal EnableLayerSearch="false" EnableUserSearch="true" ID="0" PasswordEncrypted="false" Url="https://www.arcgis.com/sharing/rest" UseHttpAuthentication="false" />
+    <ArcGisServer EnableLayerSearch="false" EnableUserSearch="true" ID="1" PasswordEncrypted="false" Url="http://services.arcgisonline.com/arcgis/rest/services" UseHttpAuthentication="false" />
+    <WebTiledLayer Copyright="© &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot; target=&quot;_blank&quot;&gt;OpenStreetMap&lt;/a&gt; contributors" DisplayName="Open Street Map" EnableLayerSearch="false" EnableUserSearch="true" ID="2" PasswordEncrypted="false" SubDomains="a,b,c" Url="http://{subDomain}.tile.openstreetmap.org/{level}/{col}/{row}.png" UseHttpAuthentication="false" />
+    <WebTiledLayer Copyright="© &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot; target=&quot;_blank&quot;&gt;OpenStreetMap&lt;/a&gt; contributors" DisplayName="Open Cycle Map" EnableLayerSearch="false" EnableUserSearch="true" ID="3" PasswordEncrypted="false" SubDomains="a,b,c" Url="http://{subDomain}.tile.opencyclemap.org/cycle/{level}/{col}/{row}.png" UseHttpAuthentication="false" />
+    <WebTiledLayer Copyright="© &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot; target=&quot;_blank&quot;&gt;OpenStreetMap&lt;/a&gt; contributors" DisplayName="Open Cycle Map Transport (experimental)" EnableLayerSearch="false" EnableUserSearch="true" ID="4" PasswordEncrypted="false" SubDomains="a,b,c" Url="http://{subDomain}.tile.opencyclemap.org/transport/{level}/{col}/{row}.png" UseHttpAuthentication="false" />
+    <WebTiledLayer Copyright="©2013 MapQuest - Portions ©2013 NAVTEQ &lt;a href=&quot;http://info.mapquest.com/mapquest-terms-of-use-ca-en/&quot; target=&quot;_blank&quot;&gt;Terms&lt;/a&gt;" DisplayName="MapQuest" EnableLayerSearch="false" EnableUserSearch="true" ID="5" PasswordEncrypted="false" SubDomains="otile1,otile2,otile3,otile4" Url="http://{subDomain}.mqcdn.com/tiles/1.0.0/osm/{level}/{col}/{row}.png" UseHttpAuthentication="false" />
+    <WebTiledLayer Copyright="©2013 MapQuest - Portions ©2013 NAVTEQ &lt;a href=&quot;http://info.mapquest.com/mapquest-terms-of-use-ca-en/&quot; target=&quot;_blank&quot;&gt;Terms&lt;/a&gt;" DisplayName="MapQuest Aerial" EnableLayerSearch="false" EnableUserSearch="true" ID="6" PasswordEncrypted="false" SubDomains="otile1,otile2,otile3,otile4" Url="http://{subDomain}.mqcdn.com/tiles/1.0.0/sat/{level}/{col}/{row}.png" UseHttpAuthentication="false" />
+    <ArcGisServer EnableLayerSearch="false" EnableUserSearch="false" ID="8" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" TokenUrl="https://adapter.caymanlandinfo.ky/secure/tokens/token" Url="https://adapter.caymanlandinfo.ky/secure/rest/services/" UseHttpAuthentication="false" Username="SUBSCRIBER" />
+    <ArcGisServer EnableLayerSearch="false" EnableUserSearch="false" ID="9" Password="wQzvU2x68FPvxTo36LdJ7Q==" PasswordEncrypted="true" TokenUrl="https://adapter.caymanlandinfo.ky/secure/tokens/token" Url="https://adapter.caymanlandinfo.ky/secure/rest/services" UseHttpAuthentication="false" Username="E911" />
+    <ArcGisServer EnableLayerSearch="false" EnableUserSearch="false" ID="10" Password="+ivzsyzLGDnHbIcgpe6lyg==" PasswordEncrypted="true" TokenUrl="https://adapter.caymanlandinfo.ky/secure/tokens/token" Url="https://adapter.caymanlandinfo.ky/secure/rest/services" UseHttpAuthentication="false" Username="PUBLIC" />
+    <ArcGisServer EnableLayerSearch="false" EnableUserSearch="false" ID="11" PasswordEncrypted="false" Url="http://adapter.caymanlandinfo.ky/ngis/rest/services" UseHttpAuthentication="false" />
+  </ServiceConnections>
+  <Modules></Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Bronze/Block_ID_Cadastral-0/Layers_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Block_ID_Cadastral_With_Val-0/Layers_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Civic-0/Layers_Civic/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Civic" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Block_Comparables-0/Layers_Comparables/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Planning-0/Layers_Planning/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Silver/Civic-0/Layers_Civic/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Civic" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Silver/Planning-0/Layers_Planning/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Enterprise/Utility-0/Layers_Utilities/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Utilities" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_Comparables/0/Layers_Comparables/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Bronze/Block_ID_Cadastral-0/Layers_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Cadastral/0/Layers_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Base/0/Layers_ID_Base/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Navigation/0/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Surveyors/0/Layers_Survey/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Survey" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Utility/0/Layers_Utilities/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Utilities" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Planning/0/PlanningLayers/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/PlanningLayers" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Planning/0/Layers_Planning/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_ID_Cadastral_With_Val/0/Layers_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Cadastral" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Block_Cadastral-3/Basemap_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Cadastral/0/Layers_ID_Cadastral/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Cadastral/0/Base_ID_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Base_ID_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Base/1/Layers_ID_Base/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Bronze/Navigation-0/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Navigation/3/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Block_ID_Cadastral_With_Val-0/Layers_ID_Cadastral/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/Public_Safety-0/Layers_PublicSafety/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_PublicSafety" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/Public_Safety-0/Layers_PubLicSafety/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_PubLicSafety" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/Public_Safety-2/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/Public_Safety-2/Editable_Layers/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Editable_Layers" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_RCIPS/Public_Safety-1/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_RCIPS/Public_Safety-2/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/Public_Safety-1/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/0/Basemap_1971/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_1971" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/0/Basemap_Aerial_1971/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1971" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/2/Basemap_Aerial_1999/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1999" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/5/Basemap_Aerial_2008/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2008" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/4/Basemap_Satellite_2004/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Satellite_2004" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/3/Basemap_Aerial_2004/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2004" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/Terrain-2/Basemap_Terrain_DTM_2013/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_DTM_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/Block_Cadastral-3/Basemap_FeaturesOverlay/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/Block_Cadastral-2/Basemap_Cadastral/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/Block_Cadastral-1/Basemap_AerialHybrid_2013/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/Navigation-2/Basemap_Aerial_2013/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/0/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Terrain/0/Basemap_Terrain_DTM_2013/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_DTM_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Cadastral_With_Val/0/Layers_ID_Cadastral/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Enterprise/Navigation-3/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/1/Editable_Layers/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services//Editable_Layers" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/1/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services//Layers_Editing" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_911/0/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="FeatureServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_RCIPS/4/Layers_Editable/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editable" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Public_Safety_RCIPS/4/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Public_Safety_RCIPS/5/Layers_Editing/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Editing" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Bronze/Block_ID_Base-1/Layers_ID_Base/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_Comparables/0/Server/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables_WebSQL1/MapServerMapServer" Address="{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_Comparables/0/Layers_Comparables_WebSQL1/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables_WebSQL1" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_Comparables/1/Layers_Comparables_WebSQL1/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables_WebSQL1" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Comparables/1/Layers_Comparables/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Platinum/Block_Comparables-1/Layers_Comparables/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Civic/0/Layers_Civic/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Civic" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Historic_Aerials/1/Basemap_Aerial_1994/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1994" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Navigation/2/Basemap_Aerial_2013/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Public_Safety/0/Layers_PubLicSafety/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_PubLicSafety" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Cadastral/3/Basemap_FeaturesOverlay/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Cadastral/2/Basemap_Cadastral/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Cadastral/1/Basemap_AerialHybrid_2013/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Comparables/2/Layers_Comparables_Label/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Comparables_Label" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Terrain/1/Basemap_Terrain_DTM_2013/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_DTM_2013" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Terrain/0/Basemap_IvanFlood/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_IvanFlood" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Customer_ICTA/6/Customer_ICTA/{type}/{*path}">
+        <Authentication Mode="AppPoolIdentity" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Customer_ICTA" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Customer_ICTA/10/Customer_ICTA/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Customer_ICTA" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Marine/0/Layers_Marine/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_CCTV/0/Layers_911/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_911" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Customer_ICTA/7/Customer_ICTA/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Customer_ICTA" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Customer_ICTA/8/Customer_ICTA/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Customer_ICTA" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Customer_ICTA/9/Customer_ICTA/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Customer_ICTA" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/0/Layers_ID_Base/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/1/Basemap_Aerial_2013_Public/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_Public" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/2/Basemap_Navigation_Public/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation_Public" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/3/Basemap_Transport_Public/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Transport_Public" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_ID_Base/0/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Gold/Civic-0/Layers_Civic/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Civic" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/4/Basemap_Public_Navigation/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Public_Navigation" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/7/Basemap_Public_Marine/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Public_Marine" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/6/Basemap_Public_Transport/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Public_Transport" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/3/Basemap_Public_Imagery/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Public_Imagery" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/2/Layers_ID_Base/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Platinum/Block_ID_Base-0/Basemap_Navigation/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Navigation/4/Basemap_Aerial_2013_IR/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_Comparables/1/Basemap_Comparables/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Comparables" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Cadastral/0/Layers_ID_Cadastral_Revised/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral_Revised" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/Block_ID_Cadastral_With_Val/0/Layers_ID_Cadastral_Revised/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral_Revised" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Block_ID_Comparables/1/Layers_ID_Comparables/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Comparables" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/Package_Public/4/Basemap_Public_Imagery/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Public_Imagery" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+</RestAppSettings>

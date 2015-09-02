@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Student" ID="Student" Version="4.2.1">
+  <ExternalConfigs>
+    <ExternalConfig SiteID="Planning" />
+    <ExternalConfig SiteID="Historic_Aerials" />
+    <ExternalConfig SiteID="Civic" />
+    <ExternalConfig SiteID="Block_Marine" />
+    <ExternalConfig SiteID="Block_ID_Base" />
+    <ExternalConfig SiteID="Navigation" />
+  </ExternalConfigs>
+  <Map InitialExtent="1505936.19346736,6965087.82515645,1602039.49678508,7059580.45858617">
+    <LayerList>
+      <Items>
+        <Item ID="7" IsExpanded="true" Name="Symbolized Layers" Visible="true" />
+        <Item ID="0" IsExpanded="false" Name="Query Layers" Visible="true">
+          <Items>
+            <Item ID="1" />
+            <Item ID="2" />
+          </Items>
+        </Item>
+      </Items>
+      <Items MergeMode="Remove">
+        <Item ID="Planning-1" />
+        <Item ID="Historic_Aerials-0" />
+        <Item ID="Historic_Aerials-1" />
+        <Item ID="Civic-0" />
+        <Item ID="Civic-1" />
+        <Item ID="Block_Marine-0" />
+        <Item ID="Block_Marine-1" />
+        <Item ID="Block_ID_Base-0" />
+        <Item ID="Block_ID_Base-1" />
+        <Item ID="Navigation-0" />
+      </Items>
+      <Items MergeMode="Update">
+        <Item ID="Planning-0">
+          <Items>
+            <Item ID="6" IsExpanded="true" Name="Editable Layers" Visible="true">
+              <Items>
+                <Item ID="5" />
+                <Item ID="4" />
+                <Item ID="3" />
+              </Items>
+            </Item>
+            <Item ID="Civic-2" IsExpanded="true" Name="Civic" Visible="true">
+              <Items>
+                <Item ID="Civic-3" />
+                <Item ID="Civic-5" />
+                <Item ID="Civic-6" />
+              </Items>
+            </Item>
+            <Item ID="Block_Marine-2" IsExpanded="true" Name="Marine" Visible="true">
+              <Items>
+                <Item ID="Block_Marine-4" IsExpanded="true" Name="Dive Sites" Visible="false" />
+                <Item ID="Block_Marine-23" IsExpanded="true" Name="Public Moorings" Visible="false" />
+                <Item ID="Block_Marine-3" />
+              </Items>
+            </Item>
+          </Items>
+          <Items MergeMode="Update">
+            <Item ID="Planning-2">
+              <Items MergeMode="Remove">
+                <Item ID="Planning-6" />
+                <Item ID="Planning-7" />
+                <Item ID="Planning-8" />
+                <Item ID="Planning-9" />
+                <Item ID="Planning-10" />
+                <Item ID="Planning-12" />
+                <Item ID="Planning-13" />
+              </Items>
+            </Item>
+          </Items>
+        </Item>
+        <Item ID="Navigation-1">
+          <Items>
+            <Item ID="Historic_Aerials-2" />
+            <Item ID="Historic_Aerials-3" />
+            <Item ID="Historic_Aerials-4" />
+            <Item ID="Historic_Aerials-5" />
+            <Item ID="Historic_Aerials-6" />
+            <Item ID="Historic_Aerials-7" />
+          </Items>
+        </Item>
+      </Items>
+    </LayerList>
+    <MapServices>
+      <FeatureLayer AutoSave="false" Color="#BEE7D427" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Students/FeatureServer/2;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisableClientCaching="true" DisplayName="Students.CAYMANPREP.Polygon" EditVerticesEnabled="true" FailureAction="Warn" Function="Operational" HeatMapCapable="false" ID="8" ImpersonateWithActor="false" IncludeInLayerList="false" InstantSearch="false" IsExpanded="true" MoveEnabled="true" Opacity="0.85" OutFields="*" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" QueryMode="OnDemand" QueryProviderName="Default" RotateEnabled="true" ScaleEnabled="true" SearchNonTextFields="true" UpdateInterval="60" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+        <CachedServiceData />
+        <FeatureClustering BackgroundColor="#FFFF0000" Enabled="false" LabelColor="#FFFFFFFF" MaximumFeatures="10" Radius="20" UserCanToggle="false" />
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="CAYMANPREP.Polygon" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="5" Name="Students.CAYMANPREP.Polygon" NativeID="2" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
+      </FeatureLayer>
+      <FeatureLayer AutoSave="false" Color="#C4E31313" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Students/FeatureServer/1;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisableClientCaching="true" DisplayName="Students.CAYMANPREP.Point" FailureAction="Warn" Function="Operational" HeatMapCapable="true" ID="7" IconUri="{RestVirtualDirectoryUrl}/Custom/CCTVCamera.png" ImpersonateWithActor="false" IncludeInLayerList="false" InstantSearch="false" IsExpanded="true" MoveEnabled="true" Opacity="1" OutFields="*" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" QueryMode="OnDemand" QueryProviderName="Default" SearchNonTextFields="true" UpdateInterval="60" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+        <CachedServiceData />
+        <FeatureClustering BackgroundColor="#FFFF0000" Enabled="false" LabelColor="#FFFFFFFF" MaximumFeatures="10" Radius="20" UserCanToggle="true" />
+        <FeatureHeatMaps HeatMapEnabled="false" HeatMapUserCanToggle="true" Intensity="75" RespectScaleRange="false">
+          <GradientStopCollection>
+            <GradientStop Color="#00FFFFFF" Offset="0" />
+            <GradientStop Color="#FF0000FF" Offset="0.5" />
+            <GradientStop Color="#FFFF0000" Offset="0.75" />
+            <GradientStop Color="#FFFFFF00" Offset="0.85" />
+          </GradientStopCollection>
+        </FeatureHeatMaps>
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="CAYMANPREP.Point" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="4" Name="Students.CAYMANPREP.Point" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
+      </FeatureLayer>
+      <FeatureLayer AutoSave="false" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Students/FeatureServer/0;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisableClientCaching="true" DisplayName="Students.CAYMANPREP.Line" EditVerticesEnabled="true" FailureAction="Warn" Function="Operational" HeatMapCapable="false" ID="6" ImpersonateWithActor="false" IncludeInLayerList="false" InstantSearch="false" IsExpanded="true" MoveEnabled="true" Opacity="1" OutFields="*" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" QueryMode="OnDemand" QueryProviderName="Default" RotateEnabled="true" ScaleEnabled="true" SearchNonTextFields="true" UpdateInterval="60" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+        <CachedServiceData />
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="CAYMANPREP.Line" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="3" Name="Students.CAYMANPREP.Line" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
+      </FeatureLayer>
+    </MapServices>
+    <MapServices MergeMode="Update">
+      <MapService ID="Planning-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
+        <Layers MergeMode="Update">
+          <Layer Name="Hotel Tourism Zone " NativeID="7" DisplayName="Hotel Tourism Zone" />
+        </Layers>
+      </MapService>
+      <MapService ID="Block_ID_Base-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
+        <Layers MergeMode="Update">
+          <Layer Name="Streets" NativeID="0" LayerListID="1" />
+          <Layer Name="Buildings" NativeID="1" LayerListID="2" />
+        </Layers>
+      </MapService>
+      <MapService ID="Navigation-3" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" Visible="true" />
+    </MapServices>
+    <MapServices MergeMode="Layout">
+      <FeatureLayer ID="8" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Students/FeatureServer/2;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" />
+      <FeatureLayer ID="7" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Students/FeatureServer/1;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" />
+      <FeatureLayer ID="6" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Students/FeatureServer/0;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" />
+      <MapService ID="Planning-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Civic-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Civic/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Block_Marine-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Block_ID_Base-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Navigation-3" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Navigation-2" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Navigation-4" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Historic_Aerials-5" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2008/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Historic_Aerials-4" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Satellite_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Historic_Aerials-3" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Historic_Aerials-2" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1999/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Historic_Aerials-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1994/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="Historic_Aerials-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1971/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+    </MapServices>
+  </Map>
+  <NamedExtents>
+    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
+    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
+    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
+  </NamedExtents>
+  <NamedExtents MergeMode="Remove">
+    <NamedExtent ID="Block_ID_Base-0" />
+    <NamedExtent ID="Block_ID_Base-1" />
+    <NamedExtent ID="Block_ID_Base-2" />
+  </NamedExtents>
+  <Viewers>
+    <Viewer DisplayName="HTML5 Student" Hidden="false" ID="HTML5_Student" Path="{SitePath}\Viewers\HTML5_Student" TemplateID="Html5Viewer_2_4" />
+  </Viewers>
+</Site>

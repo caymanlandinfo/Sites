@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Upgrade OldVersion="2.0" NewVersion="2.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+  </Preprocessing>
+
+  <Globals>
+    <AddGlobal Description="Adding PushpinsEnabled Global"
+        Name="PushpinsEnabled"
+        Value="true" />
+
+    <AddGlobal Description="Adding PushpinOffsetX Global"
+        Name="PushpinOffsetX"
+        Value="16" />
+
+    <AddGlobal Description="Adding PushpinOffsetX Global"
+      Name="PushpinOffsetY"
+      Value="32" />
+
+    <AddGlobal Description="Adding PushpinMarkerUri Global"
+     Name="PushpinMarkerUri"
+     Value="/Resources/Images/Pushpins/map-marker-red-32.png" />
+
+    <AddGlobal Description="Adding PushpinMarkerHighlightUri Global"
+     Name="PushpinMarkerHighlightUri"
+     Value="/Resources/Images/Pushpins/map-marker-red-32.png" />
+
+  </Globals>
+
+  <UpdateModules>
+  </UpdateModules>
+
+  <DeprecateModules>
+  </DeprecateModules>
+
+  <AddModules>
+    <AddModule DefaultsOnly="true"
+               Description="Adding User module"
+               Name="User"
+               ModuleDescription="User module"
+               ReplaceExisting="true">
+      <User>
+        <Views>
+          <View Id="SignInView" Region="InnerBannerContent" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.User.SignInView"/>
+          <View Id="UserInfoView" Region="InnerBannerContent" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.User.UserInfoView"/>
+        </Views>
+      </User>
+    </AddModule>
+
+    <AddModule DefaultsOnly="true"
+               Description="Adding Pushpins module"
+               Name="Pushpins"
+               ModuleDescription="Pushpins module"
+               ReplaceExisting="true">
+      <Pushpins>
+        <Views />
+        <Configuration PushpinsEnabled="{PushpinsEnabled}" OffsetX="{PushpinOffsetX}" OffsetY="{PushpinOffsetY}" PushpinMarkerUri="{PushpinMarkerUri}" HighlightPushpinMarkerUri="{PushpinMarkerHighlightUri}" />
+      </Pushpins>
+    </AddModule>
+  </AddModules>
+
+  <DocumentTransformations>
+
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="2.1" />
+
+    <RegexTextReplace Description="Updating Uris to virtual directory content" Match="/Templates/SilverlightViewer_2_\d/VirtualDirectory/" ReplaceWith="/Templates/SilverlightViewer_2_1/VirtualDirectory/" />
+
+  </DocumentTransformations>
+
+</Upgrade>

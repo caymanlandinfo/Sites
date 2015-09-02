@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Upgrade OldVersion="1.0" NewVersion="1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+    <RegexTextReplace Description="Removing unnecessary XSD references" Match=" xmlns=&quot;(.+).xsd&quot;" ReplaceWith="" />
+    <RegexTextReplace Description="Ensuring correct Globals namespace" Match=" xmlns=&quot;preprocessor&quot;" ReplaceWith=" xmlns=&quot;http://www.geocortex.com/Viewer/Configuration/PreProcessor&quot;" />
+  </Preprocessing>
+
+  <Globals>
+    <AddGlobal Description="Adding global BaseMapControlShow" Name="BaseMapControlShow" Value="true" ReplaceExisting="false" />
+    <AddGlobal Description="Adding global BookmarksShow" Name="BookmarksShow" Value="true" ReplaceExisting="false" />
+    <AddGlobal Description="Adding global ScaleSliderShow" Name="ScaleSliderShow" Value="true" ReplaceExisting="false" />
+
+    <!-- More globals added below via TokenizeAttribute -->
+  </Globals>
+
+  <DeprecateModules>
+    <!-- No deprecated modules -->
+  </DeprecateModules>
+
+  <UpdateModules>
+    <AddElement Description="Adding Configuration section to module AdvancedMapControls" Path="/Configuration/Modules/AdvancedMapControls" Name="Configuration" ReplaceExisting="false" />
+    <AddElement Description="Adding Configuration section to module AuthenticationDialog" Path="/Configuration/Modules/AuthenticationDialog" Name="Configuration" ReplaceExisting="false" />
+    <AddAttribute Description="Adding attribute 'ShowCoordinatesByDefault' to module AdvancedMapControls" Path="/Configuration/Modules/AdvancedMapControls/Configuration" Name="ShowCoordinatesByDefault" Value="true" />
+
+    <RemoveAttribute Description="Removing obsolete 'Height' attribute from module Banner" Name="Height" Path="/Configuration/Modules/Banner/Configuration" />
+
+    <AddAttribute Description="Adding attribute 'Visible' to BaseMapControl" Path="/Configuration/Modules/BaseMapControl/Views/View" Name="Visible" Value="{BaseMapControlShow}" />
+
+    <AddAttribute Description="Adding attribute 'Id' to BookmarksView" Path="/Configuration/Modules/Bookmarks/Views/View" Name="Id" Value="BookmarksView" />
+    <AddAttribute Description="Adding attribute 'Visible' to BookmarksView" Path="/Configuration/Modules/Bookmarks/Views/View" Name="Visible" Value="{BookmarksShow}" />
+
+    <AddElement Description="Adding Configuration section to module GlobalSearch" Path="/Configuration/Modules/GlobalSearch" Name="Configuration" ReplaceExisting="false" />
+
+    <AddAttribute Description="Setting 'VisibleAtCurrentScaleOnly' to true in Identify module" Path="/Configuration/Modules/Identify/Configuration/IdentifyOptions" Name="VisibleAtCurrentScaleOnly" Value="true" ReplaceExisting="true" />
+    <TokenizeAttribute Description="Adding token value for 'PixelTolerance' in Identify module" Path="/Configuration/Modules/Identify/Configuration/IdentifyOptions" Attribute="PixelTolerance" Token="IdentifyPixelTolerance" />
+    <TokenizeAttribute Description="Adding token value for 'VisibleLayersOnly' in Identify module" Path="/Configuration/Modules/Identify/Configuration/IdentifyOptions" Attribute="VisibleLayersOnly" Token="IdentifyVisibleLayersOnly" />
+    <TokenizeAttribute Description="Adding token value for 'VisibleAtCurrentScaleOnly' in Identify module" Path="/Configuration/Modules/Identify/Configuration/IdentifyOptions" Attribute="VisibleAtCurrentScaleOnly" Token="IdentifyVisibleAtCurrentScaleOnly" />
+
+    <AddElement Description="Adding configurable context menu to LayerList module" Path="/Configuration/Modules/LayerList/Views/View[@Region='DataRegion']/Configuration" Name="Menus">
+      <Menus>
+        <Menu Id="LayerListSelectionActionsMenu" >
+          <Items>
+            <Item Text="List Features">
+              <Batch>
+                <BatchItem Command="SetActiveCollectionId" CommandParameter="Default"/>
+                <BatchItem Command="SetActiveFeatureSetId" />
+                <BatchItem Command="ActivateView" CommandParameter="ResultsView"/>
+              </Batch>
+            </Item>
+            <Item IsSeparator="true" />
+            <Item Text="Zoom To All" Command="ZoomToAllFeatures" />
+            <Item Text="Highlight Features" Command="HighlightFeatureSet" />
+            <Item Text="Buffer Features" >
+              <Batch>
+                <BatchItem Command="ZoomToAllFeatures" />
+                <BatchItem Command="ShowBufferFeaturesOptions" />
+              </Batch>
+            </Item>
+            <Item IsSeparator="true" />
+            <Item Text="Generate Report" Command="RunFeaturesReport" />
+            <Item Text="Export To CSV" Command="ExportFeaturesToCsv" />
+            <Item IsSeparator="true" />
+            <Item Text="Remove From My Selection" Command="RemoveFeatureSetFromSelection" HideWhenDisabled="true" />
+          </Items>
+        </Menu>
+      </Menus>
+    </AddElement>
+
+    <AddAttribute Description="Adding 'DefaultUnit' attribute to Measurement module" Path="/Configuration/Modules/Measurement/Configuration/MeasurementOptions" Name="DefaultUnit" Value="feet" />
+    <TokenizeAttribute Description="Adding token value for 'DefaultUnit' in Measurement module" Path="/Configuration/Modules/Measurement/Configuration/MeasurementOptions" Attribute="DefaultUnit" Token="MeasurementUnitDefault" />
+    <TokenizeAttribute Description="Adding token value for 'OverrideUnits' in Measurement module" Path="/Configuration/Modules/Measurement/Configuration/MeasurementOptions" Attribute="OverrideUnits" Token="MeasurementOverrideUnits" />
+    <TokenizeAttribute Description="Adding token value for 'PredictionEnabled' in Measurement module" Path="/Configuration/Modules/Measurement/Configuration/MeasurementOptions" Attribute="PredictionEnabled" Token="MeasurementPredictionEnabled" />
+    <TokenizeAttribute Description="Adding token value for 'Wkid' in Measurement module" Path="/Configuration/Modules/Measurement/Configuration/Projection" Attribute="Wkid" Token="MeasurementProjectionWkid" />
+    <TokenizeAttribute Description="Adding token value for 'ProjectionUnits' in Measurement module" Path="/Configuration/Modules/Measurement/Configuration/Projection" Attribute="ProjectionUnits" Token="MeasurementProjectionUnits" />
+
+    <AddAttribute Description="Adding attribute 'SnapToLevels' to Map module." Path="/Configuration/Modules/Map/Configuration" Name="SnapToLevels" Value="false" />
+    <AddElement Description="Adding configurable context menu to Map module." Path="/Configuration/Modules/Map/Configuration" Name="Menus">
+      <Menus>
+        <Menu Id="MapMenu">
+          <Items>
+            <Item Command="AddMarkup" Text="Draw a Point"/>
+            <Item Command="AddTextMarkup" Text="Add Some Text"/>
+            <Item Command="Identify" Text="What's Here"/>
+            <Item Command="PanToPoint" Text="Center Map Here"/>
+          </Items>
+        </Menu>
+      </Menus>
+    </AddElement>
+
+    <AddAttribute Description="Adding 'Id' attribute to ProgressIndicator view" Path="/Configuration/Modules/ProgressIndicator/Views/View" Name="Id" Value="ProgressIndicatorView" />
+    <AddAttribute Description="Adding 'Visible' attribute to ProgressIndicator view" Path="/Configuration/Modules/ProgressIndicator/Views/View" Name="Visible" Value="true" />
+    <TokenizeAttribute Description="Adding token value for 'Visible' in ProgressIndicator view" Path="/Configuration/Modules/ProgressIndicator/Views/View" Attribute="Visible" Token="ProgressIndicatorShow" Value="false" />
+
+    <AddElement Description="Adding configurable Context Menu section to module Results" Path="/Configuration/Modules/Results/Configuration" Name="Menus" />
+    <AddElement Description="Adding configurable ResultsListMenu to module Results" Path="/Configuration/Modules/Results/Configuration/Menus" Name="Menu">
+      <Menu Id="ResultsListMenu" >
+        <Items>
+          <Item Text="Refine Results" Command="RefineSearchResults" />
+          <Item Text="Hide Results From This Layer" Command="HideFeatureSet" />
+          <Item IsSeparator="true" />
+          <Item Text="Show Feature Details" Command="ShowFeatureDetails" />
+          <Item Text="Add Feature to My Selection" Command="AddFeatureToSelection" HideWhenDisabled="true" />
+          <Item Text="Remove Feature from My Selection" Command="RemoveFeatureFromSelection" HideWhenDisabled="true" />
+          <Item Text="Add Features to My Selection" Command="AddFeaturesToSelection" HideWhenDisabled="true" />
+          <Item Text="Remove Features from My Selection" Command="RemoveFeaturesFromSelection" HideWhenDisabled="true" />
+        </Items>
+      </Menu>
+    </AddElement>
+    <AddElement Description="Adding configurable ResultsTableMenu to module Results." Path="/Configuration/Modules/Results/Configuration/Menus" Name="Menu">
+      <Menu Id="ResultsTableMenu" >
+        <Items>
+          <Item Text="Refine Results" Command="RefineSearchResults" />
+          <Item Text="Hide Results From This Layer" Command="HideFeatureSet" />
+          <Item IsSeparator="true" />
+          <Item Text="Show Feature Details" Command="ShowFeatureDetails" />
+          <Item Text="Add Feature to My Selection" Command="AddFeatureToSelection" HideWhenDisabled="true" />
+          <Item Text="Remove Feature from My Selection" Command="RemoveFeatureFromSelection" HideWhenDisabled="true" />
+          <Item Text="Add Features to My Selection" Command="AddFeaturesToSelection" HideWhenDisabled="true" />
+          <Item Text="Remove Features from My Selection" Command="RemoveFeaturesFromSelection" HideWhenDisabled="true" />
+        </Items>
+      </Menu>
+    </AddElement>
+
+    <AddAttribute Description="Adding 'Id' attribute to ScaleBar view" Path="/Configuration/Modules/ScaleBar/Views/View" Name="Id" Value="ScaleBarView" />
+    <AddAttribute Description="Adding 'Visible' attribute to ScaleBar view" Path="/Configuration/Modules/ScaleBar/Views/View" Name="Visible" Value="true" />
+    <TokenizeAttribute Description="Adding token value for 'Visible' in ScaleBar view" Path="/Configuration/Modules/ScaleBar/Views/View" Attribute="Visible" Token="ScaleBarShow" Value="true" />
+
+    <AddAttribute Description="Adding 'Id' attribute to ScaleSlider view" Path="/Configuration/Modules/ScaleSlider/Views/View" Name="Id" Value="ScaleSliderView" />
+    <AddAttribute Description="Adding 'Visible' attribute to ScaleSlider view" Path="/Configuration/Modules/ScaleSlider/Views/View" Name="Visible" Value="true" />
+    <TokenizeAttribute Description="Adding token value for 'Visible' in ScaleSlider view" Path="/Configuration/Modules/ScaleSlider/Views/View" Attribute="Visible" Token="ScaleSliderShow" Value="true" />
+
+    <ChangeAttributeDefault Description="Changing default Initial Extent icon"
+                            Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Getting Around']/Group[@DisplayName='Zoom']/Button[@Name='Initial Extent']"
+                            Name="ImageUri" OldDefault="IconPlaceholder32x32.png" NewDefault="/Resources/Images/FullExtent.png" />
+
+    <ChangeAttributeDefault Description="Changing default Full Extent icon"
+                        Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Getting Around']/Group[@DisplayName='Zoom']/Button[@Name='Full Extent']"
+                        Name="ImageUri" OldDefault="IconPlaceholder32x32.png" NewDefault="/Resources/Images/FullExtent.png" />
+
+    <AddElement Description="Adding Zoom to Previous Extent button to toolbar"
+                Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Getting Around']/Group[@DisplayName='Zoom']" Name="Button">
+      <Button Command="ZoomToPreviousExtent"
+        ImageUri="/Resources/Images/ExtentPrevious.png"
+        Name="Previous Extent"
+        ToolTip="Zoom to Previous Extent"/>
+    </AddElement>
+    <AddElement Description="Adding Zoom to Next Extent button to toolbar"
+                Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Getting Around']/Group[@DisplayName='Zoom']" Name="Button">
+      <Button Command="ZoomToNextExtent"
+        ImageUri="/Resources/Images/ExtentNext.png"
+        Name="Next Extent"
+        ToolTip="Zoom to Next Extent"/>
+    </AddElement>
+    <AddElement Description="Adding Coordinate Tools group to toolbar"
+               Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Analysis']" Name="Group">
+      <Group DisplayName="Coordinate Tools">
+        <Region RegionName="CoordinateToolsRegion"/>
+      </Group>
+    </AddElement>
+
+    <AddText Description="Adding Toolbar tasks shim" AddAfter="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Tasks']/Group[last()]">
+      {Insert__Toolbar-Tasks-Groups}
+    </AddText>
+
+    <AddElement Description="Adding configuration to Workflow module." Path="/Configuration/Modules/Workflow" Name="Configuration">
+      <Configuration>
+        <RunAtStartup>
+          <!--<Workflow Id="YourWorkflowId" />-->
+        </RunAtStartup>
+      </Configuration>
+    </AddElement>
+
+    <MoveElement Description="Moving IWantToMenu items" From="/Configuration/Modules/IWantToMenu/Configuration/Items" To="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu" />
+    <AddAttribute Description="Adding menu id to I Want To menu" Path="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu" Name="Id" Value="IWantTo" />
+    <AddAttribute Description="Adding menu title to I Want To menu" Path="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu" Name="Title" Value="I want to..." />
+    <RemoveAttribute Description="Removing previous menu title from I Want To menu" Path="/Configuration/Modules/IWantToMenu/Configuration" Name="Title" />
+    <AddAttribute Description="Updating a menu parameter" Path="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu/Items/Item[@Text='Measure distance']/Batch/BatchItem[@Command='SetCurrentTab']"
+                  Name="CommandParameter" Value="Analysis" ReplaceExisting="true" />
+    <RemoveAttribute Description="Removing attribute 'Family' from menu items" Path="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu/Items/Item" Name="Family" />
+    <AddText Description="Adding IWTM shim" AddAfter="/Configuration/Modules/IWantToMenu/Configuration/Menus/Menu/Items/Item[last()]">
+      {Insert__Menus-IWantTo-Items}
+    </AddText>
+
+    <AddAttribute DefaultsOnly="true" ReplaceExisting="true" Description="Setting default initialization timeout to 90 seconds" Path="/Configuration/Modules/Site/Configuration/Site" Name="InitializationTimeout" Value="90" />
+  </UpdateModules>
+
+  <AddModules>
+    <AddModule DefaultsOnly="true" Description="Adding Callouts module" Name="Callouts" ModuleDescription="Allows you to place lightweight map tips on the map surface." ReplaceIfExisting="true">
+      <Callouts>
+        <Configuration />
+      </Callouts>
+    </AddModule>
+
+    <AddModule DefaultsOnly="true" Description="Adding CoordinateTool module" Name="CoordinateTool" ModuleDescription="Plots coordinates on the map surface and performs projections between various coordinate systems.">
+      <CoordinateTool>
+        <Views>
+          <View Id="CoordinateToolView" Region="CoordinateToolsRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.CoordinateTool.CoordinateToolView" Visible="true" />
+          <View Id="CustomCoordinateView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.CoordinateTool.CustomCoordinateView" Visible="false" />
+        </Views>
+        <Configuration ShowCoordinatesEnabledbyDefault="True" GeometryServiceUri="{GeometryServiceUri}">
+          <CoordinateSystems>
+            <CoordinateSystem DisplayName="Web Mercator" WKID="102100" NumDigits="6" DisplayAsDMS="false" DisplayAsLatLon="false" />
+            <CoordinateSystem DisplayName="Lat/Lon (DD)" WKID="4326" NumDigits="4" DisplayAsDMS="false" DisplayAsLatLon="true" />
+            <CoordinateSystem DisplayName="Lat/Lon (DMS)" WKID="4326" NumDigits="4" DisplayAsDMS="true" DisplayAsLatLon="false" />
+          </CoordinateSystems>
+        </Configuration>
+      </CoordinateTool>
+    </AddModule>
+
+    <AddElement Description="Adding FeatureAction 'AddFeatureToSelection'" Path="/Configuration/Modules/FeatureActions/Configuration/FeatureActions" Name="FeatureAction">
+      <FeatureAction Command="AddFeatureToSelection"
+               DisplayName="Add to Selection"
+               HideWhenDisabled="true"
+               Module="Selection"
+               ToolTip="Add this feature to my selection"/>
+    </AddElement>
+    <AddElement Description="Adding FeatureAction 'RemoveFeatureFromSelection'" Path="/Configuration/Modules/FeatureActions/Configuration/FeatureActions" Name="FeatureAction">
+      <FeatureAction Command="RemoveFeatureFromSelection"
+                   DisplayName="Remove from Selection"
+                   HideWhenDisabled="true"
+                   Module="Selection"
+                   ToolTip="Remove this feature from my selection"/>
+
+    </AddElement>
+
+    <AddModule DefaultsOnly="true" Description="Adding Geocoding module" Name="Geocoding" ModuleDescription="Allows users to execute address searches against ArcGIS Server or Bing geocode services.">
+      <Geocoding>
+        <Views>
+          <View Region="DataRegion" Id="ForwardGeocodingView" Visible="false" />
+        </Views>
+        <Configuration Title="Advanced Address Search (Geocoding)" TitleWithResult="Advanced Address Search - 1 Result" TitleWithResults="Advanced Address Search - {0} Results" />
+      </Geocoding>
+    </AddModule>
+
+    <AddModule DefaultsOnly="true" Description="Adding JavaScript module" Name="JavaScript" ModuleDescription="Provides a two-way interface between the Viewer and JavaScript." ReplaceIfExisting="true">
+      <JavaScript>
+        <Configuration StartupFunction="onViewerLoaded"/>
+      </JavaScript>
+    </AddModule>
+
+    <AddModule DefaultsOnly="true" Description="Adding SaveOpenProject module" Name="SaveOpenProject" ModuleDescription="Allows users to save and load projects." ReplaceIfExisting="true">
+      <SaveOpenProject>
+        <Configuration ProjectCategory="Common" Support="Warn"/>
+        <Views>
+          <View Region="QuickLinks"/>
+        </Views>
+      </SaveOpenProject>
+    </AddModule>
+
+    <AddModule DefaultsOnly="true" Description="Adding Selection module" Name="Selection" ModuleDescription="Allows users to create and manage feature selections." ReplaceIfExisting="true">
+      <Selection>
+        <Views>
+          <View Id="SelectionView" Visible="true" Region="DataRegion" />
+        </Views>
+        <Configuration>
+          <DefaultIcon Source="/Resources/Images/DefaultResult.png" />
+          <AllSelections ExpandedByDefault="true" />
+          <SearchHistory ExpandedByDefault="false" />
+          <HistoricalResults ExpandedByDefault="false" />
+          <UpdateResults Value="true" />
+          <Menus>
+            <Menu Id="CurrentSelectionMenu" >
+              <Items>
+                <Item Text="List Features" Command="ActivateView" CommandParameter="ResultsView"/>
+                <Item IsSeparator="true" />
+                <Item Text="Zoom To All" Command="ZoomToAllFeatures" />
+                <Item Text="Highlight Features" Command="HighlightAllFeatures" />
+                <Item IsSeparator="true" />
+                <Item Text="Clear Current Selection" Command="ClearSelection" />
+              </Items>
+            </Menu>
+            <Menu Id="SelectionLayerMenu" >
+              <Items>
+                <Item Text="List Features" Command="ActivateView" CommandParameter="ResultsView"/>
+                <Item IsSeparator="true" />
+                <Item Text="Zoom To All" Command="ZoomToAllFeatures" />
+                <Item Text="Highlight Features" Command="HighlightFeatureSet" />
+                <Item Text="Buffer Features" >
+                  <Batch>
+                    <BatchItem Command="ZoomToAllFeatures" />
+                    <BatchItem Command="ShowBufferFeaturesOptions" />
+                  </Batch>
+                </Item>
+                <Item IsSeparator="true" />
+                <Item Text="Generate Report" Command="RunFeaturesReport" />
+                <Item Text="Export To CSV" Command="ExportFeaturesToCsv" />
+                <Item IsSeparator="true" />
+                <Item Text="Remove From My Selection" Command="RemoveFeatureSetFromSelection" HideWhenDisabled="true" />
+              </Items>
+            </Menu>
+            <Menu Id="HistoricalResultsRootMenu" >
+              <Items>
+                <Item Text="List Features" Command="ActivateView" CommandParameter="ResultsView"/>
+                <Item IsSeparator="true" />
+                <Item Text="Zoom To All" Command="ZoomToAllFeatures" />
+                <Item IsSeparator="true" />
+                <Item Text="Add To My Selection" Command="AddFeatureSetsToSelection" HideWhenDisabled="true"/>
+                <Item Text="Remove From My Selection" Command="RemoveFeatureSetsFromSelection" HideWhenDisabled="true"/>
+                <Item IsSeparator="true" />
+                <Item Text="Remove From Search History" Command="RemoveCollection" />
+              </Items>
+            </Menu>
+            <Menu Id="HistoricalResultsLayerMenu" >
+              <Items>
+                <Item Text="List Features" Command="ActivateView" CommandParameter="ResultsView"/>
+                <Item IsSeparator="true" />
+                <Item Text="Zoom To All" Command="ZoomToAllFeatures" />
+                <Item Text="Buffer Features" >
+                  <Batch>
+                    <BatchItem Command="ZoomToAllFeatures" />
+                    <BatchItem Command="ShowBufferFeaturesOptions" />
+                  </Batch>
+                </Item>
+                <Item IsSeparator="true" />
+                <Item Text="Generate Report" Command="RunFeaturesReport" />
+                <Item Text="Export To CSV" Command="ExportFeaturesToCsv" />
+                <Item IsSeparator="true" />
+                <Item Text="Add To My Selection" Command="AddFeatureSetToSelection" HideWhenDisabled="true"/>
+                <Item Text="Remove From My Selection" Command="RemoveFeatureSetFromSelection" HideWhenDisabled="true"/>
+              </Items>
+            </Menu>
+          </Menus>
+        </Configuration>
+      </Selection>
+    </AddModule>
+  </AddModules>
+
+  <DocumentTransformations>
+    <ReplaceComment Description="Updating Globals comment" Path="/Configuration/comment()[1]" Name="(Comment)">
+      <!--
+  The <Globals> section defines a collection of string values associated to unique ID's that can be used as replacement
+  values anywhere else in the configuration file.  A simple string substitution is performed on this configuration file 
+  as well as any other configuration files in the inheritance tree.  These string values can be overridden in a child
+  configuration file.
+  -->
+    </ReplaceComment>
+    <AddText Description="Adding Resources section comment" AddAfter="/Configuration/Libraries">
+      <!-- The <Resources> section contains <Xaml> child elements that either reference a Xaml ResourceDictionary available at a Uri, or defines the ResourceDictionary inline. -->
+      <!-- <Resources> <Xaml Uri="../Config/Themes/Custom.xaml" /> <Xaml> <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:clr="clr-namespace:System;assembly=mscorlib" xmlns:System="clr-namespace:System;assembly=mscorlib"> <clr:String x:Key="A">Default A</clr:String> <clr:String x:Key="B">Default B</clr:String> <SolidColorBrush x:Key="AppBackground">#FF000000</SolidColorBrush> </ResourceDictionary> </Xaml> </Resources> -->
+    </AddText>
+
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="1.1" />
+
+    <AddElement Description="Adding ExternalConfigs" Path="/Configuration" Name="ExternalConfigs" ReplaceExisting="false" />
+    <AddElement Description="Adding ExternalConfig" Path="/Configuration/ExternalConfigs" Name="ExternalConfig" ReplaceExisting="false">
+      <ExternalConfig Uri="{RestUri}Templates/SilverlightViewer_1_1/VirtualDirectory/Viewer.Defaults.xml" />
+    </AddElement>
+    
+  </DocumentTransformations>
+
+</Upgrade>
