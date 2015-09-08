@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package_Survey" ID="Survey" Version="4.2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package_Survey" ID="Survey" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Block_Surveyors" />
     <ExternalConfig SiteID="Silver" />
@@ -49,7 +49,7 @@
             </Item>
             <Item ID="49" IsExpanded="false" Name="Marine" Visible="true">
               <Items>
-                <Item ID="50" />
+                <Item ID="50" IsExpanded="true" Visible="true" />
               </Items>
             </Item>
             <Item ID="32" />
@@ -81,8 +81,6 @@
         </Item>
       </Items>
       <Items MergeMode="Remove">
-        <Item ID="Block_Surveyors-0" />
-        <Item ID="Block_Surveyors-1" />
         <Item ID="Silver-0" />
         <Item ID="Silver-1" />
         <Item ID="Silver-40" />
@@ -135,10 +133,8 @@
           <Layer Name="Buildings" NativeID="1" LayerListID="48" Visible="false" />
         </Layers>
       </MapService>
-      <MapService ID="Block_Marine-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
-        <Layers MergeMode="Update">
-          <Layer Name="Marine Parks" NativeID="0" LayerListID="50" />
-        </Layers>
+      <MapService ID="Block_Marine-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" MergeMode="Remove">
+        <Layers />
       </MapService>
       <MapService ID="Block_Cadastral-2" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="31" />
       <MapService ID="Block_Terrain-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_IvanFlood/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" IsExpanded="true" LayerListID="32" />

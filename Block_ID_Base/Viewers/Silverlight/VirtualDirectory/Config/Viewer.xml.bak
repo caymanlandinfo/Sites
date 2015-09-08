@@ -1,92 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Configuration Version="2.2">
+<Configuration Version="2.3">
   <Globals xmlns="http://www.geocortex.com/Viewer/Configuration/PreProcessor">
-    <SiteUri Value="{ViewerConfigUri}../../../.." />
+    <AdvancedMapControlsMapScaleShow Value="True" />
+    <AdvancedMapControlsUseEsriScaleLevelValues Value="false" />
     <ApplicationTitle Value="" />
-    <BrowserTitle Value="" />
-    <BannerShow Value="False" />
+    <AttributeEditing Value="True" />
+    <AttributionViewShow Value="True" />
+    <BannerBackgroundImageUri Value="" />
     <BannerLeftImageUri Value="" />
     <BannerRightImageUri Value="" />
-    <BannerBackgroundImageUri Value="" />
-    <ToolbarOpenByDefault Value="True" />
-    <DataFrameOpenByDefault Value="False" />
-    <OverviewMapShow Value="True" />
-    <OverviewMapOpenByDefault Value="False" />
-    <OverviewMapMode Value="Dynamic" />
-    <ShellFlowDirection Value="LeftToRight" />
-    <DataFramePosition Value="Left" />
-    <MapTipsEnabled Value="True" />
-    <OptimizerEnabled Value="False" />
-    <OptimizerUserName Value="DefaultUser" />
-    <OptimizerDataRelayUri Value="http://localhost/Geocortex/Optimizer/Rest/DataRelay/LogData.ashx?f=json" />
-    <ManagedViewerDefaultsXml Value="" />
-    <HomePanelIconUri Value="{ViewerConfigUri}../Resources/Images/Icons/Toolbar/home-32.png" />
-    <PushpinsEnabled Value="True" />
-    <PushpinOffsetX Value="16" />
-    <PushpinOffsetY Value="32" />
-    <PushpinMarkerUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
-    <PushpinMarkerHighlightUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
-    <AttributeEditing Value="True" />
-    <OverviewMapExtentScaleFactor Value="2" />
-    <DataFrameResizable Value="True" />
-    <DataFrameMinWidth Value="360" />
-    <DataFrameMaxWidth Value="650" />
-    <DataFrameDefaultWidth Value="360" />
-    <ScaleBarShow Value="True" />
-    <ScaleSliderShow Value="True" />
+    <BannerShow Value="False" />
     <BaseMapControlShow Value="True" />
-    <ProgressIndicatorShow Value="True" />
-    <AttributionViewShow Value="True" />
-    <ProjectCategory Value="Common" />
-    <ProjectCanSaveToServer Value="False" />
-    <ProjectCanSaveToClient Value="True" />
+    <BiasResultsTowardsCenter Value="True" />
+    <BookmarksShow Value="True" />
+    <BrowserTitle Value="" />
     <BufferingProjectionWkid Value="" />
     <BufferingProjectionWkt Value="" />
+    <CenterMapAfterDataFrameOpens Value="false" />
+    <CenterMapAfterToolbarOpens Value="false" />
+    <DataFrameDefaultWidth Value="360" />
+    <DataFrameMaxWidth Value="650" />
+    <DataFrameMinWidth Value="360" />
+    <DataFrameOpenByDefault Value="False" />
+    <DataFramePosition Value="Left" />
+    <DataFrameResizable Value="True" />
+    <DefaultFeatureDetailsTab Value="Attributes" />
+    <EnableInstantSearchOnSearchHints Value="True" />
+    <ExportMapAllowIncludingGeoreferenceData Value="True" />
+    <ExportMapDefaultOutputFormat Value="PNG" />
+    <HighlightDynamicSnappingLayers Value="False" />
+    <HomePanelCanClose Value="True" />
+    <HomePanelContent><![CDATA[]]></HomePanelContent>
+    <HomePanelIconUri Value="{ViewerConfigUri}../Resources/Images/Icons/Toolbar/home-32.png" />
+    <HomePanelIsVisible Value="False" />
+    <HomePanelTitle Value="Home" />
     <IdentifyPixelTolerance Value="2" />
-    <IdentifyVisibleLayersOnly Value="True" />
     <IdentifyVisibleAtCurrentScaleOnly Value="True" />
-    <MeasurementUnitDefault Value="feet" />
+    <IdentifyVisibleLayersOnly Value="True" />
+    <InstantSearchMaxHints Value="5" />
+    <InstantSearchMaxResults Value="50" />
+    <ManagedViewerDefaultsXml Value="" />
+    <MapScaleCalculationMethod Value="CurrentExtent" />
+    <MapTipsDisplayOnClick Value="True" />
+    <MapTipsEnabled Value="True" />
+    <MapTipsIgnorePixelToleranceForPolygons Value="False" />
     <MeasurementAreaUnitDefault Value="squareFeet" />
+    <MeasurementCalculationType Value="planar" />
     <MeasurementOverrideUnits Value="" />
     <MeasurementPredictionEnabled Value="True" />
-    <MeasurementCalculationType Value="planar" />
-    <MeasurementProjectionWkid Value="" />
     <MeasurementProjectionUnits Value="" />
-    <ResultsViewRegion Value="DataRegion" />
-    <ResultsViewMode Value="List" />
-    <MapTipsDisplayOnClick Value="True" />
-    <MapTipsIgnorePixelToleranceForPolygons Value="False" />
-    <DefaultFeatureDetailsTab Value="Attributes" />
-    <AdvancedMapControlsMapScaleShow Value="True" />
-    <BookmarksShow Value="True" />
+    <MeasurementProjectionWkid Value="" />
+    <MeasurementUnitDefault Value="feet" />
     <MouseCoordinatesShow Value="True" />
+    <OptimizerDataRelayUri Value="http://localhost/Geocortex/Optimizer/Rest/DataRelay/LogData.ashx?f=json" />
+    <OptimizerEnabled Value="False" />
+    <OptimizerUserName Value="DefaultUser" />
+    <OverviewMapExtentScaleFactor Value="2" />
+    <OverviewMapMode Value="Dynamic" />
+    <OverviewMapOpenByDefault Value="False" />
+    <OverviewMapShow Value="True" />
+    <ProgressIndicatorShow Value="True" />
+    <ProjectCanSaveToClient Value="True" />
+    <ProjectCanSaveToServer Value="False" />
+    <ProjectCategory Value="Common" />
+    <PushpinMarkerHighlightUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
+    <PushpinMarkerUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
+    <PushpinOffsetX Value="16" />
+    <PushpinOffsetY Value="32" />
+    <PushpinsEnabled Value="True" />
+    <ResultsViewMode Value="List" />
+    <ResultsViewRegion Value="DataRegion" />
+    <ScaleBarShow Value="True" />
+    <ScaleSliderShow Value="True" />
+    <SearchAutocompleteDelay Value="200" />
+    <SearchAutocompleteMinimumPrefixLength Value="2" />
+    <ShellFlowDirection Value="LeftToRight" />
+    <SiteUri Value="{ViewerConfigUri}../../../.." />
     <StickyTools Value="False" />
+    <TimeAwareSliderShow Value="True" />
+    <ToolbarOpenByDefault Value="True" />
     <WatermarkImageIsVisible Value="False" />
-    <WatermarkImageUrl Value="" />
     <WatermarkImageMode Value="Scaled" />
     <WatermarkImageOpacity Value="0.25" />
-    <HighlightDynamicSnappingLayers Value="False" />
-    <TimeAwareSliderShow Value="True" />
+    <WatermarkImageUrl Value="" />
     <TimeAwareSliderConfiguration xmlns="">
       <Configuration TimeMode="TimeExtent" Loop="True" PlaySpeed="1" NumberOfIntervals="10" UserConfigurable="True" UsePrimaryTimeAwareMapService="True" />
     </TimeAwareSliderConfiguration>
-    <EnableInstantSearchOnSearchHints Value="True" />
-    <BiasResultsTowardsCenter Value="True" />
-    <InstantSearchMaxResults Value="50" />
-    <InstantSearchMaxHints Value="5" />
-    <SearchAutocompleteDelay Value="200" />
-    <SearchAutocompleteMinimumPrefixLength Value="2" />
-    <ExportMapAllowIncludingGeoreferenceData Value="True" />
-    <ExportMapDefaultOutputFormat Value="PNG" />
-    <HomePanelIsVisible Value="False" />
-    <HomePanelCanClose Value="True" />
-    <HomePanelTitle Value="Home" />
-    <CenterMapAfterToolbarOpens Value="false" />
-    <CenterMapAfterDataFrameOpens Value="false" />
-    <HomePanelContent><![CDATA[]]></HomePanelContent>
   </Globals>
   <ExternalConfigs>
-    <ExternalConfig Uri="../../../../../../Templates/SilverlightViewer_2_2/VirtualDirectory/Viewer.Defaults.xml" />
+    <ExternalConfig Uri="../../../../../../Templates/SilverlightViewer_2_3/VirtualDirectory/Viewer.Classic.xml" />
   </ExternalConfigs>
   <Modules>
     <Toolbar>
@@ -96,7 +98,7 @@
       <Configuration>
         <Toolbar StickyTools="False">
         {Insert__Toolbar-Tabs}
-      <Tab DisplayName="Home"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Button ImageUri="/Resources/Images/Icons/Toolbar/zoom-initial-32.png" ToolTip="Zoom to initial extent" Name="Initial View" Command="ZoomToInitialExtent" /><Button ImageUri="/Resources/Images/Icons/Toolbar/zoom-previous-32.png" ToolTip="Zoom to previous extent" Name="Back" Command="ZoomToPreviousExtent" /><Button ImageUri="/Resources/Images/Icons/Toolbar/zoom-next-32.png" ToolTip="Zoom to next extent" Name="Forward" Command="ZoomToNextExtent" /></Group><Group DisplayName="Identify"><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Point" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-freehand-32.png" DisplayName="Freehand" ToolTip="Identify (Freehand)" Name="IdentifyFreehand" Command="Identify" DrawMode="Freehand" /></Group><Group DisplayName="Find"><Button ImageUri="{ViewerConfigUri}../Custom/Location-64.png" DisplayName="Locations" ToolTip="Find a Location" Name="Locations" Command="RunWorkflowById" CommandParameter="Find_Location" /><Button ImageUri="{ViewerConfigUri}../Custom/Parcel-64.png" DisplayName="Parcels" ToolTip="Find Parcels" Name="Parcels" Command="RunWorkflowById" CommandParameter="Find_Parcels" /><Button ImageUri="{ViewerConfigUri}../Custom/Lease-64.png" DisplayName="Leases" ToolTip="Find Lease Comparables" Name="Leases" Command="RunWorkflowById" CommandParameter="Search_Leases" /><Button ImageUri="{ViewerConfigUri}../Custom/Sales-64.png" DisplayName="Sales" ToolTip="Search Sales Comparables" Name="Search Sales" Command="RunWorkflowById" CommandParameter="Search_Sales" /></Group><Group DisplayName="Scale &amp; Extent"><Region RegionName="AdvancedControlsRegion" /></Group></Tab><Tab DisplayName="Select"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /></Group><Group DisplayName="Identify"><Region RegionName="IdentifyRegion" /></Group><Group DisplayName="Refine Data"><Button ImageUri="/Resources/Images/Icons/Toolbar/filter-32.png" ToolTip="Show advanced filter builder" Name="Filter" Command="ActivateView" CommandParameter="FilterBuilderView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/query-builder-32.png" ToolTip="Show simple query builder" Name="Query" Command="ActivateView" CommandParameter="SimpleQueryBuilderView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/query-builder-advanced-32.png" ToolTip="Show advanced query builder" Name="Advanced Query" Command="ActivateView" CommandParameter="QueryBuilderView" /></Group><Group DisplayName="View"><Button ImageUri="/Resources/Images/Icons/Toolbar/search-results-32.png" ToolTip="View current search results" Name="Results" Command="SwitchToResultsView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/star-32.png" ToolTip="View selected features" Name="Selected" Command="SwitchToSelectionView" /><Button ImageUri="{ViewerConfigUri}../Custom/Clear-24.png" DisplayName="Clear All" ToolTip="Clears All Map Mark Up" Name="Clear All" Command="RunWorkflowById" CommandParameter="Clear_All" /></Group></Tab><Tab DisplayName="Measuring"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Group DisplayName="Measurement"><Region RegionName="MeasurementToolsRegion" /></Group><Group DisplayName="Coordinates"><Region RegionName="CoordinateToolsRegion" /></Group></Tab><Tab DisplayName="Drawing"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Region RegionName="DrawingToolsRegion" /><Group DisplayName="Save"><Button ImageUri="/Resources/Images/Icons/Toolbar/draw-extract-32.png" ToolTip="Extract Markup" Name="Save as Shapefile" Command="ExtractMarkup" /></Group><Group DisplayName="Settings"><Region RegionName="MarkupSnappingRegion" /></Group></Tab><Tab DisplayName="Tasks"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Group DisplayName="Tasks"><Button ImageUri="/Resources/Images/Icons/Toolbar/print-32.png" ToolTip="Print a map" Name="Print" Command="PrintMap" /><Button ImageUri="/Resources/Images/Icons/Toolbar/share-map-32.png" ToolTip="Export a map image" Name="Export" Command="ShowExportMapDialog" /><Button ImageUri="/Resources/Images/Icons/Toolbar/reports-32.png" Module="Reporting" ToolTip="Create a report" Name="Reports" Command="RunReport" /><Button ImageUri="{ViewerConfigUri}../Resources/Images/building.png" DisplayName="Structure Report" ToolTip="Create Structure Report" Name="Structure Report" Command="RunWorkflow" CommandParameter="StructuresReport" /></Group></Tab><Tab DisplayName="Data"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Group DisplayName="Layers"><Button ImageUri="/Resources/Images/Icons/Toolbar/layers-32.png" ToolTip="Show layer list" Name="Map Layers" Command="SwitchToLayerView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/layers-add-32.png" ToolTip="Add external map layer" Name="Add" Command="AddMapLayerInteractive" /><Button ImageUri="/Resources/Images/Icons/Toolbar/layers-reorder-32.png" ToolTip="Change the drawing order of layers" Name="Re-Order" Command="ShowLayerDrawingOrder" /></Group><Group DisplayName="Import Layer"><Button ImageUri="/Resources/Images/Icons/Toolbar/shapefile-add-32.png" ToolTip="Open a shapefile and add it to the map" Name="Shapefile" Command="OpenShapefileDialog" /><Button ImageUri="/Resources/Images/Icons/Toolbar/csv-add-32.png" ToolTip="Open a CSV file and add it to the map" Name="CSV File" Command="OpenCsvDialog" /><Button ImageUri="/Resources/Images/Icons/Toolbar/geocode-batch-32.png" ToolTip="Open an Excel file and add it to the map" Name="Address File" Command="OpenExcelFileDialog" /></Group><Group DisplayName="External Maps"><Button ImageUri="/Resources/Images/Icons/Toolbar/map-google-32.png" DisplayName="Google Maps™" ToolTip="View the current location in Google Maps / Street View" Command="OpenWebPage" CommandParameter="../WMI/GoogleMaps.html" /><Button ImageUri="/Resources/Images/Icons/Toolbar/map-bing-32.png" DisplayName="Bing™ Maps" ToolTip="View the current location in Bing Maps / Birdseye" Command="OpenWebPage" CommandParameter="../WMI/BingMaps.html" /></Group></Tab><Tab DisplayName="Editing"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Region RegionName="EditToolsRegion" /></Tab><Tab DisplayName="Help"><Group DisplayName="Help Tools"><Button ImageUri="/Resources/Images/Icons/Toolbar/help-32.png" DisplayName="Help" ToolTip="Show help topics" Name="LaunchDefaultHelp" Command="ShowHelpTopic" CommandParameter="" /><Button ImageUri="/Resources/Images/Icons/Toolbar/help-cursor-32.png" DisplayName="What's This?" ToolTip="Enable click help" Name="ClickForHelp" Command="InvokeClickHelp" /></Group></Tab></Toolbar>
+      <Tab DisplayName="Home"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Button ImageUri="/Resources/Images/Icons/Toolbar/zoom-initial-32.png" ToolTip="Zoom to initial extent" Name="Initial View" Command="ZoomToInitialExtent" /><Button ImageUri="/Resources/Images/Icons/Toolbar/zoom-previous-32.png" ToolTip="Zoom to previous extent" Name="Back" Command="ZoomToPreviousExtent" /><Button ImageUri="/Resources/Images/Icons/Toolbar/zoom-next-32.png" ToolTip="Zoom to next extent" Name="Forward" Command="ZoomToNextExtent" /></Group><Group DisplayName="Identify"><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Point" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-freehand-32.png" DisplayName="Freehand" ToolTip="Identify (Freehand)" Name="IdentifyFreehand" Command="Identify" DrawMode="Freehand" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-polygon-32.png" DisplayName="Polygon Identify" ToolTip="Identify (Polygon)" Name="IdentifyPolygon" Command="Identify" DrawMode="Polygon" /><Button ImageUri="{ViewerConfigUri}../Custom/Profile-32.png" DisplayName="Terrain" ToolTip="Terrain Identify" Name="Terrain" Command="RunWorkflowById" CommandParameter="ProfileTool" /></Group><Group DisplayName="Find"><Button ImageUri="{ViewerConfigUri}../Custom/Location-32.png" DisplayName="Locations" ToolTip="Find a Location" Name="Locations" Command="RunWorkflowById" CommandParameter="Find_Location" /><Button ImageUri="{ViewerConfigUri}../Custom/Parcel-32.png" DisplayName="Parcels" ToolTip="Find Parcels" Name="Parcels" Command="RunWorkflowById" CommandParameter="Find_Parcels" /><Button ImageUri="{ViewerConfigUri}../Custom/Lease-32.png" DisplayName="Leases" ToolTip="Find Lease Comparables" Name="Leases" Command="RunWorkflowById" CommandParameter="Search_Leases" /><Button ImageUri="{ViewerConfigUri}../Custom/Sales-64.png" DisplayName="Sales" ToolTip="Search Sales Comparables" Name="Search Sales" Command="RunWorkflowById" CommandParameter="Search_Sales" /></Group><Group DisplayName="Scale &amp; Extent"><Region RegionName="AdvancedControlsRegion" /></Group></Tab><Tab DisplayName="Select"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /></Group><Group DisplayName="Identify"><Region RegionName="IdentifyRegion" /></Group><Group DisplayName="Refine Data"><Button ImageUri="/Resources/Images/Icons/Toolbar/filter-32.png" ToolTip="Show advanced filter builder" Name="Filter" Command="ActivateView" CommandParameter="FilterBuilderView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/query-builder-32.png" ToolTip="Show simple query builder" Name="Query" Command="ActivateView" CommandParameter="SimpleQueryBuilderView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/query-builder-advanced-32.png" ToolTip="Show advanced query builder" Name="Advanced Query" Command="ActivateView" CommandParameter="QueryBuilderView" /></Group><Group DisplayName="View"><Button ImageUri="/Resources/Images/Icons/Toolbar/search-results-32.png" ToolTip="View current search results" Name="Results" Command="SwitchToResultsView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/star-32.png" ToolTip="View selected features" Name="Selected" Command="SwitchToSelectionView" /><Button ImageUri="{ViewerConfigUri}../Custom/Clear-24.png" DisplayName="Clear All" ToolTip="Clears All Map Mark Up" Name="Clear All" Command="RunWorkflowById" CommandParameter="Clear_All" /></Group></Tab><Tab DisplayName="Measuring"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Group DisplayName="Measurement"><Region RegionName="MeasurementToolsRegion" /></Group><Group DisplayName="Coordinates"><Region RegionName="CoordinateToolsRegion" /></Group></Tab><Tab DisplayName="Drawing"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Region RegionName="DrawingToolsRegion" /><Group DisplayName="Save"><Button ImageUri="/Resources/Images/Icons/Toolbar/draw-extract-32.png" ToolTip="Extract Markup" Name="Save as Shapefile" Command="ExtractMarkup" /></Group><Group DisplayName="Settings"><Region RegionName="MarkupSnappingRegion" /></Group></Tab><Tab DisplayName="Tasks"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Group DisplayName="Tasks"><Button ImageUri="/Resources/Images/Icons/Toolbar/print-32.png" ToolTip="Print a map" Name="Print" Command="PrintMap" /><Button ImageUri="/Resources/Images/Icons/Toolbar/share-map-32.png" ToolTip="Export a map image" Name="Export" Command="ShowExportMapDialog" /><Button ImageUri="/Resources/Images/Icons/Toolbar/reports-32.png" Module="Reporting" ToolTip="Create a report" Name="Reports" Command="RunReport" /><Button ImageUri="{ViewerConfigUri}../Resources/Images/building.png" DisplayName="Structure Report" ToolTip="Create Structure Report" Name="Structure Report" Command="RunWorkflow" CommandParameter="StructuresReport" /></Group></Tab><Tab DisplayName="Data"><Group DisplayName="Navigation"><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" DisplayName="Zoom In" ToolTip="Zoom In" Name="Zoom In" Command="ZoomInToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" DisplayName="Zoom Out" ToolTip="Zoom Out" Name="Zoom Out" Command="ZoomOutToExtent" DrawMode="Rectangle" /><Tool ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" DisplayName="Identify" ToolTip="Identify features" Name="Identify" Command="Identify" DrawMode="Rectangle" /></Group><Group DisplayName="Layers"><Button ImageUri="/Resources/Images/Icons/Toolbar/layers-32.png" ToolTip="Show layer list" Name="Map Layers" Command="SwitchToLayerView" /><Button ImageUri="/Resources/Images/Icons/Toolbar/layers-add-32.png" ToolTip="Add external map layer" Name="Add" Command="AddMapLayerInteractive" /><Button ImageUri="/Resources/Images/Icons/Toolbar/layers-reorder-32.png" ToolTip="Change the drawing order of layers" Name="Re-Order" Command="ShowLayerDrawingOrder" /></Group><Group DisplayName="Import Layer"><Button ImageUri="/Resources/Images/Icons/Toolbar/shapefile-add-32.png" ToolTip="Open a shapefile and add it to the map" Name="Shapefile" Command="OpenShapefileDialog" /><Button ImageUri="/Resources/Images/Icons/Toolbar/csv-add-32.png" ToolTip="Open a CSV file and add it to the map" Name="CSV File" Command="OpenCsvDialog" /><Button ImageUri="/Resources/Images/Icons/Toolbar/geocode-batch-32.png" ToolTip="Open an Excel file and add it to the map" Name="Address File" Command="OpenExcelFileDialog" /></Group><Group DisplayName="External Maps"><Button ImageUri="/Resources/Images/Icons/Toolbar/map-google-32.png" DisplayName="Google Maps™" ToolTip="View the current location in Google Maps / Street View" Command="OpenWebPage" CommandParameter="../WMI/GoogleMaps.html" /><Button ImageUri="/Resources/Images/Icons/Toolbar/map-bing-32.png" DisplayName="Bing™ Maps" ToolTip="View the current location in Bing Maps / Birdseye" Command="OpenWebPage" CommandParameter="../WMI/BingMaps.html" /></Group></Tab><Tab DisplayName="Help"><Group DisplayName="Help Tools"><Button ImageUri="/Resources/Images/Icons/Toolbar/help-32.png" DisplayName="Help" ToolTip="Show help topics" Name="LaunchDefaultHelp" Command="ShowHelpTopic" CommandParameter="" /><Button ImageUri="/Resources/Images/Icons/Toolbar/help-cursor-32.png" DisplayName="What's This?" ToolTip="Enable click help" Name="ClickForHelp" Command="InvokeClickHelp" /></Group></Tab></Toolbar>
       </Configuration>
     </Toolbar>
     <Map>
@@ -104,7 +106,7 @@
         <View Region="MapRegion" AssociatedHelpTopicKey="MapNavigation" />
         <View Id="AttributionView" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.Map.AttributionView" Region="AttributionRegion" Visible="true" />
       </Views>
-      <Configuration SnapToLevels="true" PanDuration="0.2" ZoomDuration="0.1" DefaultPointFeatureZoomScales="5000" MinimumResolution="" MaximumResolution="" WrapAround="false" GeometryServiceUri="{GeometryServiceUri}">
+      <Configuration SnapToLevels="true" PanDuration="0.2" ZoomDuration="0.1" DefaultPointFeatureZoomScales="5000" MinimumResolution="" MaximumResolution="" WrapAround="false" GeometryServiceUri="{GeometryServiceUri}" ScaleCalculationMethod="CurrentExtent">
         <Menus>
           <Menu Id="MapMenu">
             <Items>
@@ -167,13 +169,7 @@
             <Menus>
               <Menu Id="LayerActions">
                 <Items>
-                  <Item Text="Zoom to Visible Scale">
-                    <Batch>
-                      <BatchItem Command="ZoomToLayerVisible" />
-                      <BatchItem Command="ZoomToEsriLayerVisible" />
-                      <BatchItem Command="ZoomToMapServiceVisible" />
-                    </Batch>
-                  </Item>
+                  <Item Text="Zoom to Visible Scale" Command="ZoomToLayerListItemVisible" />
                   <Item Text="Zoom to Extent" Command="ZoomToExtent" />
                   <Item Text="Copy Layer" Command="DuplicateLayer" HideWhenDisabled="true" />
                   <Item Text="Remove Layer" Command="RemoveDuplicatedLayer" HideWhenDisabled="true" />
@@ -183,6 +179,7 @@
                   <Item Text="List Items" Command="ListFeatureSet" HideWhenDisabled="true" />
                   <Item Text="Update" Command="UpdateLayer" HideWhenDisabled="true" />
                   <Item Text="Advanced Filter" Command="ShowFilterBuilderView" HideWhenDisabled="true" />
+                  <Item Text="Remove Folder" Command="RemoveLayerListFolder" HideWhenDisabled="true" />
                 </Items>
               </Menu>
               <Menu Id="LayerListSelectionActionsMenu">
@@ -218,8 +215,6 @@
         </View>
       </Views>
     </LayerList>
-    <FeatureClustering Remove="True" />
-    <HeatMaps Remove="True" />
     <TimeAwareSlider Remove="True" />
     <Watermark Remove="True" />
   </Modules>

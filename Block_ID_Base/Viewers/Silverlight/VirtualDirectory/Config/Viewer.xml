@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Configuration Version="2.3">
+<Configuration Version="2.4">
   <Globals xmlns="http://www.geocortex.com/Viewer/Configuration/PreProcessor">
     <AdvancedMapControlsMapScaleShow Value="True" />
     <AdvancedMapControlsUseEsriScaleLevelValues Value="false" />
@@ -63,6 +63,9 @@
     <ProjectCanSaveToClient Value="True" />
     <ProjectCanSaveToServer Value="False" />
     <ProjectCategory Value="Common" />
+    <ProjectConfirmSharedSave Value="false" />
+    <ProjectSaveOverrideBehavior Value="" />
+    <ProjectShareByDefault Value="true" />
     <PushpinMarkerHighlightUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
     <PushpinMarkerUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
     <PushpinOffsetX Value="16" />
@@ -86,9 +89,13 @@
     <TimeAwareSliderConfiguration xmlns="">
       <Configuration TimeMode="TimeExtent" Loop="True" PlaySpeed="1" NumberOfIntervals="10" UserConfigurable="True" UsePrimaryTimeAwareMapService="True" />
     </TimeAwareSliderConfiguration>
+    <ViewerId Value="Silverlight" />
+    <OpenCsvSpatialReferences xmlns="">
+      <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" />
+    </OpenCsvSpatialReferences>
   </Globals>
   <ExternalConfigs>
-    <ExternalConfig Uri="../../../../../../Templates/SilverlightViewer_2_3/VirtualDirectory/Viewer.Classic.xml" />
+    <ExternalConfig Uri="../../../../../../Templates/SilverlightViewer_2_4/VirtualDirectory/Viewer.Defaults.xml" />
   </ExternalConfigs>
   <Modules>
     <Toolbar>
@@ -203,7 +210,7 @@
                   <Item IsSeparator="true" />
                   <Item Text="Generate Report" Command="RunFeaturesReport" />
                   <Item Text="Export to CSV" Command="ExportFeaturesToCsvWithExtras" />
-                  <Item Text="Export to Shapefile" Command="ExtractFeatureSet" />
+                  <Item Text="Export to Shapefile" Command="ExtractFeatureSet" HideWhenDisabled="true" />
                   <Item IsSeparator="true" />
                   <Item Text="Remove from Selected" Command="RemoveFeatureSetFromSelection" HideWhenDisabled="true" />
                 </Items>
@@ -217,6 +224,14 @@
     </LayerList>
     <TimeAwareSlider Remove="True" />
     <Watermark Remove="True" />
+    <OpenCsv>
+      <View Id="AddCsvView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.OpenCsv.SelectLocationFieldsView" Visible="false" />
+      <View Id="AddCsvConfirmationView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.OpenCsv.ConfirmationView" Visible="false" />
+      <Configuration ZoomUserAddedLayers="true">
+        <CreateResultList>true</CreateResultList>
+        {OpenCsvSpatialReferences}
+      </Configuration>
+    </OpenCsv>
   </Modules>
   <Resources>
     <Xaml Uri="{ViewerConfigUri}../../../../Viewers/Block_ID_Base-Silverlight/VirtualDirectory/Themes/Silverlight4.xaml" />
