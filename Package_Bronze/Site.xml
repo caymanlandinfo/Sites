@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Bronze" ID="Bronze" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Block_Marine" />
@@ -71,16 +71,6 @@
       <MapService ID="Navigation-4" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" LayerListID="13" />
     </MapServices>
   </Map>
-  <NamedExtents>
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
-  </NamedExtents>
-  <NamedExtents MergeMode="Remove">
-    <NamedExtent ID="Block_ID_Base-0" />
-    <NamedExtent ID="Block_ID_Base-1" />
-    <NamedExtent ID="Block_ID_Base-2" />
-  </NamedExtents>
   <Viewers>
     <Viewer DisplayName="HTML5 Bronze" Hidden="false" ID="HTML5_Bronze" Path="{SitePath}\Viewers\HTML5_Bronze" TemplateID="Html5Viewer_2_4" />
   </Viewers>
