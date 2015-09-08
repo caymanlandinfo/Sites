@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block_ID_Comparables" ID="Block_ID_Comparables" Version="4.2.0">
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block_ID_Comparables" ID="Block_ID_Comparables" Version="4.3.1">
   <DataConnections>
     <DataConnection ConnectionString="Data Source=LSVMWEBSQL1.caymanlandinfo.local;Initial Catalog=LandBaseWeb;Integrated Security=False;User ID=essentials;Password=essentials101" DisplayName="LandBaseWeb" ErrorAction="LogDebug" ID="0" ImpersonateWithActor="false" ProviderName="System.Data.SqlClient" SqlDialect="MsSqlServer" VerifyConnectionOnStartup="false" />
   </DataConnections>
@@ -10,7 +10,7 @@
       </Items>
     </LayerList>
     <MapServices>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Comparables/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Query Layers" Function="Operational" ID="3" ImpersonateWithActor="false" IncludeInLayerList="true" InstantSearch="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Comparables/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Query Layers" Function="Operational" ID="3" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
         <CachedServiceData />
         <Layers>
           <Layer CanCopyFeature="false" Description="Purchase Agreements" DisplayName="Purchase Agreements" FeatureDescription="&lt;table width=&quot;275&quot; border=&quot;0&quot;&gt;&#xD;&#xA;  &lt;tbody&gt;&lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;DATE&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{VALUATION_DATE_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;CONSIDERATION (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;GROUP AREA&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_AREA}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;PRICE (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;${PRICE_SF}/ft&lt;/b&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;NUMBER PARCELS&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;command:RunWorkflowWithArguments?workflowId=Group_Valuations&amp;amp;instrument={INSTRUMENT_NUMBER}&quot;&gt;&#xD;&#xA;{NUM_VALUED_PARCELS}&lt;/a&gt;&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&lt;/table&gt;" FeatureLabel="PURCHASE AGREEMENT {BLOCK} {FULL_PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Sales-24.png" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" Name="Purchase Agreements" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="false">
@@ -315,9 +315,9 @@
   </Map>
   <OverviewMap />
   <Workflows>
-    <Workflow DisplayName="Group Valuations" ID="Group_Valuations" Uri="{RootUri}/Workflows/get_group_valuations.xaml" />
-    <Workflow DisplayName="Search Sales" ID="Search_Sales" Uri="{RootUri}/Workflows/find_sales_comparables.xaml" />
-    <Workflow DisplayName="Search Leases" ID="Search_Leases" Uri="{RootUri}/Workflows/find_lease_comparables.xaml" />
-    <Workflow DisplayName="Search_Sales_HTML5" ID="Search_Sales_HTML5" Uri="{RootUri}/Workflows/find_sales_comparables_HTML5.xaml" />
+    <Workflow DisplayName="Group Valuations" ID="Group_Valuations" RunOnStartup="false" Uri="{RootUri}/Workflows/get_group_valuations.xaml" />
+    <Workflow DisplayName="Search Sales" ID="Search_Sales" RunOnStartup="false" Uri="{RootUri}/Workflows/find_sales_comparables.xaml" />
+    <Workflow DisplayName="Search Leases" ID="Search_Leases" RunOnStartup="false" Uri="{RootUri}/Workflows/find_lease_comparables.xaml" />
+    <Workflow DisplayName="Search_Sales_HTML5" ID="Search_Sales_HTML5" RunOnStartup="false" Uri="{RootUri}/Workflows/find_sales_comparables_HTML5.xaml" />
   </Workflows>
 </Site>
