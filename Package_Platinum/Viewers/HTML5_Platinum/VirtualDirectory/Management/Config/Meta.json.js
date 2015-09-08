@@ -3,7 +3,7 @@
   "templatePath": null,
   "views": [
     {
-      "expandedShells": false,
+      "expandedShells": true,
       "name": "IWantToMenuSectionView"
     },
     {
@@ -17,6 +17,10 @@
     {
       "expandedShells": false,
       "name": "OfflineSectionView"
+    },
+    {
+      "expandedShells": true,
+      "name": "GeolocateSectionView"
     },
     {
       "expandedShells": false,
@@ -36,11 +40,19 @@
     },
     {
       "expandedShells": false,
+      "name": "LayerListSectionView"
+    },
+    {
+      "expandedShells": false,
       "name": "PushpinsSectionView"
     },
     {
       "expandedShells": false,
       "name": "OptimizerIntegrationSectionView"
+    },
+    {
+      "expandedShells": true,
+      "name": "MapWidgetsSectionView"
     }
   ]
 }

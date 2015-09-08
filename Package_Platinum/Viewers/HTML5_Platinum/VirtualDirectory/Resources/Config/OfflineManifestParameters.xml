@@ -31,5 +31,7 @@
     <Parameter Name="PlaceHolderFeature">{ objectIdFieldName:'OBJECTID', globalIdFieldName: 'GlobalID', features:[]}</Parameter>
     <!-- An empty result set -->
     <Parameter Name="ZeroSearchResults">{ count: 0, features: [], ResponseStatus: {} }</Parameter>
+    <!-- An empty attribution response -->
+    <Parameter Name="EmptyAttributionResponse">{}</Parameter>
   </ParameterList>
 </ManifestParameters>

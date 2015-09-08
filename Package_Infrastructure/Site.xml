@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Infrastructure" ID="Infrastructure" Version="4.2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Infrastructure" ID="Infrastructure" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Block_Utility" />
     <ExternalConfig SiteID="Block_Surveyors" />
@@ -71,7 +71,7 @@
             </Item>
             <Item ID="66" IsExpanded="true" Name="Marine" Visible="true">
               <Items>
-                <Item ID="67" />
+                <Item ID="67" IsExpanded="true" Visible="true" />
               </Items>
             </Item>
             <Item ID="48" />
@@ -103,10 +103,6 @@
         </Item>
       </Items>
       <Items MergeMode="Remove">
-        <Item ID="Block_Utility-0" />
-        <Item ID="Block_Utility-1" />
-        <Item ID="Block_Surveyors-0" />
-        <Item ID="Block_Surveyors-1" />
         <Item ID="Silver-0" />
         <Item ID="Silver-1" />
         <Item ID="Silver-40" />
@@ -174,11 +170,6 @@
           <Layer Name="Other Community Services" NativeID="2" LayerListID="45" />
         </Layers>
       </MapService>
-      <MapService ID="Block_Marine-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
-        <Layers MergeMode="Update">
-          <Layer Name="Marine Parks" NativeID="0" LayerListID="67" />
-        </Layers>
-      </MapService>
       <MapService ID="Block_ID_Base-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
         <Layers MergeMode="Update">
           <Layer Name="Streets" NativeID="0" LayerListID="62" />
@@ -218,28 +209,6 @@
       <MapService ID="Navigation-4" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
     </MapServices>
   </Map>
-  <NamedExtents>
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="3" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="4" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="5" />
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="6" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="7" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="8" />
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="9" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="10" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="11" />
-  </NamedExtents>
-  <NamedExtents MergeMode="Remove">
-    <NamedExtent ID="Gold-0" />
-    <NamedExtent ID="Gold-1" />
-    <NamedExtent ID="Gold-2" />
-    <NamedExtent ID="Gold-3" />
-    <NamedExtent ID="Gold-4" />
-    <NamedExtent ID="Gold-5" />
-  </NamedExtents>
   <Viewers>
     <Viewer DisplayName="HTML5 Infrastructure" Hidden="false" ID="HTML5_Infrastructure" Path="{SitePath}\Viewers\HTML5_Infrastructure" TemplateID="Html5Viewer_2_4" />
   </Viewers>

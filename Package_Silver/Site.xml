@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Silver" ID="Silver" Version="4.2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Silver" ID="Silver" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Bronze" />
     <ExternalConfig SiteID="Planning" />
@@ -46,7 +46,7 @@
             </Item>
             <Item ID="45" IsExpanded="false" Name="Marine" Visible="true">
               <Items>
-                <Item ID="46" />
+                <Item ID="46" IsExpanded="true" Visible="true" />
               </Items>
             </Item>
             <Item ID="27" />
@@ -127,11 +127,6 @@
           <Layer Name="Other Community Services" NativeID="2" LayerListID="24" />
         </Layers>
       </MapService>
-      <MapService ID="Block_Marine-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
-        <Layers MergeMode="Update">
-          <Layer Name="Marine Parks" NativeID="0" LayerListID="46" />
-        </Layers>
-      </MapService>
       <MapService ID="Block_ID_Base-1" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
         <Layers MergeMode="Update">
           <Layer Name="Streets" NativeID="0" LayerListID="41" />
@@ -169,19 +164,6 @@
       <MapService ID="Navigation-4" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
     </MapServices>
   </Map>
-  <NamedExtents>
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="3" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="4" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="5" />
-  </NamedExtents>
-  <NamedExtents MergeMode="Remove">
-    <NamedExtent ID="Bronze-0" />
-    <NamedExtent ID="Bronze-1" />
-    <NamedExtent ID="Bronze-2" />
-  </NamedExtents>
   <Viewers>
     <Viewer DisplayName="HTML5 Silver" Hidden="false" ID="HTML5_Silver" Path="{SitePath}\Viewers\HTML5_Silver" TemplateID="Html5Viewer_2_4" />
   </Viewers>

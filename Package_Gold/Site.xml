@@ -1,50 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Description="4.2" DisplayName=".Package Gold" ID="Gold" Version="4.3.1">
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Gold" ID="Gold" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Silver" />
   </ExternalConfigs>
-  <Map>
-    <LayerList>
-      <Items MergeMode="Update">
-        <Item ID="Silver-0">
-          <Items>
-            <Item ID="0" IsExpanded="true" Name="Marine" Visible="true">
-              <Items>
-                <Item ID="1" IsExpanded="true" Visible="true" />
-              </Items>
-            </Item>
-          </Items>
-          <Items MergeMode="Remove">
-            <Item ID="Silver-45" />
-          </Items>
-          <Items MergeMode="Update">
-            <Item ID="Silver-20" IsExpanded="true" />
-          </Items>
-        </Item>
-      </Items>
-    </LayerList>
-    <MapServices MergeMode="Update">
-      <MapService ID="Block_Marine-0" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" MergeMode="Remove">
-        <Layers />
-      </MapService>
-    </MapServices>
-  </Map>
-  <NamedExtents>
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
-    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="3" />
-    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="4" />
-    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="5" />
-  </NamedExtents>
-  <NamedExtents MergeMode="Remove">
-    <NamedExtent ID="Silver-0" />
-    <NamedExtent ID="Silver-1" />
-    <NamedExtent ID="Silver-2" />
-    <NamedExtent ID="Silver-3" />
-    <NamedExtent ID="Silver-4" />
-    <NamedExtent ID="Silver-5" />
-  </NamedExtents>
   <Viewers>
     <Viewer DisplayName="HTML5 Gold" Hidden="false" ID="HTML5_Gold" Path="{SitePath}\Viewers\HTML5_Gold" TemplateID="Html5Viewer_2_4" />
   </Viewers>

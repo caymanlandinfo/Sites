@@ -91,7 +91,7 @@
     </TimeAwareSliderConfiguration>
     <ViewerId Value="Silverlight" />
     <OpenCsvSpatialReferences xmlns="">
-      <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" />
+      <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" DefaultSpatialReference="" />
     </OpenCsvSpatialReferences>
   </Globals>
   <ExternalConfigs>
@@ -229,12 +229,13 @@
       <View Id="AddCsvConfirmationView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.OpenCsv.ConfirmationView" Visible="false" />
       <Configuration ZoomUserAddedLayers="true">
         <CreateResultList>true</CreateResultList>
-        {OpenCsvSpatialReferences}
+        <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" />
       </Configuration>
     </OpenCsv>
   </Modules>
   <Resources>
     <Xaml Uri="{ViewerConfigUri}../../../../Viewers/Block_ID_Base-Silverlight/VirtualDirectory/Themes/Silverlight4.xaml" />
+    <Xaml Uri="{ViewerConfigUri}../../../../../Block_ID_Base/Viewers/Silverlight/VirtualDirectory/Themes/Silverlight4.xaml" />
   </Resources>
   <Libraries />
 </Configuration>
