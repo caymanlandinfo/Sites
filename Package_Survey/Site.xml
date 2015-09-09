@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package_Survey" ID="Survey" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Block_Surveyors" />
@@ -169,6 +169,6 @@
     </MapServices>
   </Map>
   <Viewers>
-    <Viewer DisplayName="HTML5 Survey" Hidden="false" ID="HTML5_Survey" Path="{SitePath}\Viewers\HTML5_Survey" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 Survey" Hidden="false" ID="HTML5_Survey" Path="{SitePath}\Viewers\HTML5_Survey" TemplateID="Html5Viewer_2_5" />
   </Viewers>
 </Site>

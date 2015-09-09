@@ -199,7 +199,7 @@
     </MapServices>
   </Map>
   <Viewers>
-    <Viewer DisplayName="HTML5 Platinum" Hidden="false" ID="HTML5_Platinum" Path="{SitePath}\Viewers\HTML5_Platinum" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 Platinum" Hidden="false" ID="HTML5_Platinum" Path="{SitePath}\Viewers\HTML5_Platinum" TemplateID="Html5Viewer_2_5" />
   </Viewers>
   <Workflows MergeMode="Update">
     <Workflow ID="Block_ID_Comparables-Group_Valuations" RunOnStartup="false" />

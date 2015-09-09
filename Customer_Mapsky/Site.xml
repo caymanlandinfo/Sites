@@ -14,7 +14,7 @@
   <OverviewMap />
   <PrintTemplatesPermissions />
   <Viewers>
-    <Viewer DisplayName="Maps.ky" Hidden="false" ID="Html5_Viewer" Path="{SitePath}\Viewers\Html5_Viewer" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="Maps.ky" Hidden="false" ID="Html5_Viewer" Path="{SitePath}\Viewers\Html5_Viewer" TemplateID="Html5Viewer_2_5" />
   </Viewers>
   <WorkflowsPermissions />
 </Site>

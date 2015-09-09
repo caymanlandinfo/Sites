@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RestResources" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="qualified">
+
+  <!-- ELEMENTS -->
+
+  <xs:element name="RestResources">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The RestResources element is the root element of the RestResources.xml document.  It contains the
+        list of Resource elements used to configure custom REST Resource endpoints which can be deployed
+        to the Geocortex Essentials REST API.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              A Resource element defines a class which is responsible for responding to REST requests.  The
+              class must ultimately extend the Geocortex.Rest.RestResource base class and must specify the
+              class-level Geocortex.Rest.RestRouteAttribute to define the URL path to which the resource responds.  
+              Specify the location of the class using the Assembly and ClassName attributes to refer to an assembly 
+              which has been deployed in the Sites directory (defaults to C:\Program Files\Latitude Geographics\Geocortex Essentials\Sites).
+              
+              The discovered resource will be automatically registered with the REST API upon application 
+              startup.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="ParameterConstraints" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    When registering an extesion resource within the REST API, an administrator has the 
+                    opportunity to define validation constraints on the parameters which are accepted by
+                    that resource.  For example, an administrator may specify that a "LayerID" parameter
+                    must be equal to "7" when requesting the REST resource.  If the parameter constraints
+                    filter out a request, an exception is thrown and the calling application will receive
+                    an error (in the format requested) instead of a response.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Parameter" minOccurs="1" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Defines a constraint on a specific parameter, allowing an administrator to control
+                          the allowable values for the parameter.  Parameters can represent path components of
+                          the RestRoute which the rest resource responds to, or GET/POST parameters which are
+                          sent during a request to the resource.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Name" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              The name of the parameter to which the constraint is applied.  This must match
+                              the name of a parameter defined in the RestRoute of the resource, or a GET/POST
+                              parameter which can be sent during a request.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Constraint" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              The constraint which should be placed on the parameter.  The value of this attribute
+                              depends on the value of the "UseRegularExpression" attribute.  When "UseRegularExpression"
+                              is set to "false" (the default), the Constraint represents the value which must be
+                              exactly matched by the parameter value which is sent during a request.  When "UseRegularExpression"
+                              is set to "true", the Constraint is used as a regular expression which is used
+                              to match the submitted parameter value.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="UseRegularExpression" type="BoolType" default="false">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Whether or not the value of the Contraint attribute should be used as a regular
+                              expression when validating parameter values.  The regular expression syntax follows .NET
+                              Framework Regular Expression Syntax (see http://msdn.microsoft.com/en-us/library/hs600312(VS.71).aspx
+                              for details).
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Properties" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    A site can have user defined properties for application specific purposes.  Administrators may wish to
+                    define properties to control settings of the application that need to be known by the client API applications
+                    which consume a site.  For example, a property might contain a "feedback" email address, or the location of
+                    a directory containing a set of images used by the application.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>                                      
+                  <xs:sequence>
+                    <xs:element name="Property" minOccurs="1" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          A property is a simple string name-value pair.  Administrators have the ability to configure properties
+                          having arbitrary name and value information.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Name" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation>
+                              The name of the property.  Within the collection of site properties, the name must be unique.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Value" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation>
+                              The value of the property.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
+            <xs:attribute name="Assembly" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  The name of an assembly which contains the custom REST resource class represented by this
+                  element.  This is usually, but not always, the file name (without the .dll extension) of the
+                  assembly as deployed in the Sites directory.  You may specify the name of the assembly, or
+                  the fully qualified name of the assembly (including version information, etc.) in order to
+                  explicitly reference an assembly when more than one assembly with the same name may exist in
+                  the Sites directory.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ClassName" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  The name of the type which represents the custom REST resource represented by this element.  This
+                  must be a fully qualified type name (including the namespace), and it must belong to the
+                  assembly referenced by the Assembly attribute of this element.  The type must extend the 
+                  Geocortex.Essentials.ResourceBase abstract base class, and must define the Geocortex.Rest.RestRouteAttribute
+                  class-level attribute.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>                    
+      </xs:sequence>      
+    </xs:complexType>
+  </xs:element>
+
+  <!-- SIMPLE TYPES -->
+
+  <xs:simpleType name="BoolType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true" />
+      <xs:enumeration value="false" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

@@ -3,7 +3,7 @@
   "templatePath": null,
   "views": [
     {
-      "expandedShells": false,
+      "expandedShells": true,
       "name": "IWantToMenuSectionView"
     },
     {
@@ -15,8 +15,16 @@
       "name": "ApplicationSectionView"
     },
     {
+      "expandedShells": true,
+      "name": "AccessibilitySectionView"
+    },
+    {
       "expandedShells": false,
       "name": "OfflineSectionView"
+    },
+    {
+      "expandedShells": true,
+      "name": "GeolocateSectionView"
     },
     {
       "expandedShells": false,
@@ -27,7 +35,7 @@
       "name": "ToolbarSectionView"
     },
     {
-      "expandedShells": false,
+      "expandedShells": true,
       "name": "ToolBehaviorSectionView"
     },
     {
@@ -36,11 +44,27 @@
     },
     {
       "expandedShells": false,
+      "name": "LayerListSectionView"
+    },
+    {
+      "expandedShells": false,
       "name": "PushpinsSectionView"
     },
     {
       "expandedShells": false,
       "name": "OptimizerIntegrationSectionView"
+    },
+    {
+      "expandedShells": true,
+      "name": "MapWidgetsSectionView"
+    },
+    {
+      "expandedShells": false,
+      "name": "MapSectionView"
+    },
+    {
+      "expandedShells": false,
+      "name": "InsightIntegrationSectionView"
     }
   ]
 }

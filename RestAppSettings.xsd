@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  id="RestAppSettings"
+  elementFormDefault="unqualified"
+  attributeFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="RestAppSettings">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The RestAppSettings element is the root element of the RestAppSettings.xml document.  It contains the
+        list of Setting elements used to configure the Geocortex Essentials REST API.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Modules" />
+        <xs:element ref="ServiceConnections" />
+      </xs:choice>
+      <xs:attribute name="AccessLogLevel" type="LogLevel" default="Info">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Log Level associated with the Access logs.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="SystemLogLevel" type="LogLevel" default="Warn">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Log Level associated with the System logs.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="SiteCacheSize" type="xs:int" default="10">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The limit of the number of sites to store in in-memory cache. This attribute is no longer supported.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="ExternalRestUrl" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Allows you to specify an external url of the REST application so that you can host Essentials behind a reverse proxy.
+            eg. "http://myexternalserver/Geocortex/Essentials/Rest"
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="SiteThumbnailsGenerated" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Specifies whether site thumbnail images have been generated yet. If set to false, a all site thumbnails will be generated on start up.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Modules">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="GeoRestShaper" />
+        <xs:element minOccurs="0" ref="WebProxy" />
+        <xs:element minOccurs="0" ref="ServiceDiscovery" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GeoRestShaper">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Forwarder" type="ShaperType" />
+        <xs:element name="Shaper" type="ShaperType" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="ShaperType">
+    <xs:all>
+      <xs:element name="Authentication" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="Mode" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="AppPoolIdentity" />
+                <xs:enumeration value="PassThrough" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CachePolicy" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="Level" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Context" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="Address" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FlowControl" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="ResultLimit" type="xs:integer" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoteEndpoint" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="BaseAddress" use="required" />
+          <xs:attribute name="Address" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResolveCodesToNames" minOccurs ="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LocaleSensitivity" minOccurs ="0">
+        <xs:complexType>
+          <xs:sequence />
+          <xs:attribute name="Culture" type="xs:string" use="optional" />
+          <xs:attribute name="TimeZone" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Address" use="required" />
+  </xs:complexType>
+
+  <xs:element name="WebProxy">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="WhiteList" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="WhiteList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Accept" type="LocationType" />
+        <xs:element name="Refuse" type="LocationType" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="LocationType">
+    <xs:sequence />
+    <xs:attribute name="Location" use="required" />
+  </xs:complexType>
+
+  <!-- SIMPLE TYPES -->
+
+  <xs:simpleType name="LogLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Debug" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Warn" />
+      <xs:enumeration value="Info" />
+      <xs:enumeration value="Off" />
+      <xs:enumeration value="Fatal" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="ServiceDiscovery">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Voyager" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Voyager">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Filters" type="Filters" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Filters">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Filter" type="Filter" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name ="ExtendedFilters" type="ExtendedFilters" />
+    </xs:sequence>
+    <xs:attribute name="For" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Filter">
+    <xs:attribute name="Name" use="required" type="xs:string"/>
+    <xs:attribute name="Value" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ExtendedFilters">
+    <xs:choice>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtendedFilter" type="ExtendedFilter" />
+    </xs:choice>
+    <xs:attribute name="Name" use="required" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="ExtendedFilter">
+    <xs:attribute name="For" use="required" type="xs:string"/>
+    <xs:attribute name="Value" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:element name="ServiceConnections">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ArcGisPortal" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionWithUrl"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ArcGisServer" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionWithCredentials">
+                <xs:attribute name="TokenUrl" use="optional" type="xs:string"/>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Wms" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionWithCredentials"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Wmts" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionWithCredentials"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Bing" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionBase">
+                <xs:attribute name="Key" type="xs:string" use="required"/>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Voyager" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionWithCredentials"/>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WebTiledLayer" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="ServiceConnectionWithCredentials">
+                <xs:attribute name="SubDomains" type="xs:string" use="optional"/>
+                <xs:attribute name="Copyright" type="xs:string" use="optional"/>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="ServiceConnectionBase">
+    <xs:attribute name="EnableLayerSearch" type="xs:boolean"/>
+    <xs:attribute name="EnableUserSearch" type="xs:boolean"/>
+    <xs:attribute name="ID" type="xs:string"/>
+    <xs:attribute name="DisplayName" type="xs:string"/>
+    <xs:attribute name="PasswordEncrypted" type="xs:boolean"/>
+    <xs:attribute name="UseHttpAuthentication" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="ServiceConnectionWithUrl">
+    <xs:complexContent>
+      <xs:extension base="ServiceConnectionBase">
+        <xs:attribute name="Url" type="xs:string" use="required"/>
+        <xs:attribute name="ProxyUrl" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ServiceConnectionWithCredentials">
+    <xs:complexContent>
+      <xs:extension base="ServiceConnectionWithUrl">
+        <xs:attribute name="Username" type="xs:string"/>
+        <xs:attribute name="Password" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

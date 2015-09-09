@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Customer_Petroleum" ID="Customer_Petroleum" Version="4.2.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Public_Safety" />
@@ -310,7 +310,7 @@
   </Map>
   <PrintTemplatesPermissions />
   <Viewers>
-    <Viewer DisplayName="HTML5 Petroleum" Hidden="false" ID="HTML5_Petroleum" Path="{SitePath}\Viewers\HTML5_Petroleum" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 Petroleum" Hidden="false" ID="HTML5_Petroleum" Path="{SitePath}\Viewers\HTML5_Petroleum" TemplateID="Html5Viewer_2_5" />
   </Viewers>
   <WorkflowsPermissions />
 </Site>

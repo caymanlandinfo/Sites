@@ -291,6 +291,6 @@
     <NamedExtent ID="Infrastructure-11" />
   </NamedExtents>
   <Viewers>
-    <Viewer DisplayName="HTML5 ICTA" Hidden="false" ID="HTML5_ICTA" Path="{SitePath}\Viewers\HTML5_ICTA" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 ICTA" Hidden="false" ID="HTML5_ICTA" Path="{SitePath}\Viewers\HTML5_ICTA" TemplateID="Html5Viewer_2_5" />
   </Viewers>
 </Site>

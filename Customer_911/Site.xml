@@ -194,6 +194,6 @@
     <NamedExtent ID="Bronze-2" />
   </NamedExtents>
   <Viewers>
-    <Viewer DisplayName="HTML5 911" Hidden="false" ID="HTML5_911" Path="{SitePath}\Viewers\HTML5_911" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 911" Hidden="false" ID="HTML5_911" Path="{SitePath}\Viewers\HTML5_911" TemplateID="Html5Viewer_2_5" />
   </Viewers>
 </Site>

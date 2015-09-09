@@ -15,6 +15,10 @@
       "name": "ApplicationSectionView"
     },
     {
+      "expandedShells": true,
+      "name": "AccessibilitySectionView"
+    },
+    {
       "expandedShells": false,
       "name": "OfflineSectionView"
     },
@@ -31,7 +35,7 @@
       "name": "ToolbarSectionView"
     },
     {
-      "expandedShells": false,
+      "expandedShells": true,
       "name": "ToolBehaviorSectionView"
     },
     {
@@ -53,6 +57,14 @@
     {
       "expandedShells": true,
       "name": "MapWidgetsSectionView"
+    },
+    {
+      "expandedShells": false,
+      "name": "MapSectionView"
+    },
+    {
+      "expandedShells": false,
+      "name": "InsightIntegrationSectionView"
     }
   ]
 }

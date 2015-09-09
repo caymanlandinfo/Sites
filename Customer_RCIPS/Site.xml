@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Customer_RCIPS" ID="Customer_RCIPS" Version="4.2.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Customer_911" />
@@ -159,6 +159,6 @@
     </MapServices>
   </Map>
   <Viewers>
-    <Viewer DisplayName="HTML5 RCIPS" Hidden="false" ID="HTML5_RCIPS" Path="{SitePath}\Viewers\HTML5_RCIPS" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 RCIPS" Hidden="false" ID="HTML5_RCIPS" Path="{SitePath}\Viewers\HTML5_RCIPS" TemplateID="Html5Viewer_2_5" />
   </Viewers>
 </Site>

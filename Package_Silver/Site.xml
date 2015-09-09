@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Silver" ID="Silver" Version="4.3.1">
   <ExternalConfigs>
     <ExternalConfig SiteID="Bronze" />
@@ -165,6 +165,6 @@
     </MapServices>
   </Map>
   <Viewers>
-    <Viewer DisplayName="HTML5 Silver" Hidden="false" ID="HTML5_Silver" Path="{SitePath}\Viewers\HTML5_Silver" TemplateID="Html5Viewer_2_4" />
+    <Viewer DisplayName="HTML5 Silver" Hidden="false" ID="HTML5_Silver" Path="{SitePath}\Viewers\HTML5_Silver" TemplateID="Html5Viewer_2_5" />
   </Viewers>
 </Site>
