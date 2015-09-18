@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block Navigation" ID="Navigation" Version="4.3.1">
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="Block Navigation" ID="Navigation" Version="4.4.0">
   <Map FullExtent="1492781.83370403,6981626.77601701,2083362.16179998,7170284.60409999" InitialExtent="1505510.29957843,7002427.67089269,2070633.69592558,7320767.37072932">
     <LayerList>
       <Items>
@@ -14,7 +14,7 @@
       </Items>
     </LayerList>
     <MapServices>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Navigation" FailureAction="Warn" Function="Base" ID="3" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="2" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Navigation/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/ngis/tokens/token" DefaultAllowSymbolization="true" DisplayName="Navigation" FailureAction="Warn" Function="Base" ID="3" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="2" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/Navigation/3/Basemap_Navigation/MapServer" AppRelativeTemplate="local-proxy/Navigation/3/Basemap_Navigation/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
       </MapService>

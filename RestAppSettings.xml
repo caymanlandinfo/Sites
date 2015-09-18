@@ -223,7 +223,7 @@
     <GeoRestShaper>
       <Forwarder Address="local-proxy/Navigation/3/Basemap_Navigation/{type}/{*path}">
         <Authentication Mode="PassThrough" />
-        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Navigation" Address="{type}/{*path}" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Navigation" Address="{type}/{*path}" />
       </Forwarder>
     </GeoRestShaper>
   </Modules>
