@@ -234,7 +234,6 @@
     </OpenCsv>
   </Modules>
   <Resources>
-    <Xaml Uri="{ViewerConfigUri}../../../../Viewers/Silverlight/VirtualDirectory/Themes/Silverlight4.xaml" />
   </Resources>
   <Libraries />
 </Configuration>

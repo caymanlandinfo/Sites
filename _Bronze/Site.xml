@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="_Bronze" ID="_Bronze" Version="4.4.0">
+  <ExternalConfigs>
+    <ExternalConfig SiteID="_Master" />
+  </ExternalConfigs>
+  <Map>
+    <LayerList>
+      <Items MergeMode="Update">
+        <Item ID="_Master-C0">
+          <Items MergeMode="Remove">
+            <Item ID="_Master-C1" />
+            <Item ID="_Master-C3" />
+            <Item ID="_Master-C4" />
+          </Items>
+        </Item>
+        <Item ID="_Master-C7">
+          <Items MergeMode="Remove">
+            <Item ID="_Master-Basemap_Aerial_2013_IR" />
+            <Item ID="_Master-Basemap_Aerial_2008" />
+            <Item ID="_Master-Basemap_Satellite_2004" />
+            <Item ID="_Master-Basemap_Aerial_2004" />
+            <Item ID="_Master-Basemap_Aerial_1999" />
+            <Item ID="_Master-Basemap_Aerial_1994" />
+            <Item ID="_Master-Basemap_Aerial_1971" />
+          </Items>
+        </Item>
+      </Items>
+    </LayerList>
+    <MapServices MergeMode="Remove">
+      <MapService ID="_Master-Layers_Comparables_Label" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables_Label/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Layers_Comparables" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer;layerMask=Sales Comparables,Lease Comparables" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Layers_Planning" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Aerial_2013_IR" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Aerial_2008" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2008/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Satellite_2004" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Satellite_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Aerial_2004" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Aerial_1999" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1999/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Aerial_1994" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1994/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Aerial_1971" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1971/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+    </MapServices>
+  </Map>
+  <NamedExtents>
+    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
+    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
+    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,6969382.94485781,1605529.28154243,7055285.33888481" ID="2" />
+  </NamedExtents>
+  <NamedExtents MergeMode="Remove">
+    <NamedExtent ID="_Master-0" />
+    <NamedExtent ID="_Master-1" />
+    <NamedExtent ID="_Master-2" />
+  </NamedExtents>
+  <Workflows MergeMode="Remove">
+    <Workflow ID="_Master-Group_Valuations" />
+    <Workflow ID="_Master-Search_Sales" />
+    <Workflow ID="_Master-Search_Leases" />
+    <Workflow ID="_Master-Search_Sales_HTML5" />
+  </Workflows>
+</Site>
