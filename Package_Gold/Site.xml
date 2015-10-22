@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName=".Package Gold" ID="Gold" Version="4.3.1">
-  <ExternalConfigs>
-    <ExternalConfig SiteID="Silver" />
-  </ExternalConfigs>
-  <Viewers>
-    <Viewer DisplayName="HTML5 Gold" Hidden="false" ID="HTML5_Gold" Path="{SitePath}\Viewers\HTML5_Gold" TemplateID="Html5Viewer_2_5" />
-  </Viewers>
-</Site>
