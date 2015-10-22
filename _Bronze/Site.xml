@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="_Bronze" ID="_Bronze" Version="4.4.0">
   <ExternalConfigs>
     <ExternalConfig SiteID="_Master" />
@@ -8,6 +8,7 @@
       <Items MergeMode="Update">
         <Item ID="_Master-C0">
           <Items MergeMode="Remove">
+            <Item ID="_Master-C9" />
             <Item ID="_Master-C1" />
             <Item ID="_Master-C3" />
             <Item ID="_Master-C4" />
@@ -27,6 +28,7 @@
       </Items>
     </LayerList>
     <MapServices MergeMode="Remove">
+      <MapService ID="_Master-Layers_Utilities" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Utilities/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Comparables_Label" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables_Label/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Comparables" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer;layerMask=Sales Comparables,Lease Comparables" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Planning" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
