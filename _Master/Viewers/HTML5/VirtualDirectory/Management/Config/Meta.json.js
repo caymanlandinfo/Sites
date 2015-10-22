@@ -3,7 +3,7 @@
   "templatePath": null,
   "views": [
     {
-      "expandedShells": true,
+      "expandedShells": false,
       "name": "IWantToMenuSectionView"
     },
     {
@@ -31,7 +31,7 @@
       "name": "HomePanelSectionView"
     },
     {
-      "expandedShells": true,
+      "expandedShells": false,
       "name": "ToolbarSectionView"
     },
     {

@@ -205,7 +205,7 @@
           {
             "id": "BannerView",
             "viewModelId": "BannerViewModel",
-            "visible": true,
+            "visible": false,
             "markup": "Mapping/modules/Banner/BannerView.html",
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.banner.BannerView",
             "region": "HeaderRegion",
@@ -379,7 +379,7 @@
         "moduleName": "Browser",
         "moduleType": "geocortex.essentialsHtmlViewer.mapping.modules.browser.BrowserModule",
         "configuration": {
-          "title": "@language-browser-title"
+          "title": "Caymap 4.0 - HTML5"
         }
       },
       {
@@ -438,7 +438,7 @@
                 "mile",
                 "nauticalmile"
               ],
-              "defaultBufferUnit": "kilometer",
+              "defaultBufferUnit": "mile",
               "defaultBufferDistance": 0
             }
           }
@@ -1534,7 +1534,7 @@
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.Info.InfoViewModel",
             "configuration": {
               "content": "%3Cp%20style%3D%22text-align%3A%20center%3B%22%3E%5BApplication%20information%20and%20actions%20here%5D%3C%2Fp%3E%3Cbr%3E%3Cp%3E%3Ci%3EUse%20this%20region%20to%20welcome%20users%2C%20make%20objectives%20of%20the%20application%20clear%2C%20and%20provide%20efficient%20access%20to%20important%20functions%20and%20workflows.%3C%2Fi%3E%3C%2Fp%3E",
-              "included": true,
+              "included": false,
               "title": "@language-common-welcome"
             }
           }
@@ -2056,8 +2056,8 @@
             }
           ],
           "measurementProjectionWkid": "",
-          "measurementLengthUnits": "meter",
-          "measurementAreaUnits": "sqMeter",
+          "measurementLengthUnits": "feet",
+          "measurementAreaUnits": "sqFeet",
           "coordinateFractionalDigits": 4,
           "degreeFormat": "dd",
           "angleDirectionSystem": "polar",
@@ -3540,22 +3540,36 @@
             {
               "id": "ToolsTab",
               "type": "toolbarGroup",
-              "name": "@language-toolbar-group-tools",
+              "name": "Home",
               "items": [
                 {
                   "id": "HomeGroup",
                   "type": "toolbarGroup",
-                  "name": "@language-toolbar-group-home",
+                  "name": "Navigation",
                   "items": [
                     {
-                      "id": "HomeButton",
-                      "type": "button",
-                      "iconUri": "Resources/Images/Icons/Toolbar/home-24.png",
-                      "command": "ActivateHomePanel",
-                      "commandParameter": null,
+                      "id": "ZoomInTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/zoom-in-24.png",
+                      "command": "ZoomToExtent",
+                      "drawMode": "EXTENT",
+                      "name": "@language-toolbar-navigation-zoom-in",
+                      "tooltip": "@language-toolbar-navigation-zoom-in-tooltip",
                       "hideOnDisable": false,
-                      "name": "@language-toolbar-home-sub",
-                      "tooltip": "@language-toolbar-navigation-home-tooltip"
+                      "isSticky": false,
+                      "statusText": "@language-toolbar-navigation-zoom-in-desc"
+                    },
+                    {
+                      "id": "ZoomOutTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/zoom-out-24.png",
+                      "command": "ZoomOutToExtent",
+                      "drawMode": "EXTENT",
+                      "name": "@language-toolbar-navigation-zoom-out",
+                      "tooltip": "@language-toolbar-navigation-zoom-out-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": false,
+                      "statusText": "@language-toolbar-navigation-zoom-out-desc"
                     },
                     {
                       "id": "InitialExtentButton",
@@ -3568,45 +3582,468 @@
                       "tooltip": "@language-toolbar-navigation-initial-extent-tooltip"
                     },
                     {
-                      "id": "PointIdentifyTool-Navigation",
-                      "type": "tool",
-                      "iconUri": "Resources/Images/Icons/Toolbar/identify-24.png",
-                      "command": "Identify",
-                      "drawMode": "RECTANGLE",
-                      "name": "@language-toolbar-tasks-identify",
-                      "tooltip": "@language-toolbar-identify-point-tooltip",
-                      "hideOnDisable": false,
-                      "isSticky": false,
-                      "statusText": "@language-toolbar-identify-point-desc"
-                    },
-                    {
-                      "id": "IdentifyToolControlRegion",
-                      "type": "region",
-                      "regionName": "IdentifyToolControlRegion"
-                    },
-                    {
-                      "id": "PrintMapButton",
+                      "id": "PreviousExtentButton",
                       "type": "button",
-                      "iconUri": "Resources/Images/Icons/Toolbar/print-24.png",
-                      "command": "PrintMap",
+                      "iconUri": "Resources/Images/Icons/Toolbar/zoom-previous-32.png",
+                      "command": "ZoomToPreviousExtent",
                       "commandParameter": null,
                       "hideOnDisable": false,
-                      "name": "@language-toolbar-tasks-print-map",
-                      "tooltip": "@language-toolbar-tasks-print-map-tooltip"
+                      "name": "Back",
+                      "tooltip": "@language-toolbar-navigation-previous-extent-tooltip"
                     },
                     {
-                      "id": "ExportMapButton",
+                      "id": "NextExtentButton",
                       "type": "button",
-                      "iconUri": "Resources/Images/Icons/Toolbar/share-map-24.png",
-                      "command": "ShowExportMapDialog",
+                      "iconUri": "Resources/Images/Icons/Toolbar/zoom-next-32.png",
+                      "command": "ZoomToNextExtent",
                       "commandParameter": null,
                       "hideOnDisable": false,
-                      "name": "@language-toolbar-tasks-export-map",
-                      "tooltip": "@language-toolbar-tasks-export-map-tooltip"
+                      "name": "Forward",
+                      "tooltip": "@language-toolbar-navigation-next-extent-tooltip"
+                    },
+                    {
+                      "id": "BookmarksButton",
+                      "type": "button",
+                      "iconUri": "Resources/Images/Icons/bookmark-24.png",
+                      "command": "ShowBookmarks",
+                      "commandParameter": null,
+                      "hideOnDisable": false,
+                      "name": "@language-toolbar-bookmark",
+                      "tooltip": "@language-toolbar-bookmark-open"
                     }
-                  ]
+                  ],
+                  "layout": "Large"
+                },
+                {
+                  "id": "Dvctogtc",
+                  "type": "toolbarGroup",
+                  "name": "Identify",
+                  "items": [
+                    {
+                      "id": "FindDataFlyout",
+                      "type": "flyout",
+                      "name": "Identify",
+                      "items": [
+                        {
+                          "id": "PointIdentifyTool-Analysis",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/identify-24.png",
+                          "command": "Identify",
+                          "drawMode": "POINT",
+                          "name": "@language-toolbar-identify-point",
+                          "tooltip": "@language-toolbar-identify-point-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-toolbar-identify-point-desc"
+                        },
+                        {
+                          "id": "FreehandIdentifyTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/identify-freehand-24.png",
+                          "command": "Identify",
+                          "drawMode": "FREEHAND_POLYLINE",
+                          "name": "@language-toolbar-identify-freehand",
+                          "tooltip": "@language-toolbar-identify-freehand-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-toolbar-identify-freehand-desc"
+                        },
+                        {
+                          "id": "PolylineIdentifyTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/identify-polyline-24.png",
+                          "command": "Identify",
+                          "drawMode": "POLYLINE",
+                          "name": "@language-toolbar-identify-polyline",
+                          "tooltip": "@language-toolbar-identify-polyline-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-toolbar-identify-polyline-desc"
+                        },
+                        {
+                          "id": "PolygonIdentifyTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/identify-polygon-24.png",
+                          "command": "Identify",
+                          "drawMode": "POLYGON",
+                          "name": "@language-toolbar-identify-polygon",
+                          "tooltip": "@language-toolbar-identify-polygon-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-toolbar-identify-polygon-desc"
+                        },
+                        {
+                          "id": "RectangleIdentifyTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/identify-rectangle-24.png",
+                          "command": "Identify",
+                          "drawMode": "RECTANGLE",
+                          "name": "@language-toolbar-identify-rectangle",
+                          "tooltip": "@language-toolbar-identify-rectangle-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-toolbar-identify-rectangle-desc"
+                        }
+                      ],
+                      "layout": "Large"
+                    },
+                    {
+                      "id": "FindDataControlRegion",
+                      "type": "region",
+                      "regionName": "FindDataControlRegion"
+                    },
+                    {
+                      "id": "ShowSimpleQueryBuilderButton",
+                      "type": "button",
+                      "iconUri": "Resources/Images/Icons/query-24.png",
+                      "command": "ActivateView",
+                      "commandParameter": "SimpleQueryBuilderView",
+                      "hideOnDisable": false,
+                      "name": "@language-querybuilder-simple-title",
+                      "tooltip": "@language-querybuilder-simple-tooltip"
+                    },
+                    {
+                      "id": "ShowSimpleFilterBuilderButton",
+                      "type": "button",
+                      "iconUri": "Resources/Images/Icons/filter-24.png",
+                      "command": "ActivateView",
+                      "commandParameter": "SimpleFilterBuilderView",
+                      "hideOnDisable": false,
+                      "name": "@language-querybuilder-simple-filter-title",
+                      "tooltip": "@language-querybuilder-simple-filter-tooltip"
+                    }
+                  ],
+                  "layout": "Large"
                 }
-              ]
+              ],
+              "layout": "Large"
+            },
+            {
+              "id": "wvVhZfMg",
+              "type": "toolbarGroup",
+              "name": "Measuring",
+              "items": [
+                {
+                  "id": "AdvancedMeasurementToolControlRegion",
+                  "type": "region",
+                  "regionName": "MeasurementToolControlRegion"
+                },
+                {
+                  "id": "Rcpazgs5",
+                  "type": "toolbarGroup",
+                  "name": "Measurement",
+                  "items": [
+                    {
+                      "id": "AdvancedMeasurementTools",
+                      "type": "flyout",
+                      "name": "@language-toolbar-group-measurement-tools",
+                      "items": [
+                        {
+                          "id": "MeasureLineTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-polyline-24.png",
+                          "command": "MeasureDistance",
+                          "drawMode": "POLYLINE",
+                          "name": "@language-measurement-measure-line-tool-name",
+                          "tooltip": "@language-measurement-measure-line-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-line-tool-status"
+                        },
+                        {
+                          "id": "MeasureFreehandLineTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-freehand-24.png",
+                          "command": "MeasureDistance",
+                          "drawMode": "FREEHAND_POLYLINE",
+                          "name": "@language-measurement-measure-freehand-line-tool-name",
+                          "tooltip": "@language-measurement-measure-freehand-line-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-freehand-line-tool-status"
+                        },
+                        {
+                          "id": "MeasureFreehandPolygonTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-polygon-freehand-24.png",
+                          "command": "MeasureArea",
+                          "drawMode": "FREEHAND_POLYGON",
+                          "name": "@language-measurement-measure-freehand-polygon-tool-name",
+                          "tooltip": "@language-measurement-measure-freehand-polygon-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-freehand-polygon-tool-status"
+                        },
+                        {
+                          "id": "MeasureEllipseTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-ellipse-24.png",
+                          "command": "MeasureArea",
+                          "drawMode": "ELLIPSE",
+                          "name": "@language-measurement-measure-ellipse-tool-name",
+                          "tooltip": "@language-measurement-measure-ellipse-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-ellipse-tool-status"
+                        },
+                        {
+                          "id": "MeasureCircleTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-circle-24.png",
+                          "command": "MeasureArea",
+                          "drawMode": "CIRCLE",
+                          "name": "@language-measurement-measure-circle-tool-name",
+                          "tooltip": "@language-measurement-measure-circle-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-circle-tool-status"
+                        },
+                        {
+                          "id": "MeasurePolygonTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-polygon-24.png",
+                          "command": "MeasureArea",
+                          "drawMode": "POLYGON",
+                          "name": "@language-measurement-measure-polygon-tool-name",
+                          "tooltip": "@language-measurement-measure-polygon-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-polygon-tool-status"
+                        },
+                        {
+                          "id": "MeasureRectangleTool",
+                          "type": "tool",
+                          "iconUri": "Resources/Images/Icons/Toolbar/measure-rectangle-24.png",
+                          "command": "MeasureArea",
+                          "drawMode": "RECTANGLE",
+                          "name": "@language-measurement-measure-rectangle-tool-name",
+                          "tooltip": "@language-measurement-measure-rectangle-tool-tooltip",
+                          "hideOnDisable": false,
+                          "isSticky": true,
+                          "statusText": "@language-measurement-measure-rectangle-tool-status"
+                        }
+                      ],
+                      "layout": "Large"
+                    }
+                  ],
+                  "layout": "Large"
+                }
+              ],
+              "layout": "Large"
+            },
+            {
+              "id": "GLroh7kh",
+              "type": "toolbarGroup",
+              "name": "Tools",
+              "items": [
+                {
+                  "id": "ShowChartingViewButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/Toolbar/charting-24.png",
+                  "command": "ShowChartingView",
+                  "commandParameter": null,
+                  "hideOnDisable": false,
+                  "name": "@language-toolbar-charting-show-charts",
+                  "tooltip": "@language-toolbar-charting-show-charts-tooltip"
+                },
+                {
+                  "id": "ShowExternalComponentViewButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/Toolbar/map-3rd-party-24.png",
+                  "command": "ShowExternalComponentView",
+                  "commandParameter": null,
+                  "hideOnDisable": false,
+                  "name": "@language-toolbar-3rd-party-maps-show-maps",
+                  "tooltip": "@language-toolbar-3rd-party-maps-show-maps-tooltip"
+                },
+                {
+                  "id": "PrintMapButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/Toolbar/print-24.png",
+                  "command": "PrintMap",
+                  "commandParameter": null,
+                  "hideOnDisable": false,
+                  "name": "@language-toolbar-tasks-print-map",
+                  "tooltip": "@language-toolbar-tasks-print-map-tooltip"
+                },
+                {
+                  "id": "ExportMapButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/Toolbar/share-map-24.png",
+                  "command": "ShowExportMapDialog",
+                  "commandParameter": null,
+                  "hideOnDisable": false,
+                  "name": "@language-toolbar-tasks-export-map",
+                  "tooltip": "@language-toolbar-tasks-export-map-tooltip"
+                }
+              ],
+              "layout": "Large"
+            },
+            {
+              "id": "SzTovVHU",
+              "type": "toolbarGroup",
+              "name": "Drawing",
+              "items": [
+                {
+                  "id": "DrawingTools",
+                  "type": "flyout",
+                  "name": "@language-toolbar-markup-drawing-tools",
+                  "items": [
+                    {
+                      "id": "PointMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-point-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "POINT",
+                      "name": "@language-toolbar-markup-point",
+                      "tooltip": "@language-toolbar-markup-point-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-point-desc"
+                    },
+                    {
+                      "id": "TextMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-text-24.png",
+                      "command": "AddTextMarkup",
+                      "drawMode": "POINT",
+                      "name": "@language-toolbar-markup-text",
+                      "tooltip": "@language-toolbar-markup-text-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-text-desc"
+                    },
+                    {
+                      "id": "PolylineMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-polyline-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "POLYLINE",
+                      "name": "@language-toolbar-markup-polyline",
+                      "tooltip": "@language-toolbar-markup-polyline-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-polyline-desc"
+                    },
+                    {
+                      "id": "FreehandMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-freehand-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "FREEHAND_POLYLINE",
+                      "name": "@language-toolbar-markup-freehand",
+                      "tooltip": "@language-toolbar-markup-freehand-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-freehand-desc"
+                    },
+                    {
+                      "id": "FreehandMarkupPolygonTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-polygon-freehand-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "FREEHAND_POLYGON",
+                      "name": "@language-toolbar-markup-freehand-polygon",
+                      "tooltip": "@language-toolbar-markup-freehand-polygon-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-freehand-polygon-desc"
+                    },
+                    {
+                      "id": "EllipseMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-ellipse-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "ELLIPSE",
+                      "name": "@language-toolbar-markup-ellipse",
+                      "tooltip": "@language-toolbar-markup-ellipse-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-ellipse-desc"
+                    },
+                    {
+                      "id": "CircleMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-circle-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "CIRCLE",
+                      "name": "@language-toolbar-markup-circle",
+                      "tooltip": "@language-toolbar-markup-circle-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-circle-desc"
+                    },
+                    {
+                      "id": "PolygonMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-polygon-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "POLYGON",
+                      "name": "@language-toolbar-markup-polygon",
+                      "tooltip": "@language-toolbar-markup-polygon-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-polygon-desc"
+                    },
+                    {
+                      "id": "RectangleMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-rectangle-24.png",
+                      "command": "AddMarkup",
+                      "drawMode": "RECTANGLE",
+                      "name": "@language-toolbar-markup-rectangle",
+                      "tooltip": "@language-toolbar-markup-rectangle-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-rectangle-desc"
+                    }
+                  ],
+                  "layout": "Large"
+                },
+                {
+                  "id": "EditingFlyout",
+                  "type": "flyout",
+                  "name": "@language-toolbar-group-editing",
+                  "items": [
+                    {
+                      "id": "EditMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/draw-edit-24.png",
+                      "command": "EditMarkup",
+                      "drawMode": "POINT",
+                      "name": "@language-toolbar-markup-edit",
+                      "tooltip": "@language-toolbar-markup-edit-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-edit-desc"
+                    },
+                    {
+                      "id": "DeleteMarkupTool",
+                      "type": "tool",
+                      "iconUri": "Resources/Images/Icons/Toolbar/erase-24.png",
+                      "command": "DeleteMarkup",
+                      "drawMode": "POINT",
+                      "name": "@language-toolbar-markup-delete",
+                      "tooltip": "@language-toolbar-markup-delete-tooltip",
+                      "hideOnDisable": false,
+                      "isSticky": true,
+                      "statusText": "@language-toolbar-markup-delete-desc"
+                    },
+                    {
+                      "id": "ClearMarkup",
+                      "type": "button",
+                      "iconUri": "Resources/Images/Icons/Toolbar/clear-24.png",
+                      "command": "ClearMarkup",
+                      "commandParameter": null,
+                      "hideOnDisable": false,
+                      "name": "@language-toolbar-markup-clear",
+                      "tooltip": "@language-toolbar-markup-clear-tooltip"
+                    }
+                  ],
+                  "layout": "Large"
+                }
+              ],
+              "layout": "Large"
             }
           ]
         },
@@ -3616,9 +4053,12 @@
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.toolbar.TabbedToolbarViewModel",
             "configuration": {
               "toolbarGroupRefs": [
-                "ToolsTab"
+                "ToolsTab",
+                "wvVhZfMg",
+                "GLroh7kh",
+                "SzTovVHU"
               ],
-              "toolbarOpenByDefault": false
+              "toolbarOpenByDefault": true
             }
           },
           {
