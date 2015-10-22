@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration Version="2.3" InheritFromDefault="false">
+  <Modules>
+    
+    <IWantToMenu>
+      <Views>
+        <View Region="TopLeftMapRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.IWantToMenu.MenuFloatingView" AssociatedHelpTopicKey="IWantToMenu" />
+      </Views>
+      <Configuration>
+        <MenuRef MenuId="{IWantToMenu}" />
+        <Menus>
+          <Menu Id="{IWantToMenu}" Title="I want to...">
+            <Items>
+              <Item Text="Create a printable map" Command="PrintMap" ImageUri="/Resources/Images/Icons/Toolbar/print-32.png" Description="Create a printable map." />
+              <Item Text="Create a report" Command="RunReport" ImageUri="/Resources/Images/Icons/Toolbar/reports-32.png" Description="Run a report." />
+              <Item Text="Draw on the map" ImageUri="/Resources/Images/Icons/Toolbar/draw-freehand-32.png" Description="Draw freehand on the map surface.">
+                <Batch>
+                  <BatchItem Command="ShowAdvancedTools" />
+                  <BatchItem Command="SetCurrentTab" CommandParameter="Tasks" />
+                  <BatchItem Command="ActivateTool" CommandParameter="MarkupFreehand" />
+                </Batch>
+              </Item>
+              <Item Text="Measure distance" ImageUri="/Resources/Images/Icons/Toolbar/measure-distance-32.png" Description="Measure length using a polyline tool.">
+                <Batch>
+                  <BatchItem Command="ShowAdvancedTools" />
+                  <BatchItem Command="SetCurrentTab" CommandParameter="Analysis" />
+                  <BatchItem Command="ActivateTool" CommandParameter="MeasureDistance" />
+                </Batch>
+              </Item>
+              <Item Text="Share current map" ImageUri="/Resources/Images/Icons/Toolbar/share-map-24.png" Command="CaptureViewerState" Description="Share your current view of the map with someone." />
+              <Item Text="Return to initial map extent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-initial-32.png" Command="ZoomToInitialExtent" Description="Zoom to the initial extent of the map." />
+              <Item Text="Turn map data on/off" ImageUri="/Resources/Images/Icons/Toolbar/layers-32.png" Description="Open the layer list to modify layer visibilities.">
+                <Batch>
+                  <BatchItem Command="SwitchToLayerView" />
+                  <BatchItem Command="OpenDataFrame" />
+                </Batch>
+              </Item>
+              <Item Text="Add map layer" Command="AddMapLayerInteractive" ImageUri="/Resources/Images/Icons/Toolbar/layers-add-32.png" Description="Add external map layer." />
+              <Item Text="Show/hide advanced toolbar" Command="ToggleAdvancedTools" ImageUri="/Resources/Images/Icons/Toolbar/tools-24.png" Description="Toggle the Advanced toolbar." />
+              <Item Text="View results" Command="SwitchToResultsView" ImageUri="/Resources/Images/Icons/Toolbar/search-results-32.png" Description="View the most recent search results." />
+              <Item Text="View selected" Command="SwitchToSelectionView" ImageUri="/Resources/Images/Icons/Toolbar/star-32.png" Description="View selected features." />
+              {Insert__Menus-IWantTo-Items}
+            </Items>
+          </Menu>
+        </Menus>
+      </Configuration>
+    </IWantToMenu>
+
+    <Toolbar>
+      <Views>
+        <View Id="ToolbarView" Region="ToolbarRegion" Visible="false" AssociatedHelpTopicKey="Toolbar" />
+      </Views>
+      <Configuration>
+        <Toolbar StickyTools="{StickyTools}">
+          <Tab DisplayName="Getting Around">
+            {Insert__Toolbar-GettingAround}
+            <Group DisplayName="Navigation Tools">
+              <Tool Name="Pan" DisplayName="Pan" DrawMode="None" ImageUri="/Resources/Images/Icons/Toolbar/pan-32.png" ToolTip="Pan" HelpText="Drag the map around to pan." />
+              <Tool Name="ZoomIn" DisplayName="Zoom In" DrawMode="Rectangle" Command="ZoomInToExtent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-in-32.png" ToolTip="Zoom in" HelpText="Drag a rectangle or click the map to zoom in. A large rectangle zooms less. A small rectangle zooms more. To reverse zoom, hold CTRL." />
+              <Tool Name="ZoomOut" DisplayName="Zoom Out" DrawMode="Rectangle" Command="ZoomOutToExtent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-out-32.png" ToolTip="Zoom out" HelpText="Drag a rectangle or click the map to zoom out. A large rectangle zooms less. A small rectangle zooms more. To reverse zoom, hold CTRL." />
+              <Button Name="Initial Extent" Command="ZoomToInitialExtent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-initial-32.png" ToolTip="Zoom to initial extent" />
+              <Button Name="Full Extent" Command="ZoomToFullExtent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-full-32.png" ToolTip="Zoom to full extent" />
+              <Button Name="Previous Extent" Command="ZoomToPreviousExtent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-previous-32.png" ToolTip="Zoom to previous extent" />
+              <Button Name="Next Extent" Command="ZoomToNextExtent" ImageUri="/Resources/Images/Icons/Toolbar/zoom-next-32.png" ToolTip="Zoom to next extent" />
+            </Group>
+            <Group DisplayName="Location Info">
+              <Tool Name="PointIdentify" DisplayName="Point Identify" ToolTip="Identify (Point)" DrawMode="Point" Command="Identify" ImageUri="/Resources/Images/Icons/Toolbar/identify-32.png" HelpText="Click on the map to identify features at that point. Select from the Layers drop-down list to change which layers display." />
+            </Group>
+            <Group DisplayName="Information &amp; Actions">
+              <Region RegionName="AdvancedControlsRegion" />
+            </Group>
+            <Group DisplayName="Help">
+              <Button Name="LaunchDefaultHelp" DisplayName="Help" Command="ShowHelpTopic" CommandParameter="" ImageUri="/Resources/Images/Icons/Toolbar/help-32.png" ToolTip="Show help topics" />
+              <Button Name="ClickForHelp" DisplayName="What's This?" Command="InvokeClickHelp" ImageUri="/Resources/Images/Icons/Toolbar/help-cursor-32.png" ToolTip="Enable click help" />
+            </Group>
+          </Tab>
+          <Tab DisplayName="Maps &amp; Data Sources">
+            <Group DisplayName="Map Layers">
+              <Button Name="Show Layers" Command="SwitchToLayerView" ImageUri="/Resources/Images/Icons/Toolbar/layers-32.png" ToolTip="Show layer list" />
+              <Button Name="Layer Drawing Order" Command="ShowLayerDrawingOrder" ImageUri="/Resources/Images/Icons/Toolbar/layers-reorder-32.png" ToolTip="Change the drawing order of layers" />
+            </Group>
+            <Group DisplayName="Map Tips">
+              <Region RegionName="MapTipsRegion" />
+            </Group>
+            <Group DisplayName="Query Data">
+              <Button Name="Simple Query" Command="ActivateView" CommandParameter="SimpleQueryBuilderView" ImageUri="/Resources/Images/Icons/Toolbar/query-builder-32.png" ToolTip="Show simple query builder" />
+              <Button Name="Advanced Query" Command="ActivateView" CommandParameter="QueryBuilderView" ImageUri="/Resources/Images/Icons/Toolbar/query-builder-advanced-32.png" ToolTip="Show advanced query builder" />
+              <Button Name="Advanced Filter" Command="ActivateView" CommandParameter="FilterBuilderView" ImageUri="/Resources/Images/Icons/Toolbar/filter-32.png" ToolTip="Show advanced filter builder" />
+            </Group>
+            <Group DisplayName="Add Data">
+              <Button Name="Add Map Layer" Command="AddMapLayerInteractive" ImageUri="/Resources/Images/Icons/Toolbar/layers-add-32.png" ToolTip="Add external map layer" />
+              <Button DisplayName="Add Shapefile" Command="OpenShapefileDialog" ImageUri="/Resources/Images/Icons/Toolbar/shapefile-add-32.png" ToolTip="Open a shapefile and add it to the map" />
+              <Button DisplayName="Add CSV File" Command="OpenCsvDialog" ImageUri="/Resources/Images/Icons/Toolbar/csv-add-32.png" ToolTip="Open a CSV file and add it to the map" />
+              <Button DisplayName="Batch Geocode" Command="OpenExcelFileDialog" ImageUri="/Resources/Images/Icons/Toolbar/geocode-batch-32.png" ToolTip="Open an Excel file and add it to the map" />
+            </Group>
+            <Group DisplayName="External Mapping">
+              <Button DisplayName="Bing™ Maps" Command="OpenWebPage" CommandParameter="../WMI/BingMaps.html" ImageUri="/Resources/Images/Icons/Toolbar/map-bing-32.png" ToolTip="View the current location in Bing Maps / Birdseye" />
+              <Button DisplayName="Google Maps™" Command="OpenWebPage" CommandParameter="../WMI/GoogleMaps.html" ImageUri="/Resources/Images/Icons/Toolbar/map-google-32.png" ToolTip="View the current location in Google Maps / Street View" />
+              {Insert__Toolbar-MapsAndDataSources-ExternalMapping-Items}
+            </Group>
+            {Insert__Toolbar-MapsAndDataSources-Groups}
+          </Tab>
+          <Tab DisplayName="Tasks">
+            <Group DisplayName="Printing">
+              <Button Name="Print Map" Command="PrintMap" ImageUri="/Resources/Images/Icons/Toolbar/print-32.png" ToolTip="Print a map" />
+            </Group>
+            <Group DisplayName="Reports">
+              <Button Name="Reports" Module="Reporting" Command="RunReport" ImageUri="/Resources/Images/Icons/Toolbar/reports-32.png" ToolTip="Create a report" />
+            </Group>
+            <Group DisplayName="Export">
+              <Button Name="Export Map" Command="ShowExportMapDialog" ImageUri="/Resources/Images/Icons/Toolbar/share-map-32.png" ToolTip="Export a map image" />
+            </Group>
+            <Group DisplayName="Results">
+              <Button Name="View Results" Command="SwitchToResultsView" ImageUri="/Resources/Images/Icons/Toolbar/search-results-32.png" ToolTip="View current search results" />
+              <Button Name="View Selected" Command="SwitchToSelectionView" ImageUri="/Resources/Images/Icons/Toolbar/star-32.png" ToolTip="View selected features" />
+            </Group>
+            <Region RegionName="DrawingToolsRegion" />
+            <Group DisplayName="Extract">
+              <Button Name="Extract" Command="ExtractMarkup" ImageUri="/Resources/Images/Icons/Toolbar/draw-extract-32.png" ToolTip="Extract Markup" />
+            </Group>
+            {Insert__Toolbar-Tasks-Groups}
+          </Tab>
+          <Tab DisplayName="Analysis">
+            <Group DisplayName="Location Information">
+              <Region RegionName="IdentifyRegion" />
+            </Group>
+            <Group DisplayName="Measurement Tools">
+              <Region RegionName="MeasurementToolsRegion" />
+            </Group>
+            <Group DisplayName="Coordinate Tools">
+              <Region RegionName="CoordinateToolsRegion" />
+            </Group>
+          </Tab>
+          {Insert__Toolbar-Tabs}
+        </Toolbar>
+      </Configuration>
+    </Toolbar>
+
+  </Modules>
+  <ExternalConfigs>
+    <ExternalConfig Uri="Viewer.Defaults.xml" />
+  </ExternalConfigs>
+</Configuration>

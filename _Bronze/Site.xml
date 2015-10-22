@@ -5,9 +5,13 @@
   </ExternalConfigs>
   <Map>
     <LayerList>
+      <Items MergeMode="Remove">
+        <Item ID="_Master-Basemap_IvanFlood" />
+      </Items>
       <Items MergeMode="Update">
         <Item ID="_Master-C0">
           <Items MergeMode="Remove">
+            <Item ID="_Master-Basemap_Terrain_2013_Contours" />
             <Item ID="_Master-C9" />
             <Item ID="_Master-C1" />
             <Item ID="_Master-C3" />
@@ -24,14 +28,20 @@
             <Item ID="_Master-Basemap_Aerial_1994" />
             <Item ID="_Master-Basemap_Aerial_1971" />
           </Items>
+          <Items MergeMode="Update">
+            <Item ID="_Master-Basemap_Terrain" IsExpanded="true" Visible="true" />
+          </Items>
         </Item>
       </Items>
     </LayerList>
     <MapServices MergeMode="Remove">
+      <MapService ID="_Master-Basemap_Terrain_2013_Contours" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_2013_Contours/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Utilities" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Utilities/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Comparables_Label" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables_Label/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Comparables" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer;layerMask=Sales Comparables,Lease Comparables" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Planning" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_IvanFlood" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_IvanFlood/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Terrain_DTM_2013" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_DTM_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_Aerial_2013_IR" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2013_IR/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_Aerial_2008" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_2008/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_Satellite_2004" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Satellite_2004/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
