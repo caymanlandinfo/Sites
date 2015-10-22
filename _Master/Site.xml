@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="_Master" ID="_Master" Version="4.4.0">
   <DataConnections>
     <DataConnection ConnectionString="Data Source=LSVMSQL10_0.caymanlandinfo.local;Initial Catalog=LandBase;Integrated Security=False;User ID=essentials;Password=essentials1" DisplayName="LSVMSQL10_landbase" ErrorAction="LogDebug" ID="LSVMSQL10_landbase" ImpersonateWithActor="false" ProviderName="System.Data.SqlClient" SqlDialect="MsSqlServer" VerifyConnectionOnStartup="false" />
@@ -20,6 +20,13 @@
       <Items>
         <Item ID="1" IsExpanded="true" Name="Layers" Visible="true">
           <Items>
+            <Item ID="Basemap_FeaturesOverlay" />
+            <Item ID="12" IsExpanded="true" Name="Comparables" Visible="true">
+              <Items>
+                <Item ID="Sales" />
+                <Item ID="Lease" />
+              </Items>
+            </Item>
             <Item ID="2" IsExpanded="true" Name="Cadastral" Visible="true" />
             <Item ID="3" IsExpanded="true" Name="Planning" Visible="true" />
             <Item ID="4" IsExpanded="true" Name="Survey" Visible="true" />
@@ -30,19 +37,30 @@
         <Item ID="7" IsExpanded="true" Name="Base Maps" Visible="true">
           <Items>
             <Item ID="Basemap_Cadastral" />
+            <Item ID="Basemap_Cadastral_Strata" />
+            <Item ID="Basemap_AerialHybrid_2013" />
             <Item ID="Basemap_Navigation" />
             <Item ID="Basemap_Aerial_2013" />
             <Item ID="Basemap_Aerial_2013_IR" />
           </Items>
         </Item>
-        <Item ID="8" IsExpanded="true" Name="Query Layers" Visible="true" />
+        <Item ID="8" IsExpanded="true" Name="Query Layers" Visible="true">
+          <Items>
+            <Item ID="Streets" />
+            <Item ID="Buildings" />
+            <Item ID="Parcels" />
+          </Items>
+        </Item>
       </Items>
     </LayerList>
     <MapServices>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Cadastral_Strata/MapServer" DefaultAllowSymbolization="true" DisplayName="Strata" Function="Base" ID="Basemap_Cadastral_Strata" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="Basemap_Cadastral_Strata" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="false">
+        <CachedServiceData />
+      </MapService>
       <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Layers_ID_Base" FailureAction="Warn" Function="Operational" ID="Layers_ID_Base" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="false" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
         <CachedServiceData />
         <Layers>
-          <Layer CanCopyFeature="true" DisplayName="Streets" FeatureDescription="FROM: {FRADDL} TO: {TOADDR}" FeatureLabel="STREETS {FULLNAME}" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" Name="Streets" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="true">
+          <Layer CanCopyFeature="true" DisplayName="Streets" FeatureDescription="FROM: {FRADDL} TO: {TOADDR}" FeatureLabel="STREETS {FULLNAME}" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" LayerListID="Streets" Name="Streets" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="false">
             <Fields>
               <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STREET" Searchable="true" Visible="true" />
               <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="TYPE" Searchable="true" Visible="true" />
@@ -56,7 +74,7 @@
               <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="ONE WAY" FocusField="false" Name="One_Way" Searchable="true" Visible="true" />
             </Fields>
           </Layer>
-          <Layer CanCopyFeature="false" DisplayName="Buildings" FeatureDescription="TYPE: &lt;b&gt;{GEN_CLASS}&lt;/b&gt;&lt;br&gt;&#xD;&#xA;{LABEL}&#xD;&#xA;" FeatureLabel="BUILDING {NUMUNIT} {FULLNAME}" IconUri="{RestVirtualDirectoryUrl}/Custom/Building-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" Name="Buildings" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="true" Snappable="true" SnappingEnabled="true" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="true">
+          <Layer CanCopyFeature="false" DisplayName="Buildings" FeatureDescription="TYPE: &lt;b&gt;{GEN_CLASS}&lt;/b&gt;&lt;br&gt;&#xD;&#xA;{LABEL}&#xD;&#xA;" FeatureLabel="BUILDING {NUMUNIT} {FULLNAME}" IconUri="{RestVirtualDirectoryUrl}/Custom/Building-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Buildings" Name="Buildings" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="true" Snappable="true" SnappingEnabled="true" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="false">
             <Fields>
               <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NUMBER" FocusField="false" Name="NUMUNIT" Searchable="false" Visible="true" />
               <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STREET" FocusField="false" Name="FULLNAME" Searchable="false" Visible="true" />
@@ -83,7 +101,7 @@
       <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral_Revised/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Layers_ID_Cadastral" FailureAction="Warn" Function="Operational" ID="Layers_ID_Cadastral" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
         <CachedServiceData />
         <Layers>
-          <Layer AllowSymbolization="false" CanCopyFeature="false" DisplayName="Parcels" DrawIndex="2" FeatureDescription="OWNER: &lt;b&gt;{OWNER_NAME}&lt;/b&gt;&lt;br&gt;&#xD;&#xA;PARCEL AREA: &lt;b&gt;{REGISTERED_AREA}&lt;/b&gt;&lt;br&gt;" FeatureLabel="PARCEL {BLOCK} {PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Parcel-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="false" Name="Parcels ID" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="true">
+          <Layer AllowSymbolization="false" CanCopyFeature="false" DisplayName="Parcels" DrawIndex="2" FeatureDescription="OWNER: &lt;b&gt;{OWNER_NAME}&lt;/b&gt;&lt;br&gt;&#xD;&#xA;PARCEL AREA: &lt;b&gt;{REGISTERED_AREA}&lt;/b&gt;&lt;br&gt;" FeatureLabel="PARCEL {BLOCK} {PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Parcel-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" LayerListID="Parcels" Name="Parcels ID" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="true">
             <DataLinks>
               <DataLink Command="EXECUTE [webGIS].[GET_SALESCOMPARABLES] @LANDREF, @PARCEL" DataConnectionID="LSVMWEBSQL1_landbaseweb" DisplayName="Sales Comparables" ErrorAction="LogDebug" ID="Sales_Comparables" IsOneToOne="false" Visible="true">
                 <Parameters>
@@ -198,276 +216,6 @@
         </Layers>
         <LocalProxy AppRelativePath="local-proxy/Block_ID_Cadastral_With_Val/0/Layers_ID_Cadastral_Revised/MapServer" AppRelativeTemplate="local-proxy/Block_ID_Cadastral_With_Val/0/Layers_ID_Cadastral_Revised/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Comparables/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Layers_ID_Comparables" Function="Operational" ID="Layers_ID_Comparables" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
-        <CachedServiceData />
-        <Layers>
-          <Layer CanCopyFeature="false" Description="Purchase Agreements" DisplayName="Purchase Agreements" FeatureDescription="&lt;table width=&quot;275&quot; border=&quot;0&quot;&gt;&#xD;&#xA;  &lt;tbody&gt;&lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;DATE&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{VALUATION_DATE_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;CONSIDERATION (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;GROUP AREA&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_AREA}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;PRICE (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;${PRICE_SF}/ft&lt;/b&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;NUMBER PARCELS&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;command:RunWorkflowWithArguments?workflowId=Group_Valuations&amp;amp;instrument={INSTRUMENT_NUMBER}&quot;&gt;&#xD;&#xA;{NUM_VALUED_PARCELS}&lt;/a&gt;&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&lt;/table&gt;" FeatureLabel="PURCHASE AGREEMENT {BLOCK} {FULL_PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Sales-24.png" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" Name="Purchase Agreements" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="false">
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="FULL_PARCEL" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="INSTRUMENT" FocusField="false" Name="INSTRUMENT_NUMBER" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION TYPE" FocusField="false" Name="MEANING" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION (CI)" FocusField="false" Name="CONSIDERATION_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CHATTELS (CI)" FocusField="false" Name="CHATTELS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION DATE" FocusField="false" Name="VALUATION_DATE_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCELS IN VALUATION" FocusField="false" Name="NUM_VALUED_PARCELS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL AREA" FocusField="false" Name="REGISTERED_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION AREA" FocusField="false" Name="CONSIDERATION_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="UNITS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="CONSIDERATION_AREA_SF" Searchable="false" Visible="false" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PRICE PER SQUARE FT" FocusField="false" Name="PRICE_SF" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REASSESSMENT" FocusField="false" Name="REASSESS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REASSESS CHATTELS" FocusField="false" Name="REASSESS_CHATTELS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="REASSESS_PRICE_SF" Searchable="true" Visible="false" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="COMMENTS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL STATUS" FocusField="false" Name="STATUS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY TYPE" FocusField="false" Name="PROPERTY_TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY VIEW" FocusField="false" Name="PROPERTY_VIEW" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BEDROOMS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="BOTTOM FLOOR" FocusField="false" Name="MIN_FLOOR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NUMBER FLOORS" FocusField="false" Name="NUM_FLOORS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STRATA NAME" FocusField="false" Name="STRATA_NAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STRATA PLAN" FocusField="false" Name="STRATA_PLAN" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REGISTRATION SECTION" FocusField="false" Name="REGISTRATION_SECTION" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="DISTRICT" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
-            </Fields>
-          </Layer>
-          <Layer AllowSymbolization="false" CanCopyFeature="false" DisplayName="Sales Comparables" FeatureDescription="&lt;table width=&quot;275&quot; border=&quot;0&quot;&gt;&#xD;&#xA;  &lt;tbody&gt;&lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;DATE&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{VALUATION_DATE_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;CONSIDERATION (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;GROUP AREA&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_AREA}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;PRICE (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;${PRICE_SF}/ft&lt;/b&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;NUMBER PARCELS&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;command:RunWorkflowWithArguments?workflowId=Group_Valuations&amp;amp;instrument={INSTRUMENT_NUMBER}&quot;&gt;&#xD;&#xA;{NUM_VALUED_PARCELS}&lt;/a&gt;&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&lt;/table&gt;" FeatureLabel="SALES COMPARABLE {BLOCK} {FULL_PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Sales-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" Name="Sales Comparables" NativeID="1" Queryable="true" Searchable="true" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="true">
-            <Charts>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="false" DisplayName="Consideration by Year" ID="Consideration_by_Year">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="true" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Windows8" CommandName="" CommandParameter="" DragMode="Pan" EnableColorPalette="false" EnableCommonSeriesRange="true" EnableHorizontalZoom="true" EnableTrackBall="false" EnableVerticalZoom="false" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="TRANSACTION DATE" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="yyyy" IsContinuous="true" IsNumerical="false" Name="VALUATION_DATE" SortingFormat="MM-dd-yyyy hh:mm:ss tt" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="Right" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF1B7DBF" DisplayName="Untitled Series" ID="0" LabelType="None" MarkerType="Circle" SeriesType="Line" Title="CONSIDERATION" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PRICE (CI)" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="CONSIDERATION" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                    <ChartSeries Color="#FFB81844" DisplayName="Untitled Series 1" ID="1" LabelType="None" MarkerType="Circle" SeriesType="Line" Title="REASSESSMENT" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="REASSESS" Visible="false" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="REASSESS" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="true" DisplayName="Consideration by Year per Square Foot" ID="Consideration_by_Year_per_Square_Foot">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="true" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Windows8" CommandName="" CommandParameter="" DragMode="Pan" EnableColorPalette="false" EnableCommonSeriesRange="true" EnableHorizontalZoom="true" EnableTrackBall="false" EnableVerticalZoom="false" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="TRANSACTION DATE" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="yyyy" IsContinuous="true" IsNumerical="false" Name="VALUATION_DATE" SortingFormat="MM-dd-yyyy hh:mm:ss tt" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="Right" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF1B7DBF" DisplayName="Untitled Series" ID="0" LabelType="None" MarkerType="Circle" SeriesType="Line" Title="CONSIDERATION" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" Minimum="0" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PRICE (CI)" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="PRICE_SF" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                    <ChartSeries Color="#FFB81844" DisplayName="Untitled Series 1" ID="1" LabelType="None" MarkerType="Circle" SeriesType="Line" Title="REASSESSMENT" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="false" ShowTicks="false" Title="REASSESSMENT PER SQUARE FOOT" Visible="false" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="REASSESS_PRICE_SF" SortingFormat="" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="false" DisplayName="Consideration by Type" ID="Consideration_by_Type">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="false" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Windows8" CommandName="" CommandParameter="" DragMode="Zoom" EnableColorPalette="false" EnableCommonSeriesRange="false" EnableHorizontalZoom="false" EnableTrackBall="false" EnableVerticalZoom="false" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PROPERTY TYPE" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="PROPERTY_TYPE" SortingFormat="" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="None" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF1B7DBF" DisplayName="Untitled Series" ID="0" LabelType="None" MarkerType="Circle" SeriesType="Bar" Title="CONSIDERATION" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" Minimum="0" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PRICE (CI)" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="CONSIDERATION" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="false" DisplayName="Same Parcel Appreciation" ID="Same_Parcel_Appreciation">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="true" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Windows8" CommandName="" CommandParameter="" DragMode="Pan" EnableColorPalette="false" EnableCommonSeriesRange="true" EnableHorizontalZoom="false" EnableTrackBall="false" EnableVerticalZoom="false" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="TRANSACTION DATE" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="yyyy" IsContinuous="false" IsNumerical="false" Name="VALUATION_DATE" SortingFormat="yyyy" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="None" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF4F8F00" DisplayName="Untitled Series 2" ID="2" LabelType="None" MarkerType="Circle" SeriesType="Bar" Title="ANNUAL APPRECIATION" ValueAggregatorName="Average" ValueFormat="P0">
-                      <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="ANNUAL APPRECIATION" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="P0" IsContinuous="false" IsNumerical="false" Name="ANNUAL_APPRECIATION" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="false" DisplayName="Consideration by View" ID="Consideration_by_View">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="false" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Windows8" CommandName="" CommandParameter="" DragMode="Zoom" EnableColorPalette="false" EnableCommonSeriesRange="false" EnableHorizontalZoom="false" EnableTrackBall="false" EnableVerticalZoom="false" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PROPERTY TYPE" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="PROPERTY_VIEW" SortingFormat="" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="None" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF1B7DBF" DisplayName="Untitled Series" ID="0" LabelType="None" MarkerType="Circle" SeriesType="Bar" Title="CONSIDERATION" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" Minimum="0" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PRICE (CI)" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="CONSIDERATION" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="false" DisplayName="Consideration by Landref per Square Foot" ID="Consideration_by_Landref_per_Square_Foot">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="true" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Windows8" CommandName="" CommandParameter="" DragMode="Pan" EnableColorPalette="false" EnableCommonSeriesRange="true" EnableHorizontalZoom="true" EnableTrackBall="false" EnableVerticalZoom="false" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PARCEL" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="FULL_PARCEL" SortingFormat="" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="Right" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF1B7DBF" DisplayName="Untitled Series" ID="0" LabelType="None" MarkerType="Circle" SeriesType="Bar" Title="CONSIDERATION" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" Minimum="0" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PRICE (CI)" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="PRICE_SF" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                    <ChartSeries Color="#FFB81844" DisplayName="Untitled Series 1" ID="1" LabelType="None" MarkerType="Circle" SeriesType="Bar" Title="REASSESSMENT" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="false" ShowTicks="false" Title="REASSESSMENT PER SQUARE FOOT" Visible="false" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="REASSESS_PRICE_SF" SortingFormat="" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="None">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="BLOCK" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-              <LayerChart ChartFeatureType="MultiFeature" DefaultChart="false" DisplayName="Same Parcel Consideration" ID="Same_Parcel_Consideration">
-                <ChartConfig ChartType="Linear" FlipChart="false" Visible="true">
-                  <AreaConfig ActionFeatureDetails="true" ActionPan="true" ActionRunCommand="false" ActionSelect="false" ActionZoom="false" Background="#FFFFFFFF" ColorPalette="Office2013" CommandName="" CommandParameter="" DragMode="Pan" EnableColorPalette="true" EnableCommonSeriesRange="true" EnableHorizontalZoom="true" EnableTrackBall="false" EnableVerticalZoom="true" Foreground="#FF000000" ShowHorizontalGridLines="true" ShowHorizontalStrips="false" ShowLabels="false" ShowToolTips="true" ShowVerticalGridLines="false" ShowVerticalStrips="true" />
-                  <CategoryConfig>
-                    <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="TRANSACTION DATE" Visible="true" />
-                    <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="yyyy" IsContinuous="true" IsNumerical="false" Name="VALUATION_DATE" SortingFormat="MM-dd-yyyy hh:mm:ss tt" SourceType="Field" />
-                  </CategoryConfig>
-                  <LegendConfig Position="None" Title="Legend" />
-                  <SeriesConfigCollection>
-                    <ChartSeries Color="#FF1B7DBF" DisplayName="Untitled Series" ID="0" LabelType="None" MarkerType="None" SeriesType="Line" Title="CONSIDERATION" ValueAggregatorName="Average" ValueFormat="C0">
-                      <AxisConfig AxisLabelMode="Smart" PositionOpposite="false" ReverseValues="false" ShowLabels="true" ShowTicks="true" Title="PRICE (CI)" Visible="true" />
-                      <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="C0" IsContinuous="false" IsNumerical="false" Name="CONSIDERATION" SortingFormat="000000000000000.###############" SourceType="Field" />
-                      <SeriesBreakConfig SeriesBreakType="UniqueValue">
-                        <FieldConfig DataLinkId="IncludedParcels" DisplayFormat="" IsContinuous="false" IsNumerical="false" Name="PARCELREFID" SortingFormat="" SourceType="Field" />
-                      </SeriesBreakConfig>
-                    </ChartSeries>
-                  </SeriesConfigCollection>
-                </ChartConfig>
-              </LayerChart>
-            </Charts>
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL" FocusField="false" Name="FULL_PARCEL" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="INSTRUMENT" FocusField="false" Name="INSTRUMENT_NUMBER" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION TYPE" FocusField="false" Name="MEANING" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION (CI)" FocusField="false" Name="CONSIDERATION_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CHATTELS (CI)" FocusField="false" Name="CHATTELS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION DATE" FocusField="false" Name="VALUATION_DATE_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCELS IN VALUATION" FocusField="false" Name="NUM_VALUED_PARCELS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL AREA" FocusField="false" Name="REGISTERED_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION AREA" FocusField="false" Name="CONSIDERATION_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="UNITS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PRICE PER SQUARE FT" FocusField="false" Name="PRICE_SF" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REASSESSMENT" FocusField="false" Name="REASSESS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REASSESS CHATTELS" FocusField="false" Name="REASSESS_CHATTELS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="COMMENTS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL STATUS" FocusField="false" Name="STATUS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY TYPE" FocusField="false" Name="PROPERTY_TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY VIEW" FocusField="false" Name="PROPERTY_VIEW" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BEDROOMS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="BOTTOM FLOOR" FocusField="false" Name="MIN_FLOOR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NUMBER FLOORS" FocusField="false" Name="NUM_FLOORS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STRATA NAME" FocusField="false" Name="STRATA_NAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STRATA PLAN" FocusField="false" Name="STRATA_PLAN" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REGISTRATION SECTION" FocusField="false" Name="REGISTRATION_SECTION" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="DISTRICT" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PREVIOUS VALUATION DATE" FocusField="false" Name="PREV_VALUATION_DATE_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="YEARS SINCE LAST TRANSFER" FocusField="false" Name="YEARS_SINCE_LAST_TRANSFER" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="ANNUAL APPRECIATION" FocusField="false" Name="ANNUAL_APPRECIATION_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PREVIOUS CONSIDERATION" FocusField="false" Name="PREV_CONSIDERATION_STR" Searchable="true" Visible="true" />
-            </Fields>
-          </Layer>
-          <Layer CanCopyFeature="false" DisplayName="Lease Comparables" FeatureDescription="&lt;table width=&quot;275&quot; border=&quot;0&quot;&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;TENANT&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;{TENANT}&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;OWNER&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;{LANDLORD}&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;VALUATION DATE&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{VALUATION_DATE_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;TERM START&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{TERM_START_DATE_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;TERM YEARS&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{TERM_YEARS}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;AVG RENT (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{AVG_RENT_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;125&quot;&gt;CONSIDERATION (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;&lt;/table&gt;" FeatureLabel="LEASE COMPARABLE {BLOCK} {LEASE}" IconUri="{RestVirtualDirectoryUrl}/Custom/Lease-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" Name="Lease Comparables" NativeID="2" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="true">
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="PARCEL" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="LEASE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="MEANING" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION DATE" FocusField="false" Name="VALUATION_DATE_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TERM START DATE" FocusField="false" Name="TERM_START_DATE_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TERM YEARS" FocusField="false" Name="TERM_YEARS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="TENANT" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="OWNER" FocusField="false" Name="LANDLORD" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION" FocusField="false" Name="CONSIDERATION_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CHATTELS" FocusField="false" Name="CHATTELS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL NAME" FocusField="false" Name="PARCEL_NAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="AVG RENT" FocusField="false" Name="AVG_RENT_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="ANNUAL RENT SQFT" FocusField="false" Name="RENT_ANNUM_SF_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="USE" FocusField="false" Name="USE_TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REGISTERED AREA" FocusField="false" Name="REGISTERED_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REGISTRATION SECTION" FocusField="false" Name="REGISTRATION_SECTION" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STATUS" Searchable="true" Visible="true" />
-            </Fields>
-          </Layer>
-          <Layer CanCopyFeature="false" DisplayName="Sales Comparable Map Tips" FeatureDescription="&lt;table width=&quot;295&quot; border=&quot;0&quot;&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;120&quot;&gt;DATE&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;175&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{VALUATION_DATE_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;120&quot;&gt;VALUATION TYPE&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;175&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{MEANING}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;120&quot;&gt;CONSIDERATION (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;175&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{CONSIDERATION_STR}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;120&quot;&gt;GROUP AREA&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;175&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;{VALUATION_AREA}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;120&quot;&gt;PRICE (CI)&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;175&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;${PRICE_SF}/ft&lt;/b&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;  &lt;tr&gt;&#xD;&#xA;    &lt;td width=&quot;120&quot;&gt;NUMBER PARCELS&lt;/td&gt;&#xD;&#xA;    &lt;td width=&quot;175&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;command:RunWorkflowWithArguments?workflowId=Group_Valuations&amp;instrument={INSTRUMENT_NUMBER}&quot;&gt;&#xD;&#xA;{NUM_VALUED_PARCELS}&lt;/a&gt;&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;  &lt;/tr&gt;&#xD;&#xA;&lt;/table&gt;" FeatureLabel="LATEST SALES COMPARABLE {BLOCK}{VALUED_PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Sales-24.png" Identifiable="false" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" Name="Sales Map Tips" NativeID="3" Queryable="false" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="true" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="true">
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="INSTRUMENT" FocusField="false" Name="INSTRUMENT_NUMBER" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION TYPE" FocusField="false" Name="MEANING" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION (CI)" FocusField="false" Name="CONSIDERATION_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CHATTELS (CI)" FocusField="false" Name="CHATTELS_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION DATE" FocusField="false" Name="VALUATION_DATE_STR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCELS IN VALUATION" FocusField="false" Name="NUM_VALUED_PARCELS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="COMMENTS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL STATUS" FocusField="false" Name="STATUS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NAME" FocusField="false" Name="PARCEL_NAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL AREA" FocusField="false" Name="REGISTERED_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION AREA" FocusField="false" Name="VALUATION_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PRICE PER SQUARE FT" FocusField="false" Name="PRICE_SF" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY TYPE" FocusField="false" Name="PROPERTY_TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY VIEW" FocusField="false" Name="PROPERTY_VIEW" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REGISTRATION SECTION" FocusField="false" Name="REGISTRATION_SECTION" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="DISTRICT" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL" FocusField="false" Name="VALUED_PARCEL" Searchable="true" Visible="true" />
-            </Fields>
-          </Layer>
-        </Layers>
-      </MapService>
       <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Navigation/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/ngis/tokens/token" DefaultAllowSymbolization="true" DisplayName="Navigation" FailureAction="Warn" Function="Base" ID="Basemap_Navigation" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_Navigation" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/Navigation/3/Basemap_Navigation/MapServer" AppRelativeTemplate="local-proxy/Navigation/3/Basemap_Navigation/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
@@ -480,7 +228,7 @@
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/Navigation/4/Basemap_Aerial_2013_IR/MapServer" AppRelativeTemplate="local-proxy/Navigation/4/Basemap_Aerial_2013_IR/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Basemap_FeaturesOverlay" FailureAction="Warn" Function="Operational" ID="Basemap_FeaturesOverlay" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" Opacity="0.9" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_FeaturesOverlay/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Feature Overlay" FailureAction="Warn" Function="Operational" ID="Basemap_FeaturesOverlay" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_FeaturesOverlay" Opacity="0.9" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/Block_Cadastral/3/Basemap_FeaturesOverlay/MapServer" AppRelativeTemplate="local-proxy/Block_Cadastral/3/Basemap_FeaturesOverlay/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
       </MapService>
@@ -488,9 +236,60 @@
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/Block_Cadastral/2/Basemap_Cadastral/MapServer" AppRelativeTemplate="local-proxy/Block_Cadastral/2/Basemap_Cadastral/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Basemap_AerialHybrid_2013" FailureAction="Warn" Function="Base" ID="Basemap_AerialHybrid_2013" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-hybrid-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Hybrid" FailureAction="Warn" Function="Base" ID="Basemap_AerialHybrid_2013" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-hybrid-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_AerialHybrid_2013" Opacity="1" OverrideTemporalSettings="false" Password="Iqy3QmYQQzkWV3d3ky3NCA==" PasswordEncrypted="true" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/Block_Cadastral/1/Basemap_AerialHybrid_2013/MapServer" AppRelativeTemplate="local-proxy/Block_Cadastral/1/Basemap_AerialHybrid_2013/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables_Label/MapServer" DefaultAllowSymbolization="true" DisplayName="Labels" Function="Operational" ID="Layers_Comparables_Label" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
+        <CachedServiceData />
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="Consideration (CI) Labels" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="false" Name="Consideration (CI) Labels" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer;layerMask=Sales Comparables,Lease Comparables" DefaultAllowSymbolization="true" DisplayName="Sales Comparables" Function="Operational" ID="Layers_Comparables" ImageFormat="Png8" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="0.5" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
+        <CachedServiceData />
+        <Layers>
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Sales" FeatureDescription="&lt;table width=&quot;275&quot; border=&quot;0&quot;&gt;&#xD;&#xA;&lt;tbody&gt;&lt;tr&gt;&#xD;&#xA;&lt;td width=&quot;125&quot;&gt;DATE&lt;/td&gt;&#xD;&#xA;&lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;strong&gt;{VALUATION_DATE_STR}&lt;/strong&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr&gt;&#xD;&#xA;&lt;td width=&quot;125&quot;&gt;VALUATION TYPE&lt;/td&gt;&#xD;&#xA;&lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;strong&gt;{MEANING}&lt;/strong&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr&gt;&#xD;&#xA;&lt;td width=&quot;125&quot;&gt;CONSIDERATION (CI)&lt;/td&gt;&#xD;&#xA;&lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;strong&gt;{CONSIDERATION_STR}&lt;/strong&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr&gt;&#xD;&#xA;&lt;td width=&quot;125&quot;&gt;GROUP AREA&lt;/td&gt;&#xD;&#xA;&lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;strong&gt;{VALUATION_AREA}&amp;nbsp;{UNITS}&lt;/strong&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr&gt;&#xD;&#xA;&lt;td width=&quot;125&quot;&gt;PRICE (CI)&lt;/td&gt;&#xD;&#xA;&lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;strong&gt;${PRICE_SF}/ft&lt;/strong&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr&gt;&#xD;&#xA;&lt;td width=&quot;125&quot;&gt;NUMBER PARCELS&lt;/td&gt;&#xD;&#xA;&lt;td width=&quot;150&quot;&gt;&lt;div align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;command:RunWorkflowWithArguments?workflowId=Group_Valuations&amp;amp;instrument={INSTRUMENT_NUMBER}&quot;&gt;&#xD;&#xA;{NUM_VALUED_PARCELS}&lt;/a&gt;&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&lt;/table&gt;" FeatureLabel="SALES COMPARABLE {BLOCK} {FULL_PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Sales-24.png" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Sales" Name="Sales Comparables" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="true" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="true" Visible="true">
+            <Fields>
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL" FocusField="false" Name="FULL_PARCEL" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STRATA NUM" FocusField="false" Name="STRATALEASE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="UNIT NUMBER" FocusField="false" Name="APT_UNIT" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="INSTRUMENT" FocusField="false" Name="INSTRUMENT_NUMBER" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TRANSACTION" FocusField="false" Name="MEANING" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="false" FocusField="false" Name="CONSIDERATION" Searchable="false" Visible="false" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CONSIDERATION" FocusField="false" Name="CONSIDERATION_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CHATTELS" FocusField="false" Name="CHATTELS_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="VALUATION DATE" FocusField="false" Name="VALUATION_DATE_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="false" DisplayName="VALUATION YEAR" FocusField="false" Name="VALUATION_YEAR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="false" DisplayName="NUM VALUED PARCELS" FocusField="false" Name="NUM_VALUED_PARCELS" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="UNITS" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="false" FocusField="false" Name="PRICE_SF" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REASSESSMENT" FocusField="false" Name="REASSESS_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REASSESSMENT CHATTELS" FocusField="false" Name="REASSESS_CHATTELS_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STATUS" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPERTY TYPE" FocusField="false" Name="PROPERTY_TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BEDROOMS" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="false" DisplayName="BOTTOM FLOOR" FocusField="false" Name="MIN_FLOOR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="false" DisplayName="NUMBER FLOORS" FocusField="false" Name="NUM_FLOORS" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="LAND CLASS" FocusField="false" Name="LAND_TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STRATA" FocusField="false" Name="STRATA_NAME" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="REGISTRATION_SECTION" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PREVIOUS VALUATION DATE" FocusField="false" Name="PREV_VALUATION_DATE_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="YEARS SINCE LAST TRANSFER" FocusField="false" Name="YEARS_SINCE_LAST_TRANSFER" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="ANNUAL APPRECIATION" FocusField="false" Name="ANNUAL_APPRECIATION_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PREV CONSIDERATION" FocusField="false" Name="PREV_CONSIDERATION_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PARCEL NAME" FocusField="false" Name="PARCEL_NAME" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="COMMENTS" Searchable="true" Visible="true" />
+            </Fields>
+            <Styles>
+              <LayerStyle Definition="{&#xD;&#xA;    &quot;type&quot;: &quot;classBreaks&quot;,&#xD;&#xA;    &quot;field&quot;: &quot;PRICE_SF&quot;,&#xD;&#xA;    &quot;classificationMethod&quot;: &quot;esriClassifyManual&quot;,&#xD;&#xA;    &quot;minValue&quot;: 0.01,&#xD;&#xA;    &quot;classBreakInfos&quot;: [&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 10,&#xD;&#xA;            &quot;label&quot;: &quot;$0.01 - $10 / SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [130, 130, 130, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 25,&#xD;&#xA;            &quot;label&quot;: &quot;$10 - $25 / SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [105, 173, 9, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 50,&#xD;&#xA;            &quot;label&quot;: &quot;$25 - $50 /SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [170, 255, 0, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 100,&#xD;&#xA;            &quot;label&quot;: &quot;$50 - $100 / SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [255, 255, 0, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 200,&#xD;&#xA;            &quot;label&quot;: &quot;$100 - $200 / SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [255, 187, 0, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 400,&#xD;&#xA;            &quot;label&quot;: &quot;$200 - $400 /SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [255, 102, 0, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;classMaxValue&quot;: 1600,&#xD;&#xA;            &quot;label&quot;: &quot;$400 - $1600 /SF&quot;,&#xD;&#xA;            &quot;symbol&quot;: {&#xD;&#xA;                &quot;type&quot;: &quot;esriSFS&quot;,&#xD;&#xA;                &quot;style&quot;: &quot;esriSFSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                &quot;color&quot;: [255, 51, 51, 255],&#xD;&#xA;                &quot;outline&quot;: {&#xD;&#xA;                    &quot;type&quot;: &quot;esriSLS&quot;,&#xD;&#xA;                    &quot;style&quot;: &quot;esriSLSSolid&quot;,&#xD;&#xA;&#xD;&#xA;                    &quot;color&quot;: [0, 0, 0, 255],&#xD;&#xA;                    &quot;width&quot;: 0&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;}" DisplayName="Price SQFT" ID="0" />
+            </Styles>
+          </Layer>
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Lease" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Lease" Name="Lease Comparables" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
       </MapService>
     </MapServices>
   </Map>
