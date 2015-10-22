@@ -3512,6 +3512,6 @@
         "viewModelId": "TabbedToolbarTransientViewModel"
       }
     ],
-    "viewerId": "HTML5_Silver"
+    "viewerId": "Silver-HTML5_Silver"
   }
 }

@@ -90,9 +90,9 @@
     <TimeAwareSliderConfiguration xmlns="">
       <Configuration TimeMode="TimeExtent" Loop="True" PlaySpeed="1" NumberOfIntervals="10" UserConfigurable="True" UsePrimaryTimeAwareMapService="True" />
     </TimeAwareSliderConfiguration>
-    <ViewerId Value="Silverlight_Editor" />
+    <ViewerId Value="Block_ID_Base-Silverlight_Editor" />
     <OpenCsvSpatialReferences xmlns="">
-      <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" />
+      <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" DefaultSpatialReference="" />
     </OpenCsvSpatialReferences>
   </Globals>
   <ExternalConfigs>
@@ -230,7 +230,7 @@
       <View Id="AddCsvConfirmationView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.OpenCsv.ConfirmationView" Visible="false" />
       <Configuration ZoomUserAddedLayers="true">
         <CreateResultList>true</CreateResultList>
-        {OpenCsvSpatialReferences}
+        <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" />
       </Configuration>
     </OpenCsv>
   </Modules>

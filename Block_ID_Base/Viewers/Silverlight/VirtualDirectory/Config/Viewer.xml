@@ -89,7 +89,7 @@
     <TimeAwareSliderConfiguration xmlns="">
       <Configuration TimeMode="TimeExtent" Loop="True" PlaySpeed="1" NumberOfIntervals="10" UserConfigurable="True" UsePrimaryTimeAwareMapService="True" />
     </TimeAwareSliderConfiguration>
-    <ViewerId Value="Silverlight" />
+    <ViewerId Value="Block_ID_Base-Silverlight" />
     <OpenCsvSpatialReferences xmlns="">
       <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" DefaultSpatialReference="" />
     </OpenCsvSpatialReferences>

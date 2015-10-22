@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration Version="2.4">
+  <Globals xmlns="http://www.geocortex.com/Viewer/Configuration/PreProcessor">
+    <SiteUri Value="{ViewerConfigUri}../../../.." />
+    <ApplicationTitle Value="" />
+    <BrowserTitle Value="Geocortex Viewer for Silverlight" />
+    <BannerShow Value="True" />
+    <BannerLeftImageUri Value="{ViewerConfigUri}../Resources/Images/Banners/default-banner.png" />
+    <BannerRightImageUri Value="" />
+    <BannerBackgroundImageUri Value="{ViewerConfigUri}../Resources/Images/Banners/default-banner-bg.png" />
+    <ToolbarOpenByDefault Value="False" />
+    <DataFrameOpenByDefault Value="False" />
+    <OverviewMapShow Value="True" />
+    <OverviewMapOpenByDefault Value="False" />
+    <OverviewMapMode Value="Dynamic" />
+    <ShellFlowDirection Value="LeftToRight" />
+    <DataFramePosition Value="Left" />
+    <MapTipsEnabled Value="False" />
+    <OptimizerEnabled Value="False" />
+    <OptimizerUserName Value="DefaultUser" />
+    <OptimizerDataRelayUri Value="http://localhost/Geocortex/Optimizer/Rest/DataRelay/LogData.ashx?f=json" />
+    <ManagedViewerDefaultsXml Value="" />
+    <HomePanelIconUri Value="{ViewerConfigUri}../Resources/Images/home-32.png" />
+    <PushpinsEnabled Value="True" />
+    <PushpinOffsetX Value="16" />
+    <PushpinOffsetY Value="32" />
+    <PushpinMarkerUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
+    <PushpinMarkerHighlightUri Value="{ViewerConfigUri}../Resources/Images/Pushpins/map-marker-red-32.png" />
+    <ViewerId Value="Silverlight" />
+    <AttributeEditing Value="False" />
+    <OverviewMapExtentScaleFactor Value="2" />
+    <DataFrameResizable Value="True" />
+    <DataFrameMinWidth Value="360" />
+    <DataFrameMaxWidth Value="650" />
+    <DataFrameDefaultWidth Value="360" />
+    <ScaleBarShow Value="True" />
+    <ScaleSliderShow Value="True" />
+    <BaseMapControlShow Value="True" />
+    <ProgressIndicatorShow Value="True" />
+    <AttributionViewShow Value="True" />
+    <ProjectCategory Value="Common" />
+    <ProjectCanSaveToServer Value="True" />
+    <ProjectCanSaveToClient Value="True" />
+    <BufferingProjectionWkid Value="" />
+    <BufferingProjectionWkt Value="" />
+    <IdentifyPixelTolerance Value="2" />
+    <IdentifyVisibleLayersOnly Value="True" />
+    <IdentifyVisibleAtCurrentScaleOnly Value="True" />
+    <MeasurementUnitDefault Value="feet" />
+    <MeasurementAreaUnitDefault Value="squareFeet" />
+    <MeasurementOverrideUnits Value="" />
+    <MeasurementPredictionEnabled Value="True" />
+    <MeasurementCalculationType Value="planar" />
+    <MeasurementProjectionWkid Value="" />
+    <MeasurementProjectionUnits Value="" />
+    <ResultsViewRegion Value="DataRegion" />
+    <ResultsViewMode Value="List" />
+    <MapTipsDisplayOnClick Value="False" />
+    <MapTipsIgnorePixelToleranceForPolygons Value="False" />
+    <DefaultFeatureDetailsTab Value="Description" />
+    <AdvancedMapControlsMapScaleShow Value="True" />
+    <BookmarksShow Value="True" />
+    <MouseCoordinatesShow Value="False" />
+    <StickyTools Value="True" />
+    <WatermarkImageIsVisible Value="False" />
+    <WatermarkImageUrl Value="" />
+    <WatermarkImageMode Value="Scaled" />
+    <WatermarkImageOpacity Value="0.25" />
+    <HighlightDynamicSnappingLayers Value="False" />
+    <TimeAwareSliderShow Value="True" />
+    <TimeAwareSliderConfiguration xmlns="">
+      <Configuration TimeMode="TimeExtent" Loop="True" PlaySpeed="1" NumberOfIntervals="10" UserConfigurable="True" UsePrimaryTimeAwareMapService="True" />
+    </TimeAwareSliderConfiguration>
+    <EnableInstantSearchOnSearchHints Value="True" />
+    <BiasResultsTowardsCenter Value="True" />
+    <InstantSearchMaxResults Value="50" />
+    <InstantSearchMaxHints Value="5" />
+    <SearchAutocompleteDelay Value="300" />
+    <SearchAutocompleteMinimumPrefixLength Value="3" />
+    <ExportMapAllowIncludingGeoreferenceData Value="True" />
+    <ExportMapDefaultOutputFormat Value="PNG" />
+    <HomePanelIsVisible Value="False" />
+    <HomePanelCanClose Value="True" />
+    <HomePanelTitle Value="Home" />
+    <HomePanelContent><![CDATA[
+      
+      <p style="text-align: center">[Application information and actions here]</p>
+      <br />
+      
+      <p><i>Use this region to welcome users, make objectives of the application clear, and provide efficient access to important functions and workflows.</i></p>
+    
+    ]]></HomePanelContent>
+    <OpenCsvSpatialReferences xmlns="">
+      <SpatialReferences IncludeMapSpatialReference="False" IncludeCustomWkidWktOption="False" />
+    </OpenCsvSpatialReferences>
+  </Globals>
+  <ExternalConfigs>
+    <ExternalConfig Uri="../../../../../../Templates/SilverlightViewer_2_4/VirtualDirectory/Viewer.Defaults.xml" />
+  </ExternalConfigs>
+  <Modules>
+    <OpenCsv>
+      <View Id="AddCsvView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.OpenCsv.SelectLocationFieldsView" Visible="false" />
+      <View Id="AddCsvConfirmationView" Region="ModalWindowRegion" Type="Geocortex.EssentialsSilverlightViewer.CoreModules.OpenCsv.ConfirmationView" Visible="false" />
+      <Configuration ZoomUserAddedLayers="true">
+        <CreateResultList>true</CreateResultList>
+        {OpenCsvSpatialReferences}
+      </Configuration>
+    </OpenCsv>
+  </Modules>
+  <Resources />
+  <Libraries />
+</Configuration>
