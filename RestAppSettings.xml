@@ -161,4 +161,20 @@
       </Forwarder>
     </GeoRestShaper>
   </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/_Master/0/Layers_Civic/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Civic" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/_Master/Layers_Marine/Layers_Marine/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
 </RestAppSettings>
