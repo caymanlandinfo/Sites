@@ -5,7 +5,7 @@
       "proxyUri": "proxy.ashx?",
       "allowUnsafeContent": false,
       "offlineStorageSpaceMb": "50",
-      "geometryServiceUrl": "http://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/Geometry/GeometryServer"
+      "geometryServiceUrl": ""
     },
     "defaultLibraryId": "Mapping",
     "libraries": [
@@ -438,7 +438,7 @@
                 "mile",
                 "nauticalmile"
               ],
-              "defaultBufferUnit": "mile",
+              "defaultBufferUnit": "feet",
               "defaultBufferDistance": 0
             }
           }
@@ -929,7 +929,7 @@
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.coordinates.CoordinatesViewModel",
             "configuration": {
               "isEnabled": true,
-              "openByDefault": false,
+              "openByDefault": true,
               "useBasemapCoordinates": true,
               "numDigits": 5,
               "coordinateSystems": []
@@ -1514,7 +1514,7 @@
             "id": "GeolocateViewModel",
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.geolocate.GeolocateViewModel",
             "configuration": {
-              "geolocateEnabled": false,
+              "geolocateEnabled": true,
               "trackingEnabled": false,
               "followingEnabled": false,
               "enableHighAccuracy": true,
@@ -1534,7 +1534,7 @@
               },
               "geolocateAccuracyCircleEnabled": true,
               "adjustExtentZoomOnGeolocate": true,
-              "geolocateExtentZoomLevel": 50000,
+              "geolocateExtentZoomLevel": "2416",
               "geolocationIndicator": "Resources/Images/Icons/geolocate-position-32.png"
             }
           },
@@ -2064,7 +2064,9 @@
               "wrapAround180": false,
               "extentBroadcastFrequency": 20,
               "fitTiledMapsToExtent": false,
-              "showAttribution": true
+              "showAttribution": true,
+              "minScale": 618496,
+              "maxScale": 302
             }
           }
         ],
@@ -3116,7 +3118,7 @@
             "region": "BottomLeftMapRegion",
             "configuration": {
               "scalebarStyle": "ruler",
-              "scalebarUnit": "metric",
+              "scalebarUnit": "english",
               "showBackground": true
             },
             "viewModelId": "ScalebarViewModel"
@@ -4252,6 +4254,16 @@
                   "hideOnDisable": false,
                   "name": "@language-toolbar-tasks-export-map",
                   "tooltip": "@language-toolbar-tasks-export-map-tooltip"
+                },
+                {
+                  "id": "ShareButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/Toolbar/share-24.png",
+                  "command": "ShowShareView",
+                  "commandParameter": null,
+                  "hideOnDisable": false,
+                  "name": "@language-toolbar-tasks-share",
+                  "tooltip": "@language-toolbar-tasks-share-tooltip"
                 }
               ],
               "layout": "Large"

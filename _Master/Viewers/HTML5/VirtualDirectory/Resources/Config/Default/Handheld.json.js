@@ -5,7 +5,7 @@
       "proxyUri": "proxy.ashx?",
       "allowUnsafeContent": false,
       "offlineStorageSpaceMb": "50",
-      "geometryServiceUrl": "http://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+      "geometryServiceUrl": "",
       "mobileMode": true
     },
     "defaultLibraryId": "Mapping",
@@ -1587,7 +1587,9 @@
               "wrapAround180": false,
               "extentBroadcastFrequency": 20,
               "fitTiledMapsToExtent": false,
-              "showAttribution": true
+              "showAttribution": true,
+              "minScale": 618496,
+              "maxScale": 302
             }
           }
         ],
@@ -3240,6 +3242,16 @@
                   "hideOnDisable": false,
                   "name": "@language-toolbar-tasks-export-map",
                   "tooltip": "@language-toolbar-tasks-export-map-tooltip"
+                },
+                {
+                  "id": "ShareButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/Toolbar/share-24.png",
+                  "command": "ShowShareView",
+                  "commandParameter": null,
+                  "hideOnDisable": false,
+                  "name": "@language-toolbar-tasks-share",
+                  "tooltip": "@language-toolbar-tasks-share-tooltip"
                 }
               ],
               "layout": "Large"

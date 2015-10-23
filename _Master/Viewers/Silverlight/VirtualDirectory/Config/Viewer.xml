@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration Version="2.4">
   <Globals xmlns="http://www.geocortex.com/Viewer/Configuration/PreProcessor">
     <AdvancedMapControlsMapScaleShow Value="True" />
     <AdvancedMapControlsUseEsriScaleLevelValues Value="false" />
-    <ApplicationTitle Value="" />
+    <ApplicationTitle Value="Caymap 4.0 - Silverlight" />
     <AttributeEditing Value="True" />
     <AttributionViewShow Value="True" />
     <BannerBackgroundImageUri Value="" />
@@ -13,7 +13,7 @@
     <BaseMapControlShow Value="True" />
     <BiasResultsTowardsCenter Value="True" />
     <BookmarksShow Value="True" />
-    <BrowserTitle Value="" />
+    <BrowserTitle Value="Caymap 4.0 - Silverlight" />
     <BufferingProjectionWkid Value="" />
     <BufferingProjectionWkt Value="" />
     <CenterMapAfterDataFrameOpens Value="false" />
@@ -163,7 +163,7 @@
           <Configuration>
             <LayerThemes Visible="true" />
             <Filter Location="bottom" />
-            <LayerList ExpandFolders="true" ExpandMapServices="true" ExpandGroupLayers="true" IncludeLegendSwatches="true" AutoExpandSwatches="false" DisableAutoExpandSwatchThreshold="0" FilterLegendSwatchesInLayerList="true" ToggleParentOnCheck="false" ToggleChildrenOnCheck="false" ToggleChildrenOnUncheck="false" ToggleRecursively="false" ShowTransparencySlider="true" />
+            <LayerList ExpandFolders="true" ExpandMapServices="true" ExpandGroupLayers="true" IncludeLegendSwatches="true" AutoExpandSwatches="true" DisableAutoExpandSwatchThreshold="0" FilterLegendSwatchesInLayerList="true" ToggleParentOnCheck="false" ToggleChildrenOnCheck="false" ToggleChildrenOnUncheck="false" ToggleRecursively="false" ShowTransparencySlider="true" />
             <Legend VisibleLayersOnly="true" VisibleAtCurrentScaleOnly="true" VisibleWithinCurrentExtentOnly="false" LegendSwatchSize="20" />
             <LayerTypeIcons>
               <LayerTypeIcon LayerType="Group" ImageUri="/Resources/Images/Icons/Toolbar/layers-16.png" />
