@@ -153,4 +153,12 @@
       </Shaper>
     </GeoRestShaper>
   </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Forwarder Address="local-proxy/_Master/0/Layers_Survey/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Survey" Address="{type}/{*path}" />
+      </Forwarder>
+    </GeoRestShaper>
+  </Modules>
 </RestAppSettings>
