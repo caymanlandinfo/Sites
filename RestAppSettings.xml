@@ -123,7 +123,7 @@
     <GeoRestShaper>
       <Shaper Address="local-proxy/_Master/Layers_ID_Cadastral/Layers_ID_Cadastral_Revised/{type}/{*path}">
         <Authentication Mode="PassThrough" />
-        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Cadastral_Revised" Address="MapServer/{*path}" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_ID_Cadastral_Revised" Address="MapServer/{*path}" />
         <ResolveCodesToNames Enabled="true" />
       </Shaper>
     </GeoRestShaper>
@@ -175,6 +175,15 @@
         <Authentication Mode="PassThrough" />
         <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Marine" Address="{type}/{*path}" />
       </Forwarder>
+    </GeoRestShaper>
+  </Modules>
+  <Modules>
+    <GeoRestShaper>
+      <Shaper Address="local-proxy/_Master/Layers_ID_Cadastral/Layers_ID_Cadastral/{type}/{*path}">
+        <Authentication Mode="PassThrough" />
+        <RemoteEndpoint BaseAddress="https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_ID_Cadastral" Address="MapServer/{*path}" />
+        <ResolveCodesToNames Enabled="true" />
+      </Shaper>
     </GeoRestShaper>
   </Modules>
 </RestAppSettings>
