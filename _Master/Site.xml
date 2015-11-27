@@ -52,20 +52,13 @@
             </Item>
             <Item ID="C1" IsExpanded="true" Name="Comparables" Visible="false">
               <Items>
-                <Item ID="Layers_Comparables_Label">
-                  <Items>
-                    <Item ID="Labels-0" />
-                  </Items>
-                </Item>
-                <Item ID="Sales" />
-                <Item ID="Lease" />
+                <Item ID="Sales" IsExpanded="true" Visible="true" />
+                <Item ID="Lease" IsExpanded="true" Visible="true" />
               </Items>
             </Item>
             <Item ID="C2" IsExpanded="false" Name="Cadastral" Visible="true">
               <Items>
-                <Item ID="Cadastral-3" />
-                <Item ID="Cadastral-4" />
-                <Item ID="Cadastral-5" />
+                <Item ID="Cadastral-3" IsExpanded="true" Visible="true" />
               </Items>
             </Item>
             <Item ID="C3" IsExpanded="false" Name="Planning" Visible="true">
@@ -105,7 +98,7 @@
         <Item ID="C7" IsExpanded="false" Name="Basemaps" Visible="true">
           <Items>
             <Item ID="Basemap_Cadastral" />
-            <Item ID="Basemap_Cadastral_Strata" />
+            <Item ID="Basemap_Cadastral_Strata" IsExpanded="true" Visible="true" />
             <Item ID="Basemap_AerialHybrid_2013" />
             <Item ID="Basemap_Navigation" />
             <Item ID="Basemap_Terrain" IsExpanded="true" Visible="true" />
@@ -123,7 +116,7 @@
           <Items>
             <Item ID="Streets" />
             <Item ID="Buildings" />
-            <Item ID="Parcels" />
+            <Item ID="Parcels" IsExpanded="true" Visible="true" />
           </Items>
         </Item>
       </Items>
@@ -369,12 +362,6 @@
         </Layers>
         <LocalProxy AppRelativePath="local-proxy/_Master/Layers_Utilities/Layers_Utilities/MapServer" AppRelativeTemplate="local-proxy/_Master/Layers_Utilities/Layers_Utilities/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables_Label/MapServer" DefaultAllowSymbolization="true" DisplayName="Labels" Function="Operational" ID="Layers_Comparables_Label" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Layers_Comparables_Label" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="false">
-        <CachedServiceData />
-      </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer;layerMask=Sales Comparables,Lease Comparables" DefaultAllowSymbolization="true" DisplayName="Sales Comparables" Function="Operational" ID="Layers_Comparables" ImageFormat="Png8" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="0.5" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
-        <CachedServiceData />
-      </MapService>
       <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Planning" FailureAction="Warn" Function="Operational" ID="Layers_Planning" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="0.7" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
         <CachedServiceData />
         <Layers>
@@ -595,60 +582,7 @@
         </Layers>
         <LocalProxy AppRelativePath="local-proxy/_Master/Layers_ID_Base/Layers_ID_Base/MapServer" AppRelativeTemplate="local-proxy/_Master/Layers_ID_Base/Layers_ID_Base/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_ID_Cadastral/MapServer" DefaultAllowSymbolization="true" DisplayName="Layers_ID_Cadastral" FailureAction="Warn" Function="Operational" ID="Layers_ID_Cadastral" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
-        <CachedServiceData />
-        <Layers>
-          <Layer AllowSymbolization="false" CanCopyFeature="false" DisplayName="Parcel History" DrawIndex="3" FeatureDescription="OWNER: &lt;b&gt;{OWNER_NAME}&lt;/b&gt;&lt;br&gt;&#xD;&#xA;PARCEL AREA: &lt;b&gt;{REGISTERED_AREA}&lt;/b&gt;&lt;br&gt;" FeatureLabel="PARCEL {BLOCK} {PARCEL}" IconUri="{RestVirtualDirectoryUrl}/Custom/Parcel-24.png" Identifiable="false" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="false" Name="Parcel History ID" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="false">
-            <DataLinks>
-              <DataLink Command="EXECUTE [webGIS].[GET_SALESCOMPARABLES] @LANDREF, @PARCEL" DataConnectionID="LSVMWEBSQL1_landbaseweb" DisplayName="Sales Comparables" ErrorAction="LogDebug" ID="Sales_Comparables" IsOneToOne="false" Visible="true">
-                <Parameters>
-                  <Parameter FeatureField="LANDREF" Name="LANDREF" />
-                  <Parameter FeatureField="PARCEL" Name="PARCEL" />
-                </Parameters>
-              </DataLink>
-              <DataLink Command="EXECUTE [webGIS].[GET_LEASECOMPARABLES] @LANDREF" DataConnectionID="LSVMWEBSQL1_landbaseweb" DisplayName="Lease Comparables" ErrorAction="LogDebug" ID="Lease_Comparables" IsOneToOne="false" Visible="true">
-                <Parameters>
-                  <Parameter FeatureField="LANDREF" Name="LANDREF" />
-                </Parameters>
-              </DataLink>
-              <DataLink Command="EXECUTE [DBO].[GET_LASTMUTATION] @BLOCK, @PARCEL" DataConnectionID="LSVMSQL10_landbase" DisplayName="Last_Mutation" ErrorAction="LogDebug" ID="Last_Mutation" IsOneToOne="true" Visible="true">
-                <Parameters>
-                  <Parameter FeatureField="BLOCK" Name="BLOCK" />
-                  <Parameter FeatureField="PARCEL" Name="PARCEL" />
-                </Parameters>
-              </DataLink>
-              <DataLink Command="EXECUTE [DBO].[GET_NEXTMUTATION] @BLOCK, @PARCEL" DataConnectionID="LSVMSQL10_landbase" DisplayName="Next_Mutation" ErrorAction="LogDebug" ID="Next_Mutation" IsOneToOne="false" Visible="true">
-                <Parameters>
-                  <Parameter FeatureField="BLOCK" Name="@BLOCK" />
-                  <Parameter FeatureField="OBJECTID" Name="@PARCEL" />
-                </Parameters>
-              </DataLink>
-            </DataLinks>
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="PARCEL" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="LANDREF" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="OWNERSHIP TYPE" FocusField="false" Name="OWNERSHIP_TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="NAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="OWNER" FocusField="false" Name="OWNER_NAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="POSTAL ADDRESS" FocusField="false" Name="OWNER_ADDRESS" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="PROPRIETORSHIP TYPE" FocusField="false" Name="PROPRIETORSHIP_TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="SURVEY" FocusField="false" Name="SURVEY_REF" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="REGISTERED AREA" FocusField="false" Name="REGISTERED_AREA" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STATUS" Searchable="false" Visible="true" />
-            </Fields>
-          </Layer>
-          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Parcel Boundaries" DrawIndex="1" FeatureLabel="BOUNDARY: {BDY_TYPE.Name()}" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Cadastral-4" Name="Parcel Boundaries" NativeID="4" Queryable="false" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="true" Snappable="true" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="false">
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="true" DisplayName="Boundary Type" FocusField="false" Name="BDY_TYPE.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" DisplayName="Length" FocusField="false" Name="Shape.len" Searchable="false" Visible="true" />
-            </Fields>
-          </Layer>
-          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Registration Sections" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Cadastral-5" Name="Registration Sections" NativeID="5" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
-        </Layers>
-        <LocalProxy AppRelativePath="local-proxy/_Master/Layers_ID_Cadastral/Layers_ID_Cadastral/MapServer" AppRelativeTemplate="local-proxy/_Master/Layers_ID_Cadastral/Layers_ID_Cadastral/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
-      </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel" FailureAction="Warn" Function="Base" ID="Basemap_Cadastral" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_Cadastral" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel Old" FailureAction="Warn" Function="Base" ID="Basemap_Cadastral" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_Cadastral" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
         <BaseMapSettings>
           <BaseMapSetting ID="0" />
         </BaseMapSettings>
