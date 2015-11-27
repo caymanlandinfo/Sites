@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Upgrade OldVersion="2.4" NewVersion="2.5" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+  </Preprocessing>
+
+  <Globals>
+    <AddGlobal Description="Adding ViewerId to uniquely identify the Viewer" Name="ViewerId" Value="" />
+    
+    <!-- Insight Integration -->
+    <AddGlobal Description="Adding InsightEnabled for Insight Integration" Name="InsightEnabled" Value="false" />
+    <AddGlobal Description="Adding InsightDataRelayUri for Insight Integration" Name="InsightDataRelayUri" Value="http://localhost/Geocortex/Insight/Insight/ClientRelay" />
+    <AddGlobal Description="Adding InsightMaxLocalFileSizeKB for Insight Integration" Name="InsightMaxLocalFileSizeKB" Value="100" />
+    <AddGlobal Description="Adding InsightSendIntervalSeconds for Insight Integration" Name="InsightSendIntervalSeconds" Value="60" />
+  </Globals>
+
+  <UpdateModules>
+  </UpdateModules>
+
+  <DeprecateModules>
+  </DeprecateModules>
+
+  <AddModules>
+    <AddModule Description="Adding InsightIntegration Module"
+           Name="InsightIntegration"
+           ModuleDescription="Provides integration with Geocortex Insight."
+           DefaultsOnly="true">
+      <InsightIntegration>
+        <Configuration>
+          <Enabled Value="{InsightEnabled}"/>
+          <InsightOptions DataRelayUri="{InsightDataRelayUri}"/>
+          <MaxLocalFileSizeKB Value="{InsightMaxLocalFileSizeKB}" />
+          <SendIntervalSeconds Value="{InsightSendIntervalSeconds}" />
+          <ViewerId Value="{ViewerId}" />
+        </Configuration>
+      </InsightIntegration>
+    </AddModule>
+  </AddModules>
+
+  <DocumentTransformations>
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="2.5" />
+    <RegexTextReplace Description="Updating Uris to virtual directory content" Match="/Templates/SilverlightViewer_2_\d/VirtualDirectory/" ReplaceWith="/Templates/SilverlightViewer_2_5/VirtualDirectory/" />
+  </DocumentTransformations>
+
+</Upgrade>

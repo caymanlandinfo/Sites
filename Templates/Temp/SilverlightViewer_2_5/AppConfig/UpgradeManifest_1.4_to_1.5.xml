@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Upgrade OldVersion="1.4" NewVersion="1.5" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Preprocessing>
+  </Preprocessing>
+
+  <Globals>
+  </Globals>
+
+  <UpdateModules>
+
+    <AddAttribute Description="Adding Help Topic Key for Banner"
+              Path="/Configuration/Modules/Banner/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="MainScreen" />
+
+    <AddAttribute Description="Adding Help Topic Key for Base Maps"
+              Path="/Configuration/Modules/BaseMapControl/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="BaseMaps" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Global Search"
+              Path="/Configuration/Modules/GlobalSearch/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="Search" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Instant Search"
+              Path="/Configuration/Modules/InstantSearch/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="Search" />
+              
+    <AddAttribute Description="Adding Help Topic Key for the I Want To menu"
+              Path="/Configuration/Modules/IWantToMenu/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="IWantToMenu" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Layer List"
+              Path="/Configuration/Modules/LayerList/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="LayerList" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Map"
+              Path="/Configuration/Modules/Map/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="MapNavigation" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Map Tips"
+              Path="/Configuration/Modules/MapTips/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="MapFeatures" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Overview Map"
+              Path="/Configuration/Modules/OverviewMap/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="OverviewMap" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Reporting"
+              Path="/Configuration/Modules/Reporting/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="Reporting" />
+              
+    <AddAttribute Description="Adding Help Topic Key for Results"
+              Path="/Configuration/Modules/Results/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="UseTheResultsList" />
+
+    <AddAttribute Description="Adding Help Topic Key for the Toolbar"
+              Path="/Configuration/Modules/Toolbar/Views/View[1]"
+              Name="AssociatedHelpTopicKey"
+              Value="Toolbar" />
+              
+    <AddElement Description="Adding Help Group to Getting Around Tab in Toolbar"
+                Path="/Configuration/Modules/Toolbar/Configuration/Toolbar/Tab[@DisplayName='Getting Around']"
+                Name="Group">
+      <Group DisplayName="Help">
+        <Button Name="LaunchDefaultHelp" DisplayName="Help" Command="ShowHelpTopic" CommandParameter="" ImageUri="/Resources/Images/Help.png" ToolTip="Show Help Topics" />
+        <Button Name="ClickForHelp" DisplayName="What's This?" Command="InvokeClickHelp" ImageUri="/Resources/Images/HelpClickCursor.png" ToolTip="Enable Click Help" />
+      </Group>
+    </AddElement>
+
+    <AddElement Description="Adding Export Feature Attachments to Feature Actions"
+                Path="/Configuration/Modules/MapTips/Configuration/Menus/Menu[@Id='FeatureActions']/Items"
+                Name="Item">
+      <Item Text="Export Feature Attachments" ToolTip="Export feature attachments" Command="ExportFeatureAttachments" Module="FeatureActions" HideWhenDisabled="false"/>
+    </AddElement>
+
+  </UpdateModules>
+
+  <DeprecateModules>
+  </DeprecateModules>
+
+  <AddModules>
+
+    <AddModule Description="Adding Help Module"
+            Name="Help"
+            ModuleDescription="Allows users to display help on a variety of topics.">
+    <Help>
+      <Configuration UseF1Key="true">
+        <Topics>
+          
+          <UriTopic Key="" Uri="./../Help/Default.htm" />
+
+          <UriTopic Key="MapNavigation" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_NavigateAroundTheMap.htm" />
+          <UriTopic Key="BaseMaps" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_AboutBaseMaps.htm" />      
+          <UriTopic Key="MainScreen" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_MainScreen.htm" />          
+          <UriTopic Key="Toolbar" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_AboutTheToolbar.htm" />
+          <UriTopic Key="LayerList" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_TheInformationPane.htm#TheMapLayerList" />          
+          <UriTopic Key="IWantToMenu" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_IWantToMenu.htm" />
+          <UriTopic Key="OverviewMap" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_TheOverviewMap.htm" />                  
+          <UriTopic Key="Search" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_AboutSearch.htm" />
+          <UriTopic Key="UseTheResultsList" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_UseTheResultsList.htm" />          
+          <UriTopic Key="MapFeatures" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_ViewFeaturesAndAttributes.htm" />          
+          <UriTopic Key="Reporting" Uri="./../Help/Default.htm#Client_APIs/SV_User/SVU_AboutReports.htm" />
+                                 
+          <!-- example of how to run an arbitrary command for a help topic
+          <RunCommandTopic Key="IWantTo" Command="OpenWebPage" CommandParameter="./../Help/IWantTo.html"/>
+          -->
+          
+          {Insert__Help-Topics}
+        </Topics>
+      </Configuration>
+    </Help>    </AddModule>
+
+  </AddModules>
+
+  <DocumentTransformations>
+
+    <AddAttribute Description="Updating version attribute" ReplaceExisting="true" Path="/Configuration" Name="Version" Value="1.5" />
+
+    <RegexTextReplace Description="Updating ExternalConfig Uri" Match="SilverlightViewer_1_4/VirtualDirectory" ReplaceWith="SilverlightViewer_1_5/VirtualDirectory" />
+
+    <ReplaceAttributeValue Description="Deprecating ExportFeaturesToCsvWithDataLinks"
+        OldValue="ExportFeaturesToCsvWithDataLinks"
+        NewValue="ExportFeaturesToCsvWithExtras"
+        AttributeName="Command" />
+
+    <ReplaceAttributeValue Description="Rename Zoom to Navigation"
+        OldValue="Zoom"
+        NewValue="Navigation"
+        AttributeName="DisplayName" />
+
+  </DocumentTransformations>
+
+</Upgrade>
