@@ -22,6 +22,9 @@
       <BaseMap DisplayName="Aerial 1994" ID="10" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" />
       <BaseMap DisplayName="Aerial 1971" ID="11" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-24.png" />
       <BaseMap DisplayName="Terrain" ID="12" IconUri="{RestVirtualDirectoryUrl}/Custom/Terrain-24.png" />
+      <BaseMap DisplayName="Basemap_Cadastral" ID="13" />
+      <BaseMap DisplayName="Basemap_Cadastral" ID="14" />
+      <BaseMap DisplayName="Basemap_Comparables" ID="15" />
     </BaseMaps>
     <ExportOptions AllowIncludeGeoreferenceData="true" DefaultOutputFormat="Png" />
     <LayerList>
@@ -50,15 +53,15 @@
                 <Item ID="Utilities-15" />
               </Items>
             </Item>
-            <Item ID="C1" IsExpanded="true" Name="Comparables" Visible="false">
+            <Item ID="2" IsExpanded="true" LayerVisibilityType="MutuallyExclusive" Name="Comparables" Visible="true">
               <Items>
-                <Item ID="Sales" IsExpanded="true" Visible="true" />
-                <Item ID="Lease" IsExpanded="true" Visible="true" />
-              </Items>
-            </Item>
-            <Item ID="C2" IsExpanded="false" Name="Cadastral" Visible="true">
-              <Items>
-                <Item ID="Cadastral-3" IsExpanded="true" Visible="true" />
+                <Item ID="13" />
+                <Item ID="17" />
+                <Item ID="15" />
+                <Item ID="14" />
+                <Item ID="16" />
+                <Item ID="18" />
+                <Item ID="12" />
               </Items>
             </Item>
             <Item ID="C3" IsExpanded="false" Name="Planning" Visible="true">
@@ -95,13 +98,11 @@
           </Items>
         </Item>
         <Item ID="Basemap_IvanFlood" />
-        <Item ID="C7" IsExpanded="false" Name="Basemaps" Visible="true">
+        <Item ID="C7" IsExpanded="true" Name="Basemaps" Visible="true">
           <Items>
             <Item ID="Basemap_Cadastral" />
-            <Item ID="Basemap_Cadastral_Strata" IsExpanded="true" Visible="true" />
             <Item ID="Basemap_AerialHybrid_2013" />
             <Item ID="Basemap_Navigation" />
-            <Item ID="Basemap_Terrain" IsExpanded="true" Visible="true" />
             <Item ID="Basemap_Aerial_2013" />
             <Item ID="Basemap_Aerial_2013_IR" />
             <Item ID="Basemap_Aerial_2008" />
@@ -112,11 +113,14 @@
             <Item ID="Basemap_Aerial_1971" />
           </Items>
         </Item>
-        <Item ID="C8" IsExpanded="false" Name="Query Layers" Visible="true">
+        <Item ID="40" IsExpanded="true" Name="Query Layers" Visible="true">
           <Items>
-            <Item ID="Streets" />
-            <Item ID="Buildings" />
-            <Item ID="Parcels" IsExpanded="true" Visible="true" />
+            <Item ID="41" />
+            <Item ID="42" />
+            <Item ID="43" />
+            <Item ID="44" />
+            <Item ID="45" />
+            <Item ID="46" />
           </Items>
         </Item>
       </Items>
@@ -362,6 +366,18 @@
         </Layers>
         <LocalProxy AppRelativePath="local-proxy/_Master/Layers_Utilities/Layers_Utilities/MapServer" AppRelativeTemplate="local-proxy/_Master/Layers_Utilities/Layers_Utilities/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
       </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer" DefaultAllowSymbolization="true" DisplayName="Layers_Comparables" Function="Operational" ID="2" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="0.8" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
+        <CachedServiceData />
+        <Layers>
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Purchase Agreements" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="12" Name="Purchase Agreements" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Recent Sales" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="13" Name="Sales - 2014+" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Appreciation" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="14" Name="Sales - Appreciation" NativeID="2" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Price SQFT" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="15" Name="Sales - Price SQFT" NativeID="3" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Chattels" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="16" Name="Sales - Chattels" NativeID="4" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Consideration" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="17" Name="Sales - Consideration" NativeID="5" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+          <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Rent SQFT" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="18" Name="Lease - Rent SQFT Annum" NativeID="6" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
+        </Layers>
+      </MapService>
       <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Planning" FailureAction="Warn" Function="Operational" ID="Layers_Planning" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="0.7" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
         <CachedServiceData />
         <Layers>
@@ -541,48 +557,7 @@
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/_Master/Basemap_IvanFlood/Basemap_IvanFlood/MapServer" AppRelativeTemplate="local-proxy/_Master/Basemap_IvanFlood/Basemap_IvanFlood/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_ID_Base/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Layers_ID_Base" FailureAction="Warn" Function="Operational" ID="Layers_ID_Base" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="false" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
-        <CachedServiceData />
-        <Layers>
-          <Layer CanCopyFeature="true" DisplayName="Streets" FeatureDescription="FROM: {FRADDL} TO: {TOADDR}" FeatureLabel="STREETS {FULLNAME}" IconUri="{RestVirtualDirectoryUrl}/Custom/Streets-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="false" IsCatalogLayer="false" IsExpanded="true" LayerListID="Streets" Name="Streets" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="false">
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STREET" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="TYPE" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="FROM ADDRESS LEFT" FocusField="false" Name="FRADDL" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="FROM ADDRESS RIGHT" FocusField="false" Name="FRADDR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TO ADDRRESS LEFT" FocusField="false" Name="TOADDL" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TO ADDRESS RIGHT" FocusField="false" Name="TOADDR" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="ISLAND" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="CLASSIFICATION" FocusField="false" Name="ROADCLASS" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NAME" FocusField="false" Name="FULLNAME" Searchable="true" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="ONE WAY" FocusField="false" Name="One_Way" Searchable="true" Visible="true" />
-            </Fields>
-          </Layer>
-          <Layer CanCopyFeature="false" DisplayName="Buildings" FeatureDescription="TYPE: &lt;b&gt;{GEN_CLASS}&lt;/b&gt;&lt;br&gt;&#xD;&#xA;{LABEL}&#xD;&#xA;" FeatureLabel="BUILDING {NUMUNIT} {FULLNAME}" IconUri="{RestVirtualDirectoryUrl}/Custom/Building-24.png" Identifiable="true" IncludeInLayerList="false" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Buildings" Name="Buildings" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="true" Snappable="true" SnappingEnabled="true" UnconfiguredCodeFieldsVisible="false" UnconfiguredFieldsCanSymbolizeClassBreaks="false" UnconfiguredFieldsCanSymbolizeUniqueValue="false" UnconfiguredFieldsSearchable="false" UnconfiguredFieldsVisible="false" UnconfiguredRelationshipsVisible="false" Visible="false">
-            <Fields>
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NUMBER" FocusField="false" Name="NUMUNIT" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STREET" FocusField="false" Name="FULLNAME" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="NAME" FocusField="false" Name="LABEL" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="TYPE" FocusField="false" Name="GEN_CLASS.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="STATUS" FocusField="false" Name="STATUS_DEC.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" DisplayName="FOOTPRINT AREA" FocusField="false" Name="Shape.area" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="STORIES" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="QUALITY.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="R_COVER.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="R_STRUCT.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="R_DESIGN.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="R_SPAN.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="R_OVERHANG.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="WALLS.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="DOORS.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="WINDOWS.Name()" Searchable="false" Visible="true" />
-              <Field CanSymbolizeClassBreaks="false" CanSymbolizeUniqueValue="false" FocusField="false" Name="SHUTTERS.Name()" Searchable="false" Visible="true" />
-            </Fields>
-          </Layer>
-        </Layers>
-        <LocalProxy AppRelativePath="local-proxy/_Master/Layers_ID_Base/Layers_ID_Base/MapServer" AppRelativeTemplate="local-proxy/_Master/Layers_ID_Base/Layers_ID_Base/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
-      </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel Old" FailureAction="Warn" Function="Base" ID="Basemap_Cadastral" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_Cadastral" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="true">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel Old" FailureAction="Warn" Function="Base" ID="Basemap_Cadastral" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_Cadastral" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
         <BaseMapSettings>
           <BaseMapSetting ID="0" />
         </BaseMapSettings>
@@ -665,6 +640,32 @@
         </BaseMapSettings>
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/_Master/Basemap_Aerial_1971/Basemap_Aerial_1971/MapServer" AppRelativeTemplate="local-proxy/_Master/Basemap_Aerial_1971/Basemap_Aerial_1971/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_ID/MapServer" DefaultAllowSymbolization="true" DisplayName="Query Layers" Function="Operational" ID="3" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
+        <CachedServiceData />
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="Owners" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="41" Name="ID Owners" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true">
+            <Fields>
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="BLOCK" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="PARCEL" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="EDITION" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="OWN_NAME" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="LAND_TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="LAND_NAME" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="AREA_STR" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="OWNERSHIP_TYPE" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="NOTES" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="STRATA_NAME" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="SECTION" Searchable="true" Visible="true" />
+              <Field CanSymbolizeClassBreaks="true" CanSymbolizeUniqueValue="true" FocusField="false" Name="DISTRICT" Searchable="true" Visible="true" />
+            </Fields>
+          </Layer>
+          <Layer CanCopyFeature="true" DisplayName="Leases" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="42" Name="ID Leases" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+          <Layer CanCopyFeature="true" DisplayName="Sales Comparables" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="43" Name="ID Sales Comparables" NativeID="2" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+          <Layer CanCopyFeature="true" DisplayName="Lease Comparables" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="44" Name="ID Lease Comparables" NativeID="3" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+          <Layer CanCopyFeature="true" DisplayName="Streets" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="45" Name="ID Streets" NativeID="4" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+          <Layer CanCopyFeature="true" DisplayName="Buildings" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="46" Name="ID Buildings" NativeID="5" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
       </MapService>
     </MapServices>
   </Map>
