@@ -3,7 +3,7 @@
   <Globals xmlns="http://www.geocortex.com/Viewer/Configuration/PreProcessor">
     <AdvancedMapControlsMapScaleShow Value="True" />
     <AdvancedMapControlsUseEsriScaleLevelValues Value="false" />
-    <ApplicationTitle Value="Caymap 4.0 - Silverlight" />
+    <ApplicationTitle Value="Caymap" />
     <AttributeEditing Value="True" />
     <AttributionViewShow Value="True" />
     <BannerBackgroundImageUri Value="" />
@@ -13,7 +13,7 @@
     <BaseMapControlShow Value="True" />
     <BiasResultsTowardsCenter Value="True" />
     <BookmarksShow Value="True" />
-    <BrowserTitle Value="Caymap 4.0 - Silverlight" />
+    <BrowserTitle Value="Caymap" />
     <BufferingProjectionWkid Value="" />
     <BufferingProjectionWkt Value="" />
     <CenterMapAfterDataFrameOpens Value="false" />
@@ -21,7 +21,7 @@
     <DataFrameDefaultWidth Value="360" />
     <DataFrameMaxWidth Value="650" />
     <DataFrameMinWidth Value="360" />
-    <DataFrameOpenByDefault Value="False" />
+    <DataFrameOpenByDefault Value="True" />
     <DataFramePosition Value="Left" />
     <DataFrameResizable Value="True" />
     <DefaultFeatureDetailsTab Value="Attributes" />
@@ -239,6 +239,7 @@
     </OpenCsv>
   </Modules>
   <Resources>
+    <Xaml Uri="{ViewerConfigUri}../../../../../_Master/Viewers/Silverlight/VirtualDirectory/Themes/Caymap.xaml" />
   </Resources>
   <Libraries />
 </Configuration>

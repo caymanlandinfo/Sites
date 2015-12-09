@@ -176,7 +176,7 @@
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.accessibility.AccessibilityIconViewModel",
             "configuration": {
               "included": true,
-              "content": "%3Cp%3E%0AThis%20application%20provides%20enhanced%20access%20to%20end-users%20with%20disabilities%3A%20it%20enables%20full%20keyboard%20control%2C%20is%20screen%20reader%20friendly%2C%20and%20contains%20other%20features%20to%20make%20mapping%20technology%20more%20accessible%20to%20the%20largest%20possible%20audience%20of%20potential%20users%2C%20regardless%20of%20their%20level%20of%20ability.%20%3Cbr%3E%3Cbr%3E%20Geocortex%20Viewer%20for%20HTML5%20conforms%20to%20%3Ca%20href%3D%22http%3A%2F%2Fwww.w3.org%2FTR%2FWCAG20%2F%22%20target%3D%22_blank%22%3EWCAG%202.0%3C%2Fa%3E%20level%20AA%20(international%20%26amp%3B%20United%20States)%2C%20as%20part%20of%20Latitude%20Geographics'%20Geocortex%20Essentials%20technology%20for%20Esri's%20ArcGIS%20platform.%0A%3C%2Fp%3E",
+              "content": "%3Cp%3E%0AThis%20application%20provides%20enhanced%20access%20to%20end-users%20with%20disabilities%3A%20it%20enables%20full%20keyboard%20control%2C%20is%20screen%20reader%20friendly%2C%20and%20contains%20other%20features%20to%20make%20mapping%20technology%20more%20accessible%20to%20the%20largest%20possible%20audience%20of%20potential%20users%2C%20regardless%20of%20their%20level%20of%20ability.%20%3Cbr%3E%3Cbr%3E%20Geocortex%20Viewer%20for%20HTML5%20conforms%20to%20%3Ca%20href%3D%22http%3A%2F%2Fwww.w3.org%2FTR%2FWCAG20%2F%22%20target%3D%22_blank%22%3EWCAG%202.0%3C%2Fa%3E%20level%20AA%20(international%20%26amp%3B%20United%20States).%3C%2Fp%3E",
               "title": "@language-accessibility-map-title"
             }
           }
@@ -379,7 +379,7 @@
         "moduleName": "Browser",
         "moduleType": "geocortex.essentialsHtmlViewer.mapping.modules.browser.BrowserModule",
         "configuration": {
-          "title": "Caymap 4.0 - HTML5"
+          "title": "Caymap"
         }
       },
       {
@@ -1589,8 +1589,8 @@
         "moduleName": "Highlight",
         "moduleType": "geocortex.essentialsHtmlViewer.mapping.modules.Highlight.HighlightModule",
         "configuration": {
-          "fillColor": "#99ECEC3A",
-          "borderColor": "#FFCCCC33"
+          "fillColor": "#00000000",
+          "borderColor": "#FF0000FF"
         }
       },
       {
@@ -1842,7 +1842,7 @@
         "moduleType": "geocortex.essentialsHtmlViewer.mapping.modules.layerList.LayerListModule",
         "configuration": {
           "enableLegendIntegration": true,
-          "onlyShowSwatchesOnVisibleLayers": false,
+          "onlyShowSwatchesOnVisibleLayers": true,
           "autoActivateAncestorVisibilities": false,
           "enableLayerIcons": false
         },
@@ -1878,7 +1878,7 @@
             "type": "geocortex.essentialsHtmlViewer.mapping.modules.layerList.LayerListViewModel",
             "configuration": {
               "showTransparencySlider": true,
-              "autoExpandLegendSwatches": false
+              "autoExpandLegendSwatches": true
             }
           },
           {
@@ -2065,8 +2065,8 @@
               "extentBroadcastFrequency": 20,
               "fitTiledMapsToExtent": false,
               "showAttribution": true,
-              "minScale": 618496,
-              "maxScale": 302
+              "minScale": "",
+              "maxScale": ""
             }
           }
         ],
@@ -3412,7 +3412,7 @@
               "minWidth": 200,
               "maxWidth": 500,
               "dataFrameWidth": 350,
-              "dataFrameOpenByDefault": false,
+              "dataFrameOpenByDefault": true,
               "bottomRegionHeight": 400
             }
           },
@@ -4065,31 +4065,24 @@
                         }
                       ],
                       "layout": "Large"
-                    },
+                    }
+                  ],
+                  "layout": "Large"
+                },
+                {
+                  "id": "K9FhqH8z",
+                  "type": "toolbarGroup",
+                  "name": "Search",
+                  "items": [
                     {
-                      "id": "FindDataControlRegion",
-                      "type": "region",
-                      "regionName": "FindDataControlRegion"
-                    },
-                    {
-                      "id": "ShowSimpleQueryBuilderButton",
+                      "id": "AF2fUWWW",
                       "type": "button",
-                      "iconUri": "Resources/Images/Icons/query-24.png",
-                      "command": "ActivateView",
-                      "commandParameter": "SimpleQueryBuilderView",
-                      "hideOnDisable": false,
-                      "name": "@language-querybuilder-simple-title",
-                      "tooltip": "@language-querybuilder-simple-tooltip"
-                    },
-                    {
-                      "id": "ShowSimpleFilterBuilderButton",
-                      "type": "button",
-                      "iconUri": "Resources/Images/Icons/filter-24.png",
-                      "command": "ActivateView",
-                      "commandParameter": "SimpleFilterBuilderView",
-                      "hideOnDisable": false,
-                      "name": "@language-querybuilder-simple-filter-title",
-                      "tooltip": "@language-querybuilder-simple-filter-tooltip"
+                      "iconUri": "{ViewerConfigUri}../../../Resources/Images/Custom/Location-24.png",
+                      "command": "RunWorkflowById",
+                      "commandParameter": "Find_Location",
+                      "hideOnDisable": true,
+                      "name": "Locations",
+                      "tooltip": "Search for Locations"
                     }
                   ],
                   "layout": "Large"
@@ -4102,11 +4095,6 @@
               "type": "toolbarGroup",
               "name": "Measuring",
               "items": [
-                {
-                  "id": "AdvancedMeasurementToolControlRegion",
-                  "type": "region",
-                  "regionName": "MeasurementToolControlRegion"
-                },
                 {
                   "id": "Rcpazgs5",
                   "type": "toolbarGroup",
@@ -4206,6 +4194,11 @@
                     }
                   ],
                   "layout": "Large"
+                },
+                {
+                  "id": "AdvancedMeasurementToolControlRegion",
+                  "type": "region",
+                  "regionName": "MeasurementToolControlRegion"
                 }
               ],
               "layout": "Large"
@@ -4224,16 +4217,6 @@
                   "hideOnDisable": false,
                   "name": "@language-toolbar-charting-show-charts",
                   "tooltip": "@language-toolbar-charting-show-charts-tooltip"
-                },
-                {
-                  "id": "ShowExternalComponentViewButton",
-                  "type": "button",
-                  "iconUri": "Resources/Images/Icons/Toolbar/map-3rd-party-24.png",
-                  "command": "ShowExternalComponentView",
-                  "commandParameter": null,
-                  "hideOnDisable": false,
-                  "name": "@language-toolbar-3rd-party-maps-show-maps",
-                  "tooltip": "@language-toolbar-3rd-party-maps-show-maps-tooltip"
                 },
                 {
                   "id": "PrintMapButton",
@@ -4256,14 +4239,29 @@
                   "tooltip": "@language-toolbar-tasks-export-map-tooltip"
                 },
                 {
-                  "id": "ShareButton",
+                  "id": "ShowSimpleQueryBuilderButton",
                   "type": "button",
-                  "iconUri": "Resources/Images/Icons/Toolbar/share-24.png",
-                  "command": "ShowShareView",
-                  "commandParameter": null,
+                  "iconUri": "Resources/Images/Icons/query-24.png",
+                  "command": "ActivateView",
+                  "commandParameter": "SimpleQueryBuilderView",
                   "hideOnDisable": false,
-                  "name": "@language-toolbar-tasks-share",
-                  "tooltip": "@language-toolbar-tasks-share-tooltip"
+                  "name": "@language-querybuilder-simple-title",
+                  "tooltip": "@language-querybuilder-simple-tooltip"
+                },
+                {
+                  "id": "ShowSimpleFilterBuilderButton",
+                  "type": "button",
+                  "iconUri": "Resources/Images/Icons/filter-24.png",
+                  "command": "ActivateView",
+                  "commandParameter": "SimpleFilterBuilderView",
+                  "hideOnDisable": false,
+                  "name": "@language-querybuilder-simple-filter-title",
+                  "tooltip": "@language-querybuilder-simple-filter-tooltip"
+                },
+                {
+                  "id": "FindDataControlRegion",
+                  "type": "region",
+                  "regionName": "FindDataControlRegion"
                 }
               ],
               "layout": "Large"

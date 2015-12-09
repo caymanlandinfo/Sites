@@ -52,13 +52,18 @@
             </Item>
             <Item ID="2" IsExpanded="true" LayerVisibilityType="MutuallyExclusive" Name="Comparables" Visible="true">
               <Items>
-                <Item ID="Comparables-0" />
+                <Item ID="Comparables-0">
+                  <Items>
+                    <Item ID="41" />
+                    <Item ID="42" />
+                  </Items>
+                </Item>
                 <Item ID="Comparables-1" />
                 <Item ID="Comparables-2" />
-                <Item ID="Comparables-3" />
                 <Item ID="Comparables-4" />
-                <Item ID="Comparables-5" />
                 <Item ID="Comparables-6" />
+                <Item ID="Comparables-5" />
+                <Item ID="Comparables-3" />
                 <Item ID="Comparables-7" />
               </Items>
             </Item>
@@ -96,7 +101,7 @@
           </Items>
         </Item>
         <Item ID="Basemap_IvanFlood" />
-        <Item ID="C7" IsExpanded="true" Name="Basemaps" Visible="true">
+        <Item ID="C7" IsExpanded="false" Name="Basemaps" Visible="true">
           <Items>
             <Item ID="Basemap_Cadastral" />
             <Item ID="Basemap_AerialHybrid_2013" />
@@ -112,7 +117,7 @@
             <Item ID="Basemap_CadastralOLD" />
           </Items>
         </Item>
-        <Item ID="40" IsExpanded="true" Name="Query Layers" Visible="true">
+        <Item ID="40" IsExpanded="false" Name="Query Layers" Visible="true">
           <Items>
             <Item ID="Query-0" />
             <Item ID="Query-1" />
@@ -269,10 +274,14 @@
         </Layers>
         <LocalProxy AppRelativePath="local-proxy/_Master/Layers_Utilities/Layers_Utilities/MapServer" AppRelativeTemplate="local-proxy/_Master/Layers_Utilities/Layers_Utilities/{type}/{*path}" ResolveCodedDomains="true" UseAppPoolIdentity="false" />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Comparables/MapServer" DefaultAllowSymbolization="true" DisplayName="Comparables" Function="Operational" ID="7" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="Comparables-0" Opacity="0.5" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Comparables/MapServer" DefaultAllowSymbolization="true" DisplayName="All" Function="Operational" ID="7" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" LayerListID="Comparables-0" Opacity="0.5" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
         <CachedServiceData />
+        <Layers>
+          <Layer CanCopyFeature="true" DisplayName="Lease Comparables" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="41" Name="Lease Comparables" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+          <Layer CanCopyFeature="true" DisplayName="Sales Comparables" Identifiable="true" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="42" Name="Sales Comparables" NativeID="1" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="false" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="true" />
+        </Layers>
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer" DefaultAllowSymbolization="true" DisplayName="Layers_Comparables" Function="Operational" ID="2" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="0.8" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer" DefaultAllowSymbolization="true" DisplayName="Layers_Comparables" Function="Operational" ID="2" ImageFormat="Png32" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="true" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Visible="true">
         <CachedServiceData />
         <Layers>
           <Layer AllowSymbolization="true" CanCopyFeature="true" DisplayName="Purchase Agreements" Identifiable="false" IncludeInLayerList="true" IncludeInLegend="true" IsCatalogLayer="false" IsExpanded="true" LayerListID="Comparables-1" Name="Purchase Agreements" NativeID="0" Queryable="true" Searchable="false" ShowFeatureHyperlinks="ShowAll" ShowLabels="true" ShowMapTips="false" Snappable="true" SnappingEnabled="false" UnconfiguredFieldsCanSymbolizeClassBreaks="true" UnconfiguredFieldsCanSymbolizeUniqueValue="true" UnconfiguredFieldsSearchable="true" UnconfiguredFieldsVisible="true" UnconfiguredRelationshipsVisible="true" Visible="false" />
@@ -606,13 +615,6 @@
         </BaseMapSettings>
         <CachedServiceData />
       </MapService>
-      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel Old" FailureAction="Warn" Function="Base" ID="Basemap_Cadastral" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_CadastralOLD" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
-        <BaseMapSettings>
-          <BaseMapSetting ID="1" />
-        </BaseMapSettings>
-        <CachedServiceData />
-        <LocalProxy AppRelativePath="local-proxy/_Master/Basemap_Cadastral/Basemap_Cadastral/MapServer" AppRelativeTemplate="local-proxy/_Master/Basemap_Cadastral/Basemap_Cadastral/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
-      </MapService>
       <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_AerialHybrid_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Hybrid" FailureAction="Warn" Function="Base" ID="Basemap_AerialHybrid_2013" IconUri="{RestVirtualDirectoryUrl}/Custom/Imagery-hybrid-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_AerialHybrid_2013" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
         <BaseMapSettings>
           <BaseMapSetting ID="2" />
@@ -689,6 +691,13 @@
         </BaseMapSettings>
         <CachedServiceData />
         <LocalProxy AppRelativePath="local-proxy/_Master/Basemap_Aerial_1971/Basemap_Aerial_1971/MapServer" AppRelativeTemplate="local-proxy/_Master/Basemap_Aerial_1971/Basemap_Aerial_1971/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
+      </MapService>
+      <MapService ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" DefaultAllowSymbolization="true" DisplayName="Parcel Old" FailureAction="Warn" Function="Base" ID="Basemap_Cadastral" IconUri="{RestVirtualDirectoryUrl}/Custom/Cadastral-24.png" ImpersonateWithActor="false" IncludeCopyright="false" IncludeInLayerList="true" InstantSearch="false" InstantSearchAttachments="false" IsExpanded="false" LayerListID="Basemap_CadastralOLD" Opacity="1" OverrideTemporalSettings="false" PasswordEncrypted="false" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" QueryProviderName="Default" SearchNonTextFields="true" SupportedImageHeight="0" SupportedImageWidth="0" UseHttpAuthentication="false" Username="SUBSCRIBER" Visible="false">
+        <BaseMapSettings>
+          <BaseMapSetting ID="1" />
+        </BaseMapSettings>
+        <CachedServiceData />
+        <LocalProxy AppRelativePath="local-proxy/_Master/Basemap_Cadastral/Basemap_Cadastral/MapServer" AppRelativeTemplate="local-proxy/_Master/Basemap_Cadastral/Basemap_Cadastral/{type}/{*path}" ResolveCodedDomains="false" UseAppPoolIdentity="false" />
       </MapService>
     </MapServices>
   </Map>

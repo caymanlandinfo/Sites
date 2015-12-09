@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="_Bronze" ID="_Bronze" Version="4.4.0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DisplayName="_Bronze" ID="_Bronze" Version="4.4.3">
   <ExternalConfigs>
     <ExternalConfig SiteID="_Master" />
   </ExternalConfigs>
@@ -10,15 +10,49 @@
       </Items>
       <Items MergeMode="Update">
         <Item ID="_Master-C0">
-          <Items MergeMode="Remove">
-            <Item ID="_Master-Basemap_Terrain_2013_Contours" />
-            <Item ID="_Master-C9" />
-            <Item ID="_Master-C1" />
-            <Item ID="_Master-C3" />
-            <Item ID="_Master-C4" />
+          <Items MergeMode="Update">
+            <Item ID="_Master-Basemap_Terrain_2013_Contours" IsExpanded="true" Visible="true" />
+            <Item ID="_Master-C9">
+              <Items MergeMode="Update">
+                <Item ID="Utilities-0" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-1" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-2" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-3" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-4" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-5" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-6" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-7" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-8" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-9" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-10" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-11" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-12" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-13" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-14" IsExpanded="true" Visible="true" />
+                <Item ID="Utilities-15" IsExpanded="true" Visible="true" />
+              </Items>
+            </Item>
+            <Item ID="_Master-2" MergeMode="Remove">
+              <Items />
+            </Item>
+            <Item ID="_Master-C3">
+              <Items MergeMode="Update">
+                <Item ID="Planning-0" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-1" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-2" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-3" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-4" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-5" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-6" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-7" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-8" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-9" IsExpanded="true" Visible="true" />
+                <Item ID="Planning-10" IsExpanded="true" Visible="true" />
+              </Items>
+            </Item>
           </Items>
         </Item>
-        <Item ID="_Master-C7">
+        <Item ID="_Master-C7" IsExpanded="true">
           <Items MergeMode="Remove">
             <Item ID="_Master-Basemap_Aerial_2013_IR" />
             <Item ID="_Master-Basemap_Aerial_2008" />
@@ -27,9 +61,13 @@
             <Item ID="_Master-Basemap_Aerial_1999" />
             <Item ID="_Master-Basemap_Aerial_1994" />
             <Item ID="_Master-Basemap_Aerial_1971" />
+            <Item ID="_Master-Basemap_CadastralOLD" />
           </Items>
-          <Items MergeMode="Update">
-            <Item ID="_Master-Basemap_Terrain" IsExpanded="true" Visible="true" />
+        </Item>
+        <Item ID="_Master-40">
+          <Items MergeMode="Remove">
+            <Item ID="Query-2" />
+            <Item ID="Query-3" />
           </Items>
         </Item>
       </Items>
@@ -37,8 +75,8 @@
     <MapServices MergeMode="Remove">
       <MapService ID="_Master-Basemap_Terrain_2013_Contours" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_2013_Contours/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Utilities" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Utilities/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
-      <MapService ID="_Master-Layers_Comparables_Label" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables_Label/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
-      <MapService ID="_Master-Layers_Comparables" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer;layerMask=Sales Comparables,Lease Comparables" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-7" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Basemap_Comparables/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-2" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_Comparables/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Layers_Planning" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Layers_Planning/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_IvanFlood" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_IvanFlood/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_Terrain_DTM_2013" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Terrain_DTM_2013/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
@@ -49,8 +87,26 @@
       <MapService ID="_Master-Basemap_Aerial_1999" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1999/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_Aerial_1994" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1994/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
       <MapService ID="_Master-Basemap_Aerial_1971" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Aerial_1971/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+      <MapService ID="_Master-Basemap_Cadastral" ConnectionString="url=https://adapter.caymanlandinfo.ky/secure/rest/services/Basemap_Cadastral/MapServer;tokenUrl=https://adapter.caymanlandinfo.ky/secure/tokens/token" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest" />
+    </MapServices>
+    <MapServices MergeMode="Update">
+      <MapService ID="_Master-3" ConnectionString="url=https://adapter.caymanlandinfo.ky/ngis/rest/services/Layers_ID/MapServer" ProviderInvariantName="Geocortex.Gis.Services.ArcGisServer.Rest">
+        <Layers MergeMode="Update">
+          <Layer Name=" Lease Comparables ID=3" NativeID="3" DisplayName="Lease Comparables" />
+        </Layers>
+      </MapService>
     </MapServices>
   </Map>
+  <NamedExtents>
+    <NamedExtent DisplayName="Little Cayman" Extent="1914267.92135032,7103220.00378131,2016277.01425739,7189122.39780832" ID="0" />
+    <NamedExtent DisplayName="Cayman Brac" Extent="2002586.32020934,7113689.35805335,2104595.41311641,7199591.75208036" ID="1" />
+    <NamedExtent DisplayName="Grand Cayman" Extent="1502446.40871001,7055285.33888481,1605529.28154243,6969382.94485781" ID="2" />
+  </NamedExtents>
+  <NamedExtents MergeMode="Remove">
+    <NamedExtent ID="_Master-0" />
+    <NamedExtent ID="_Master-1" />
+    <NamedExtent ID="_Master-2" />
+  </NamedExtents>
   <Workflows MergeMode="Remove">
     <Workflow ID="_Master-Group_Valuations" />
     <Workflow ID="_Master-Search_Sales" />

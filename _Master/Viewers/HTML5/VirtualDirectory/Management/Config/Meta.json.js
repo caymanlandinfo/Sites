@@ -7,7 +7,7 @@
       "name": "IWantToMenuSectionView"
     },
     {
-      "expandedShells": false,
+      "expandedShells": true,
       "name": "LookAndFeelSectionView"
     },
     {
